@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Megan Schmid</title>
+
+  <link rel="icon" type="image/png" href="icon.svg">
+  <!-- For apple devices -->
+  <link rel="apple-touch-icon" type="image/png" href="icon.svg" />
+
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Nixie One' rel='stylesheet'>
+
+</head>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    background: #fff;
+    margin: 0;
+    height: 100%;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #546195;
+    overflow: auto;
+  }
+
+  h1 {
+    font-size: 60px;
+    font-family: "Montserrat", Verdana, sans-serif;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-family: "Nixie One", Verdana, sans-serif;
+    font-weight: bold;
+    letter-spacing: 10px;
+    font-size: 120px;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  li {
+    display: inline;
+  }
+
+  header {
+    background: #DDE1F5;
+    padding: 20px;
+    min-height: 120px;
+    height: 20%;
+  }
+
+  footer {
+    display: flex;
+    background: #DDE1F5;
+    padding: 10px;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: float;
+    bottom: 0;
+  }
+
+  footer p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  footer div {
+    padding: 10px;
+  }
+
+  nav {
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 0;
+  }
+
+  section {
+    padding: 30px 100px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  section div {
+    padding: 10px 40px;
+    text-align: left;
+    height: 100%;
+  }
+
+  section h3, h4, p {
+    margin: 5px;
+  }
+
+  section a {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background: none;
+    text-decoration: none;
+    border: none;
+    color: #546195;
+  }
+
+  section a:hover {
+    color: #F1A3BD;
+  }
+
+  nav a,
+  button {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    background: none;
+    text-decoration: none;
+    border: none;
+    padding: 20px;
+    margin: 0px;
+    display: block;
+    color: white;
+    padding: 10px 16px;
+  }
+
+  nav a:hover,
+  button:hover {
+    background: #7781AE;
+    cursor: pointer;
+  }
+
+  nav button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #546195;
+    overflow: hidden;
+  }
+
+  nav li {
+    float: left;
+  }
+
+  /* helper classes */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+  }
+
+  .flex-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .home {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 120px;
+    height: 20%;
+  }
+
+  .mainContent {
+    min-height: 60%;
+  }
+</style>
+
+<body>
+  <header class="flex-container">
+    <div>
+      <h1>Megan Schmid</h1>
+    </div>
+    <div style="padding-left:20px">
+      <h5>UCLA</h5>
+      <h5>Linguistics & Computer Science Major,</h5>
+      <h5>Korean Minor</h5>
+    </div>
+  </header>
+
+  <div class="mainContent">
+    <nav>
+      <ul>
+        <li><a href="/Users/meganschmid/Desktop/web dev/Portfolio/index.html">home</a></li>
+        <li><a href="/Users/meganschmid/Desktop/web dev/Portfolio/portfolio.html">portfolio</a></li>
+        <li><a style="background:#394472" href="/Users/meganschmid/Desktop/web dev/Portfolio/courses.html">course list</a></li>
+        <li><a href="/Users/meganschmid/Desktop/web dev/Portfolio/aboutMe.html">about me</a></li>
+        <button type="submit" onclick="window.open('MSresume.pdf')">resume</button>
+      </ul>
+    </nav>
+
+    <section>
+      <h3>Summer 2020</h3>
+      <div>
+        <h4>Korean 10</h4>
+        <p>
+          Intermediate Modern Korean: Intensive
+        </p>
+      </div>
+    </section>
+    <section style="background:#F4F6FF">
+      <h3>Spring 2020</h3>
+      <div>
+        <h4>Clusters M1CW - Food</h4>
+        <p>
+          Lens for Environment and Sustainability--Special Topics: Crafting Alternatives to Mass Production
+        </p>
+      </div>
+      <div>
+        <h4>Computer Science</h4>
+        <p>
+          Introduction to Computer Science II
+        </p>
+      </div>
+      <div>
+        <h4>Korean 3</h4>
+        <p>
+          Elementary Modern Korean
+        </p>
+      </div>
+      <div>
+        <h4>Linguistics 20</h4>
+        <p>
+          Introduction to Linguistic Analysis
+        </p>
+      </div>
+    </section>
+    <section>
+      <h3>Winter 2020</h3>
+      <div>
+        <h4>Clusters M1B - Food</h4>
+        <p>
+          Lens for Environment and Sustainability
+        </p>
+      </div>
+      <div>
+        <h4>Computer Science 31</h4>
+        <p>
+          Introduction to Computer Science I
+        </p>
+      </div>
+      <div>
+        <h4>Korean 2</h4>
+        <p>
+          Elementary Modern Korean
+        </p>
+      </div>
+    </section>
+    <section style="background:#F4F6FF">
+      <h3>Fall 2019</h3>
+      <div>
+        <h4>M1A - Food</h4>
+        <p>
+          Lens for Environment and Sustainability
+        </p>
+      </div>
+      <div>
+        <h4>Honors Collegium 19 - Fiat Lux Freshman Seminars</h4>
+        <p>
+          Importance of Being an Ignorant Failure
+        </p>
+      </div>
+      <div>
+        <h4>Korean 50</h4>
+        <p>
+          History of Korean Civilization
+        </p>
+      </div>
+      <div>
+        <h4>Linguistics 1</h4>
+        <p>
+          Introduction to Study of Language
+        </p>
+      </div>
+    </section>
+    <section>
+      <h3>Summer 2020</h3>
+      <div>
+        <h4>Sociology 1</h4>
+        <p>
+          Introductory Sociology​
+        </p>
+      </div>
+      <div>
+        <h4>Political Sci 40​</h4>
+        <p>
+          Introduction to American Politics
+        </p>
+      </div>
+      <div>
+        <h4>University Studies 10A</h4>
+        <p>
+          ​Critical Strategies to Achieve Undergraduate Excellence for Incoming Freshmen
+        </p>
+      </div>
+    </section>
+    <section style="background:#F4F6FF">
+      <h3>AP Credit</h3>
+      <div>
+        <h4>English Literature and Composition: 5</h4>
+      </div>
+      <div>
+        <h4>Macroeconomics: 5</h4>
+      </div>
+      <div>
+        <h4>Physics 1: 5</h4>
+      </div>
+      <div>
+        <h4>United States Government and Politics: 5</h4>
+      </div>
+      <div>
+        <h4>Calculus BC: 5, AB Subscore: 5</h4>
+      </div>
+      <div>
+        <h4>English Language and Composition: 5</h4>
+      </div>
+      <div>
+        <h4>Environmental Science: 5</h4>
+      </div>
+      <div>
+        <h4>Spanish Language and Culture: 5</h4>
+      </div>
+      <div>
+        <h4>United States History: 5</h4>
+      </div>
+      <div>
+        <h4>European History: 5</h4>
+      </div>
+    </section>
+    <section>
+      <h3>Community College Credit: Saddleback College</h3>
+      <div>
+        <h4>Psychology 1</h4>
+        <p>
+          Introduction to Psychology
+        </p>
+      </div>
+      <div>
+        <h4>Sign Language 1</h4>
+        <p>
+          American Sign Language
+        </p>
+      </div>
+    </section>
+  </div>
+
+
+  <footer>
+    <div class="flex-container">
+      <div>
+        <h5>
+          Contact me:
+        </h5>
+      </div>
+      <div>
+        <h5>Mission Viejo, CA</h5>
+        <h5>(949)584-1961</h5>
+        <h5>meganschmid@ucla.edu</h5>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
