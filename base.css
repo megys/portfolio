@@ -1,0 +1,130 @@
+/* bg */
+html { 
+    background: url("assets/bg.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+  }
+
+/* layout */
+
+body {
+    height: 100%;
+}
+
+div {
+    margin: auto;
+}
+
+.main {
+    background-color: white;
+    border-radius: 25px;
+    padding: 10px;
+    top: 0px;
+    width: 60%;
+    min-width: 600px;
+}
+
+.header {
+    height: 100vh;
+    display: flex;
+    flex-flow: center;
+    align-self: auto;
+}
+
+.flexChild {
+    flex: 1;
+}
+
+
+.content {
+    margin: 0px 100px 75px 100px;
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin: auto;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    padding: 10px;
+    width: 60%;
+    min-width: 600px;
+}
+
+img {
+    border-radius: 25px;
+}
+
+/* typography */
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, span {
+    font-family: 'Spectral', serif;
+}
+
+h3, h4, h5 {
+    font-weight: 400;
+}
+
+p, ul {
+    font-size: smaller;
+}
+
+/* buttons */
+
+button {
+    border-radius: 25px;
+    padding: 6px 18px;
+    text-align: center;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: #fdabab;
+    color: #fdabab;
+    border: none;
+    width: 250px;
+}
+
+.button1:hover {
+    color: white;
+}
+
+.button2 {
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid #fdabab;
+    color: black;
+}
+
+.button2:hover {
+    background-color: #fdabab;
+    color: white;
+}
+
+/* toggle */
+.accordion {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+/* links */
+
+a {
+    color: black;
+}
+
