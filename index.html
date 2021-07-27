@@ -15,13 +15,13 @@
     <body>
         <div class="main">
             <div class="header">
-                <div style="display: flex">
+                <div class="wrapper" style="display: flex">
                     <div class="flexChild">
                         <img style=width:250px src="assets/headshot.png" alt="a photo of Megan" />
                         <br>
                         <a href="#aboutMe"><button class="button1">♡ about me ♡</button></a>
                     </div>
-                    <div class="flexChild" style="width: 350px">
+                    <div class="flexChild" style="min-width: 350px">
                         <h1>hello! 💖</h1>
                         <h3>I'm Megan! Nice to meet you!</h3>
                         <div>
@@ -36,7 +36,7 @@
 
             </div>
 
-            <div id="portfolio" class="content">
+            <!-- <div id="portfolio" class="content">
                 <div>
                     <h2>projects</h2>
                     <div>
@@ -260,6 +260,7 @@
                 <div>
                     <h2>coursework</h2>
                     <p>A list of the classes I've taken at UCLA.</p>
+                    <p>Click to expand</p>
 
                     <h3 class="accordion">computer science</h3>
                     <div class="panel">
@@ -325,7 +326,7 @@
                         <li>I like learning languages! I studied Spanish in high school and Korean in college.</li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
     
         </div>
         <br>
@@ -335,6 +336,8 @@
         </footer>
 
         <script>
+            // toggle text
+
             var acc = document.getElementsByClassName("accordion");
             var i;
 
@@ -349,6 +352,19 @@
                     } 
                 });
             }
+
+            // move divs based on width
+            $(window).on('load resize', function() { //Fires when window is loaded or resized
+                var div1 = $('#div1');
+                var div2 = $('#div2');
+                var wrapper = $('.wrapper');
+
+                if ($(window).width() < 800) {
+                    wrapper.prepend(div1).append(div2); // move div 1 to start & div2 to end
+                } else {
+                    wrapper.prepend(div2).append(div1); // move div 2 to start & div 1 to end
+                }
+            });
         </script>
     </body>
 </html>
