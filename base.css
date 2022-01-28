@@ -93,6 +93,10 @@ p, ul {
     font-size: smaller;
 }
 
+li{
+    margin: 10px 0;
+  }
+
 /* buttons */
 
 button {
@@ -128,10 +132,7 @@ button {
 
 /* toggle */
 .accordion {
-    margin-top: 10px;
-    margin-bottom: 0px;
     cursor: pointer;
-    font-weight: 600;
   }
   
 .panel {
