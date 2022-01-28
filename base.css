@@ -6,6 +6,8 @@ html {
     -o-background-size: cover;
     background-size: cover;
     height: 100%;
+
+    --pinkish: #fdabab;
   }
 
 /* layout */
@@ -102,7 +104,7 @@ button {
 }
 
 .button1 {
-    background-color: #fdabab;
+    background-color: var(--pinkish); 
     color: white;
     border: 2px solid #fdabab;
     width: 300px;
