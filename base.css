@@ -93,7 +93,7 @@ p, ul {
     font-size: smaller;
 }
 
-li{
+li {
     margin: 10px 0;
   }
 
@@ -134,6 +134,10 @@ button {
 .accordion {
     cursor: pointer;
   }
+
+  .accordion:hover {
+    color: #ee5c5c;
+  }
   
   .accordion:after {
     content: '\002B';
@@ -151,9 +155,25 @@ button {
     transition: max-height 0.2s ease-out;
   }
 
+/* project cards */
+
+.tag {
+    font-size: x-small;
+    font-weight: bold;
+    color: gray;
+    margin-bottom: -8px;
+}
+
 /* links */
 
 a {
     color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ee5c5c;
+    text-decoration: underline;
 }
 
