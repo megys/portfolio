@@ -135,6 +135,16 @@ button {
     cursor: pointer;
   }
   
+  .accordion:after {
+    content: '\002B';
+    color: black;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
 .panel {
     max-height: 0;
     overflow: hidden;
