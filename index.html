@@ -163,10 +163,10 @@
                                         <span>JUNE 2022 - SEPT 2022</span>
                                     </div>
                                 </div>
-                                <div id="experienceBrief">
+                                <div class="experienceBrief">
                                     <p>Strategized and executed a filter and sort by feature refresh for the Xbox storefronts</p>
                                 </div>
-                                <div id="experienceDetailed" style="display: none">
+                                <div class="experienceDetailed" style="display: none">
                                     <p style="margin-bottom:-10px">
                                         Strategized and executed a filter and sort by feature refresh for the Xbox storefronts
                                     </p>
@@ -186,12 +186,19 @@
                                         <span>JUNE 2021 - SEPT 2021</span>
                                     </div>
                                 </div>
-                                <div class="panel">
+                                <div class="experienceBrief">
                                     <p>
                                         Explore Microsoft is a 12-week summer internship program specifically designed for students in their first or 
                                         second year of a bachelor’s degree program who would like to learn more about careers in software 
                                         development through a learning program. 
-                                    </p>
+                                    </p>                                
+                                </div>
+                                <div class="experienceDetailed" style="display: none">
+                                    <!-- <p>
+                                        Explore Microsoft is a 12-week summer internship program specifically designed for students in their first or 
+                                        second year of a bachelor’s degree program who would like to learn more about careers in software 
+                                        development through a learning program. 
+                                    </p>          -->
                                     <ul>
                                         <li>
                                             Gained experience with software engineering and project management through the 12-week summer internship program                                        
@@ -202,7 +209,7 @@
                                         <li>
                                             Utilized tools such as Azure DevOps, ASP.NET, SQLite, C#, and Unity to devise and produce a web-based security trivia game to gamify the experience of security training for all Yammer engineers                                        
                                         </li>
-                                    </ul>    
+                                    </ul>                         
                                 </div>
                             </div>
                     </div>
@@ -470,18 +477,25 @@
         </script>
         <script type="text/javascript" language="javascript">
             function toggleVisibility(cb)
-            {
-             var x = document.getElementById("experienceBrief");
-             var y = document.getElementById("experienceDetailed");
+            { 
+                // need to perform a select all query
+             var x = document.getElementsByClassName("experienceBrief");
+             var y = document.getElementsByClassName("experienceDetailed");
              if(cb.checked==true)
              {
-                x.style.display = "none"; // or x.style.display = "none";
-                y.style.display = "block"; //or x.style.display = "block";
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none"; 
+                }
+                for (i = 0; i < y.length; i++) {
+                    y[i].style.display = "block"; 
+                }
              }
              else
              {
-                x.style.display = "block"; //or x.style.display = "block";
-                y.style.display = "none"; // or x.style.display = "none";
+                for (i = 0; i < x.length; i++)
+                    x[i].style.display = "block"; 
+                for (i = 0; i < y.length; i++)
+                    y[i].style.display = "none"; 
              }
             }
            </script>
