@@ -14,34 +14,75 @@
 
     <body>
         <div style="height:10px"></div>
+
         <div class="main">
-            <div class="header">
+            <!-- Intro Section -->
+            <div class="intro">
                 <div class="flexBox" style="padding: 25px">
                     <div class="flexChild" style="width:300px; align-items: center; padding: 10px 15px 10px 15px"> 
                         <img style="width:300px" src="assets/headshot.png" alt="a photo of Megan" />
-                        <!-- <br>
-                        <a href="#aboutMe"><button class="button1">♡ about me ♡</button></a> -->
+                        <br>
+                        <a href="#aboutMe"><button class="button1">about me</button></a>
                     </div>
                     <div class="flexChild" style="justify-content: center; padding: 10px 15px 10px 15px">
                         <h1 style="margin-bottom:-15px">hello!</h1>
                         <h3 style="margin-bottom:-5px">I'm Megan! Nice to meet you!</h3>
                         <div>
-                            <h3 style="margin-bottom:-20px;">UCLA Class of 2023</h3>
-                            <h5>Linguistics & Computer Science, Korean</h5>
+                            <h3 style="margin-bottom:-20px;">Product Manager @ Xbox</h3>
+                            <h5 style="width:300px">Creating more engaging, inclusive, and discoverable gaming experiences</h5>
                         </div>
                         <div>
                             <a href="#portfolio"><button class="button2">projects</button></a>
-                            <button class="button2" type="submit" onclick="window.open('assets/MSresume.pdf')">resume</button>
-                            <a href='https://www.linkedin.com/in/megan-y-schmid/' target="_blank"><button class="button2">linked in</button></a>
+                            <a href="#experience"><button class="button2">experience</button></a>
+                            <a href="#service"><button class="button2">service</button></a>
                         </div>
                     </div>
                 </div>
 
             </div>
+            
+            <!-- Content Section -->
+            <div class="content">
 
-            <div id="portfolio" class="content">
-                <div>
-                    <h2>projects</h2>
+                <!-- About -->
+                <div id="aboutMe">
+                    <!-- Header -->
+                    <div class="header">
+                        <h2>about me</h2>
+                        <div class="header-buttons">
+                            <button class="button3" type="submit" onclick="window.open('assets/MSresume.pdf')">📋 resume</button>
+                            <a href="https://www.linkedin.com/in/megan-y-schmid/" target="_blank">
+                                <button class="button3">🔗 linked in</button>
+                            </a>
+                            <a href="https://mysmee.itch.io/" target="_blank">
+                                <button class="button3">🎮 itch.io</button>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Content -->
+                    <div>
+                        <h4>Hello! My name is Megan (she/her), and I'm a Product Manager at <a href='https://www.xbox.com/en-US' target="_blank">Xbox</a>, where I focus on crafting discovery experiences that connect players with the games they love.</h4>
+                        <h4>I specialize in building AI-driven metadata systems that power personalized discovery, helping players find what they love while enabling publishers to reach the right audiences.</h4></h4>
+                        <h4>Outside of work, I'm both a gamer and an <a href='https://mysmee.itch.io/' target="_blank">aspiring game dev</a>, bringing that same creativity and player-first mindset into everything I build and advocating for experiences that engage, include, and inspire.</h4>
+                    </div>    
+                </div>
+                <br>
+                <br>
+                <hr>
+
+                <!-- Portfolio -->
+                <div id="portfolio" >
+                    <!-- Header -->
+                    <div class="flexInline">
+                        <h2>projects</h2>
+                        <!-- Filter Buttons -->
+                        <div>
+                            <button class="button3">Game Dev</button>
+                            <button class="button3">Web Dev</button>
+                            <button class="button3">UX/UI</button>
+                        </div>
+                    </div>
+
                     <div>
                         <h3 style="margin-bottom:-10px">Habitude</h3>
                         <h5 class="tag">WEB DEVELOPMENT</h5>
@@ -137,36 +178,40 @@
                     <br>
                 </div>
                 <br>
+                <br>
                 <hr>
 
-                <div>
+                <!-- Experience -->
+                <div id="experience">
+                    <!-- Header -->
                     <div class="flexInline">
                         <h2>experience</h2>
                         <div>
                             <div class="toggle-button-cover">
                                 <div class="button-cover">
-                                  <div class="button r" id="button-1">
-                                    <input type="checkbox" class="checkbox" onClick="toggleVisibility(this)"/>
+                                    <div class="button r" id="button-1">
+                                    <input type="checkbox" class="checkbox" onClick="toggleVisibilityExp(this)"/>
                                     <div class="knobs"></div>
                                     <div class="layer"></div>
-                                  </div>
+                                    </div>
                                 </div>
-                              </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- Work -->
                     <div>
-                        <h3 style="margin-bottom:-10px">Microsoft</h3>
+                        <h3 style="margin-bottom:-10px">Work Experience</h3>
                             <div>
                                 <div style="margin-bottom:-25px" class="flexInline">
                                     <h4>Project Manager Intern</h4>
                                     <div class="timeframe">
-                                        <span>JUNE 2022 - SEPT 2022</span>
+                                        <span>2022</span>
                                     </div>
                                 </div>
-                                <div class="experienceBrief">
+                                <div class="expBrief">
                                     <p>Strategized and executed a filter and sort by feature refresh for the Xbox storefronts</p>
                                 </div>
-                                <div class="experienceDetailed" style="display: none">
+                                <div class="expDetailed" style="display: none">
                                     <p style="margin-bottom:-10px">
                                         Strategized and executed a filter and sort by feature refresh for the Xbox storefronts
                                     </p>
@@ -183,17 +228,17 @@
                                 <div style="margin-bottom:-25px" class="flexInline">
                                     <h4>Explore Intern</h4>
                                     <div class="timeframe">
-                                        <span>JUNE 2021 - SEPT 2021</span>
+                                        <span>2021</span>
                                     </div>
                                 </div>
-                                <div class="experienceBrief">
+                                <div class="expBrief">
                                     <p>
                                         Explore Microsoft is a 12-week summer internship program specifically designed for students in their first or 
                                         second year of a bachelor’s degree program who would like to learn more about careers in software 
                                         development through a learning program. 
                                     </p>                                
                                 </div>
-                                <div class="experienceDetailed" style="display: none">
+                                <div class="expDetailed" style="display: none">
                                     <!-- <p>
                                         Explore Microsoft is a 12-week summer internship program specifically designed for students in their first or 
                                         second year of a bachelor’s degree program who would like to learn more about careers in software 
@@ -214,12 +259,23 @@
                             </div>
                     </div>
                     <br>
-
-                    <div>
+                    <!-- Education -->
+                        <div>
+                        <h3 style="margin-bottom:-10px">Education</h3>
+                        </div>
+                        <div>
                         <h3 style="margin-bottom:-10px">Upsilon Pi Epsilon</h3>
-                            <div style="margin-left:30px;">
-                                <h5 class="accordion" style="margin-bottom:-5px;">Induction Director (2021-2022)</h5>
-                                <div class="panel">
+                            <div>
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>Induction Advisor</h4>
+                                    <div class="timeframe">
+                                        <span>2022 - 2023</span>
+                                    </div>
+                                </div>
+                                <div class="expBrief">
+                                    <p>Brief</p>
+                                </div>
+                                <div class="expDetailed" style="display: none">
                                     <ul>
                                         <li>
                                             Organized committee meetings and divided responsibilities between co-directors and chairs 
@@ -235,8 +291,43 @@
                                         </li>
                                     </ul>    
                                 </div>
-                                <h5 class="accordion" style="margin-bottom:-5px;">Induction Chair (2020-2021)</h5>
-                                <div class="panel">
+
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>Induction Director</h4>
+                                    <div class="timeframe">
+                                        <span>2021 - 2022</span>
+                                    </div>
+                                </div>
+                                <div class="expBrief">
+                                    <p>Brief</p>
+                                </div>
+                                <div class="expDetailed" style="display: none">
+                                    <ul>
+                                        <li>
+                                            Organized committee meetings and divided responsibilities between co-directors and chairs 
+                                        </li>
+                                        <li>
+                                            Overhauled the active membership program through adding new requirements and new benefits
+                                        </li>
+                                        <li>
+                                            Managed inductees and active members
+                                        </li>
+                                        <li>
+                                            Conducted clubhouse tutoring, orientations, and ceremonies
+                                        </li>
+                                    </ul>    
+                                </div>
+
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>Induction Chair</h4>
+                                    <div class="timeframe">
+                                        <span>2020 - 2021</span>
+                                    </div>
+                                </div>
+                                <div class="expBrief">
+                                    <p>Brief</p>
+                                </div>
+                                <div class="expDetailed" style="display: none">
                                     <ul>
                                         <li>
                                             Managed inductees during the induction process to the honor society as well as active members                                        </li>
@@ -247,14 +338,20 @@
                                     </ul>    
                                 </div>
                             </div>
-                    </div>
-                    <br>
-
-                    <div>
+                        </div>
+                        <div>
                         <h3 style="margin-bottom:-10px">ACM Design</h3>
-                        <div style="margin-left:30px;">
-                            <h5 class="accordion" style="margin-bottom:-5px;">Committee Officer (2020-2022)</h5>
-                            <div class="panel">
+                        <div>
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>Committee Officer</h4>
+                                <div class="timeframe">
+                                    <span>2020 - 2022</span>
+                                </div>
+                            </div>
+                            <div class="expBrief">
+                                <p>Brief</p>
+                            </div>
+                            <div class="expDetailed" style="display: none">
                                 <p>
                                     ACM Design is a committee within the Association for Computing Machinery (ACM) at UCLA that handles design requests, design projects, and hosts tutorials related to 
                                     design and computer science.
@@ -273,14 +370,41 @@
                             </div>
 
                         </div>
-                    </div>
-                    <br>
+                        </div>
+                        <br>
 
-                    <div>
-                        <h3 style="margin-bottom:-10px">ACM Studio (2021)</h3>
-                        <div style="margin-left:30px;">
-                            <h5 class="accordion" style="margin-bottom:-5px;">Game Developer (2021)</h5>
-                            <div class="panel">
+                        <div>
+                        <h3 style="margin-bottom:-10px">ACM Studio</h3>
+                        <div>
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>Game Developer</h4>
+                                <div class="timeframe">
+                                    <span>2023</span>
+                                </div>
+                            </div>
+                            <div class="expBrief">
+                                <p>Brief</p>
+                            </div>
+                            <div class="expDetailed" style="display: none">
+                                <p>
+                                    ACM Studio is a committee within the Association for Computing Machinery (ACM) at UCLA that creates games and hosts tutorials on game development.
+                                </p>
+                                <ul>
+                                    <li>
+                                        Utilized Unity to develop the visual novel interface as a game dev with ACM Studio’s two quarter long student led game development project
+                                    </li>
+                                </ul>    
+                            </div>
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>Game Developer</h4>
+                                <div class="timeframe">
+                                    <span>2021</span>
+                                </div>
+                            </div>
+                            <div class="expBrief">
+                                <p>Brief</p>
+                            </div>
+                            <div class="expDetailed" style="display: none">
                                 <p>
                                     ACM Studio is a committee within the Association for Computing Machinery (ACM) at UCLA that creates games and hosts tutorials on game development.
                                 </p>
@@ -291,108 +415,179 @@
                                 </ul>    
                             </div>
                         </div>
-                    </div>
-                    <br>
-                    <br>
-                    <hr>
+                        </div>
+                        <br>
+                </div>
+                <br>
+                <br>
+                <hr>
 
-                    <div>
+                <!-- Service -->
+                <div id="service">
+                    <div class="flexInline">
                         <h2>service</h2>
                         <div>
-                            <h3 style="margin-bottom:-10px">Liberty in North Korea</h3>
-                                <div style="margin-left:30px;">
-                                    <h5 class="accordion" style="margin-bottom:-5px;">President (2022-2023)</h5>
-                                    <div class="panel">
-                                        <p>
-                                            Liberty in North Korea is an international NGO working with the North Korean people as they achieve their liberty. LiNK helps North Korean refugees escape through a 3,000-mile secret rescue route and empowers North Koreans who have reached freedom to be changemakers, advocates, and leaders on this issue.
-                                        </p>
-                                        <ul>
-                                            <li>
-                                                Presided as the main correspondent with a large non-profit organization
-                                            </li>
-                                            <li>
-                                                Established the Rescue Team's overall objectives and timeline for each quarter
-                                            </li>
-                                            <li>
-                                                Delegated responsibilities and supported the work efforts and contributions of individual club members
-                                            </li>
-                                        </ul>    
-                                    </div>
-                                    <h5 class="accordion" style="margin-bottom:-5px;">Fundraising Director (2021-2022)</h5>
-                                    <div class="panel">
-                                        <ul>
-                                            <li>
-                                                Coordinated the development of fundraisers and events for the club
-                                            </li>
-                                            <li>
-                                                Communicated with other committees to facilitate fundraisers and events
-                                            </li>
-                                        </ul>    
-                                    </div>
-                                    <h5 class="accordion" style="margin-bottom:-5px;">Financial Director (2020-2021)</h5>
-                                    <div class="panel">
-                                        <ul>
-                                            <li>
-                                                Applied for university grants to fund events and provide honorarium for speaker events
-                                            </li>
-                                            <li>
-                                                Organized and analyzed financial spreadsheets for transactions and donations
-                                            </li>
-                                            <li>
-                                                Facilitated the financial transactions of the nonprofit subsidiary organization
-                                            </li>
-                                            <li>
-                                                Collaborated on a fundraiser which raised 2/3 of our goal within a week ($2,000)
-                                            </li>
-                                            <li>
-                                                Worked with the fundraising team throughout the year to cumulatively raise $3,500
-                                            </li>
-                                        </ul>    
-                                    </div>
-                                    <h5 class="accordion" style="margin-bottom:-5px;">Fundraising Intern (2019-2020)</h5>
-                                    <div class="panel">
-                                        <ul>
-                                            <li>
-                                                Initiated and developed fundraisers and events, cumulatively raising $3,500 and thus exceeding our fundraising goal for the school year ($3,000: enough to finance the relocation of one North Korean refugee)
-                                            </li>
-                                            <li>
-                                                Expanded outreach through publicity, resulting in 50+ event attendees
-                                            </li>
-                                            <li>
-                                                Executed a speaker event with the team in which North Korean defector Oh Chong-Song spoke on his experiences living in North Korea and his escape
-                                            </li>
-                                        </ul>    
-                                    </div>
-                                    <h5 class="accordion" style="margin-bottom:-5px;">Rescue Team Founder (2017-2019)</h5>
-                                    <div class="panel">
-                                        <ul>
-                                            <li>Founded and led a LiNK Rescue Team at my high school.</li>
-                                        </ul>    
+                            <div class="toggle-button-cover">
+                                <div class="button-cover">
+                                    <div class="button r" id="button-1">
+                                    <input type="checkbox" class="checkbox" onClick="toggleVisibilityService(this)"/>
+                                    <div class="knobs"></div>
+                                    <div class="layer"></div>
                                     </div>
                                 </div>
+                            </div>
                         </div>
-                        <br>
-                        <div>
-                            <h3 style="margin-bottom:-10px">Alliance for Korea United USA</h3>
-                                <div style="margin-left:30px;">
-                                    <h5 class="accordion" style="margin-bottom:-5px;">English Tutor (2021)</h5>
-                                    <div class="panel">
-                                        <ul>
-                                            <li>
-                                                Conducted 90 minute one-on-one tutoring sessions with a new topic each week                                            
-                                            </li>
-                                            <li>
-                                                Researched and prepared weekly lesson presentations and homework assignments
-                                            </li>
-                                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 style="margin-bottom:-10px">Liberty in North Korea</h3>
+                            <div>
+                                <div class="serDetailed" style="display: none">
+                                    <p style="font-size: smaller">
+                                        Liberty in North Korea is an international NGO working with the North Korean people as they achieve their liberty. LiNK helps North Korean refugees escape through a 3,000-mile secret rescue route and empowers North Koreans who have reached freedom to be changemakers, advocates, and leaders on this issue.
+                                    </p>
+                                    <p>
+                                        Liberty in North Korea is an international NGO working with the North Korean people as they achieve their liberty. LiNK helps North Korean refugees escape through a 3,000-mile secret rescue route and empowers North Koreans who have reached freedom to be changemakers, advocates, and leaders on this issue.
+                                    </p>
+
+                                </div>
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>President</h4>
+                                    <div class="timeframe">
+                                        <span>2022 - 2023</span>
                                     </div>
                                 </div>
-                        </div>
-                        <br>
-    
+                                <div class="serBrief">
+                                    <p>Brief</p>
+                                </div>
+                                <div class="serDetailed" style="display: none">
+                                    <ul>
+                                        <li>
+                                            Presided as the main correspondent with a large non-profit organization
+                                        </li>
+                                        <li>
+                                            Established the Rescue Team's overall objectives and timeline for each quarter
+                                        </li>
+                                        <li>
+                                            Delegated responsibilities and supported the work efforts and contributions of individual club members
+                                        </li>
+                                    </ul>    
+                                </div>
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>Fundraising Director</h4>
+                                    <div class="timeframe">
+                                        <span>2021 - 2022</span>
+                                    </div>
+                                </div>
+                                <div class="serBrief">
+                                    <p>Brief</p>
+                                </div>
+                                <div class="serDetailed" style="display: none">
+                                    <ul>
+                                        <li>
+                                            Coordinated the development of fundraisers and events for the club
+                                        </li>
+                                        <li>
+                                            Communicated with other committees to facilitate fundraisers and events
+                                        </li>
+                                    </ul>    
+                                </div>
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>Financial Director</h4>
+                                    <div class="timeframe">
+                                        <span>2020 - 2021</span>
+                                    </div>
+                                </div>
+                                <div class="serBrief">
+                                    <p>Brief</p>
+                                </div>
+                                <div class="serDetailed" style="display: none">
+                                    <ul>
+                                        <li>
+                                            Applied for university grants to fund events and provide honorarium for speaker events
+                                        </li>
+                                        <li>
+                                            Organized and analyzed financial spreadsheets for transactions and donations
+                                        </li>
+                                        <li>
+                                            Facilitated the financial transactions of the nonprofit subsidiary organization
+                                        </li>
+                                        <li>
+                                            Collaborated on a fundraiser which raised 2/3 of our goal within a week ($2,000)
+                                        </li>
+                                        <li>
+                                            Worked with the fundraising team throughout the year to cumulatively raise $3,500
+                                        </li>
+                                    </ul>    
+                                </div>
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>Fundraising Intern</h4>
+                                    <div class="timeframe">
+                                        <span>2019 - 2020</span>
+                                    </div>
+                                </div>
+                                <div class="serBrief">
+                                    <p>Brief</p>
+                                </div>
+                                <div class="serDetailed" style="display: none">
+                                    <ul>
+                                        <li>
+                                            Initiated and developed fundraisers and events, cumulatively raising $3,500 and thus exceeding our fundraising goal for the school year ($3,000: enough to finance the relocation of one North Korean refugee)
+                                        </li>
+                                        <li>
+                                            Expanded outreach through publicity, resulting in 50+ event attendees
+                                        </li>
+                                        <li>
+                                            Executed a speaker event with the team in which North Korean defector Oh Chong-Song spoke on his experiences living in North Korea and his escape
+                                        </li>
+                                    </ul>    
+                                </div>
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>LiNK Team Founder</h4>
+                                    <div class="timeframe">
+                                        <span>2017 - 2019</span>
+                                    </div>
+                                </div>
+                                <div class="serBrief">
+                                    <p>Brief</p>
+                                </div>
+                                <div class="serDetailed" style="display: none">
+                                    <ul>
+                                        <li>Founded and led a LiNK Rescue Team at my high school.</li>
+                                    </ul>    
+                                </div>
+                            </div>
                     </div>
                     <br>
+                    <div>
+                        <h3 style="margin-bottom:-10px">Alliance for Korea United USA</h3>
+                            <div>
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>English Tutor</h4>
+                                    <div class="timeframe">
+                                        <span>2021</span>
+                                    </div>
+                                </div>
+                                <div class="serBrief">
+                                    <p>Brief</p>
+                                </div>
+                                <div class="serDetailed" style="display: none">
+                                    <ul>
+                                        <li>
+                                            Conducted 90 minute one-on-one tutoring sessions with a new topic each week                                            
+                                        </li>
+                                        <li>
+                                            Researched and prepared weekly lesson presentations and homework assignments
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </div>
+                    <br>
+    
                 </div>
+                <br>
+                <br>
                 <hr>
 
 
@@ -408,12 +603,12 @@
                             <br><br>
                         </h4>        
                     </div> -->
-                    <!-- <div class="flexBox" style="justify-content: center;">
+                <!-- <div class="flexBox" style="justify-content: center;">
                         <div class="flexChild" style="width: 180px;">
                             <img style="width:180px; margin-bottom: -15px;" src="assets/seattle.png" alt="a photo of Megan on the Space Needle" />
                             <h5 style="text-align: center; margin-right: 5px; font-size: smaller">Me in Seattle!</h5>
                         </div> -->
-                        <!-- <div class="flexChild" style="width: 180px;">
+                <!-- <div class="flexChild" style="width: 180px;">
                             <img style="width:180px; margin-bottom: -15px;" src="assets/ratatouille.png" alt="a photo of two plates of ratatouille" />
                             <h5 style="text-align: center; margin-right: 5px;font-size: smaller">Ratatouille attempt!</h5>
                         </div>
@@ -429,11 +624,17 @@
                             Also, if you're interested in seeing my first attempt at a website site, <a href="https://megys.github.io/how-to-site/" target="_blank">click here!</a>
                         </p>
                     </div> -->
-                    <!-- <br>
-                    <h3 style="text-align: center;margin-bottom:-5px">I hope you enjoyed learning a bit about me and my projects!<br> Thanks for reading!</h3>
+                <!-- <br>
                 </div> -->
+
+                <!-- Closing -->
                 <div id="contact me">
-                    <h2>say hi</h2>
+                    <h2>say hi!</h2>
+                    <h3 style="font-weight: normal;">I hope you enjoyed learning a bit about me and my projects!</h3>
+                    <h4>I hope you enjoyed learning a bit about me and my projects!</h4>
+                    <h4>If you'd like to reach out, you can message me at meganschmid@microsoft.com</h4>
+                    <h3 style="font-weight: normal;">Thanks for reading!</h3>
+
                 </div>
 
             </div>
@@ -445,6 +646,10 @@
             <span>made with ♡ by megan</span>
         </footer>
 
+
+        <!-- SCRIPTS -->
+
+        <!-- Accordian -->
         <script>
             // toggle text
             var acc = document.getElementsByClassName("accordion");
@@ -475,12 +680,14 @@
                 }
             });
         </script>
+
+        <!-- Visibility Toggle -->
         <script type="text/javascript" language="javascript">
-            function toggleVisibility(cb)
+            function toggleVisibilityExp(cb)
             { 
-                // need to perform a select all query
-             var x = document.getElementsByClassName("experienceBrief");
-             var y = document.getElementsByClassName("experienceDetailed");
+                
+             var x = document.getElementsByClassName("expBrief");
+             var y = document.getElementsByClassName("expDetailed");
              if(cb.checked==true)
              {
                 for (i = 0; i < x.length; i++) {
@@ -498,6 +705,31 @@
                     y[i].style.display = "none"; 
              }
             }
-           </script>
+        </script>
+        <script type="text/javascript" language="javascript">
+                    function toggleVisibilityService(cb)
+                    { 
+                        
+                     var x = document.getElementsByClassName("serBrief");
+                     var y = document.getElementsByClassName("serDetailed");
+                     if(cb.checked==true)
+                     {
+                        for (i = 0; i < x.length; i++) {
+                            x[i].style.display = "none"; 
+                        }
+                        for (i = 0; i < y.length; i++) {
+                            y[i].style.display = "block"; 
+                        }
+                     }
+                     else
+                     {
+                        for (i = 0; i < x.length; i++)
+                            x[i].style.display = "block"; 
+                        for (i = 0; i < y.length; i++)
+                            y[i].style.display = "none"; 
+                     }
+                    }
+        </script>
+        
     </body>
 </html>

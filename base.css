@@ -28,11 +28,41 @@ body {
     margin: auto;
 }
 
-.header {
+.intro {
     display: flex;
     justify-content: center;
     align-items: center;
     height:100vh; 
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+  gap: 0.5rem; /* spacing between elements when wrapped */
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.header-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem 0.5rem;
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-buttons {
+    justify-content: flex-start;
+  }
 }
 
 .flexBox {
@@ -54,6 +84,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.flexInCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content {
@@ -128,10 +164,25 @@ button {
     background-color: rgba(255, 255, 255, 0);
     border: 2px solid #fdabab;
     color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .button2:hover {
     background-color: #fdabab;
+    color: white;
+}
+
+.button3 {
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid rgb(182, 182, 182);
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.button3:hover {
+    background-color: rgb(182, 182, 182);
     color: white;
 }
 
@@ -202,7 +253,7 @@ a:hover {
 .toggle-button-cover {
   /* display: table-cell; */
   position: relative;
-  width: 120px;  
+  width: 100px;  
   height: 30px;
   /* box-sizing: border-box; */
 }
@@ -220,10 +271,9 @@ a:hover {
 
 .button {
   position: relative;
-  width: 120px;
+  width: 100px;  
   height: 30px;
   overflow: hidden;
-
 }
 
 .button.r,
@@ -252,7 +302,8 @@ a:hover {
 
 .layer {
   width: 100%;
-  background-color: #d8d8d8db;
+  background-color: rgb(182, 182, 182);
+  opacity: 0.8;
   transition: 0.3s ease all;
   z-index: 1;
 }
@@ -278,7 +329,7 @@ a:hover {
 
 #button-1 .checkbox:checked + .knobs:before {
   content: "detailed";
-  left: 51px;
+  left: 31px;
   /* background-color: #f44336; */
 }
 
@@ -291,3 +342,4 @@ a:hover {
 #button-1 .layer {
   transition: 0.3s ease all;
 }
+
