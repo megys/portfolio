@@ -133,7 +133,7 @@ h4, h5 {
 
 p, ul, li {
     font-family: 'Open Sans', sans-serif;
-    font-size: smaller;
+    font-size: small;
     color: #5e5e5e;
 }
 
@@ -174,16 +174,56 @@ button {
 }
 
 .button3 {
+    /* background-color: rgba(255, 255, 255, 0); */
+    border: 2px solid rgb(92, 92, 92);
+    color: black;
+}
+
+.button3:hover {
+    background-color: rgb(92, 92, 92);
+    color: white;
+}
+
+.button4 {
     background-color: rgba(255, 255, 255, 0);
     border: 2px solid rgb(182, 182, 182);
     color: black;
     margin-top: 5px;
     margin-bottom: 5px;
+    cursor: pointer;
+    padding: 6px 12px; /* default padding */
+    transition: all 0.25s ease; /* smooth transition for width, bg, etc. */
+    overflow: hidden;
 }
 
-.button3:hover {
+.button4:hover {
     background-color: rgb(182, 182, 182);
     color: white;
+}
+
+.button4.active {
+  background-color: rgb(182, 182, 182);
+  color: white;
+  border-color: rgb(182, 182, 182);
+  position: relative;
+  padding-left: 20px; /* extra left padding for the X */
+}
+
+.button4::before {
+  opacity: 0;
+  content: "×";
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 1rem;
+  transition: opacity 0.5s ease;
+}
+
+.button4.active::before {
+  opacity: 1;
+
 }
 
 .timeframe {
@@ -197,40 +237,59 @@ button {
     font-weight: 400;
     color: #828282;
     text-align: center;
+} 
+
+/* project grid styles */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
-
-/* toggle */
-.accordion {
-    cursor: pointer;
-  }
-
-  .accordion:hover {
-    color: #ee5c5c;
-  }
-  
-  .accordion:after {
-    content: '\002B';
-    color: black;
-    margin-left: 5px;
-  }
-  
-  .active:after {
-    content: "\2212";
-  }
-  
-.panel {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-  }
 
 /* project cards */
 
-.tag {
+.project-card h1 { /* header */
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+.project-card h2 { /* tags */
     font-size: x-small;
     font-weight: bold;
     color: gray;
-    margin-bottom: -8px;
+    margin-top: 5px;
+}
+
+.project-card button {
+  /* allow the button section to push itself to the bottom */
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fafafa;
+  text-align: left;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  min-width: 100px;
+
+  /* make contents stack vertically and fill height */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  display: none;
 }
 
 /* links */
@@ -258,6 +317,9 @@ a:hover {
   /* box-sizing: border-box; */
 }
 
+.expDetailed p {
+  margin-bottom:-10px
+}
 
 .button-cover,
 .knobs,

@@ -25,7 +25,7 @@
                         <a href="#aboutMe"><button class="button1">about me</button></a>
                     </div>
                     <div class="flexChild" style="justify-content: center; padding: 10px 15px 10px 15px">
-                        <h1 style="margin-bottom:-15px">hello!</h1>
+                        <h1 id="type-target" style="margin-bottom:-15px"></h1>
                         <h3 style="margin-bottom:-5px">I'm Megan! Nice to meet you!</h3>
                         <div>
                             <h3 style="margin-bottom:-20px;">Product Manager @ Xbox</h3>
@@ -50,20 +50,16 @@
                     <div class="header">
                         <h2>about me</h2>
                         <div class="header-buttons">
-                            <button class="button3" type="submit" onclick="window.open('assets/MSresume.pdf')">📋 resume</button>
-                            <a href="https://www.linkedin.com/in/megan-y-schmid/" target="_blank">
-                                <button class="button3">🔗 linked in</button>
-                            </a>
-                            <a href="https://mysmee.itch.io/" target="_blank">
-                                <button class="button3">🎮 itch.io</button>
-                            </a>
+                            <button class="button2" type="submit" onclick="window.open('assets/MSresume.pdf')">📋 resume</button>
+                            <button class="button2" onclick="window.open('https://www.linkedin.com/in/megan-y-schmid/', '_blank')">🔗 linked in</button>
+                            <button class="button2" onclick="window.open('https://mysmee.itch.io/', '_blank')">🎮 itch.io</button>
                         </div>
                     </div>
                     <!-- Content -->
                     <div>
                         <h4>Hello! My name is Megan (she/her), and I'm a Product Manager at <a href='https://www.xbox.com/en-US' target="_blank">Xbox</a>, where I focus on crafting discovery experiences that connect players with the games they love.</h4>
                         <h4>I specialize in building AI-driven metadata systems that power personalized discovery, helping players find what they love while enabling publishers to reach the right audiences.</h4></h4>
-                        <h4>Outside of work, I'm both a gamer and an <a href='https://mysmee.itch.io/' target="_blank">aspiring game dev</a>, bringing that same creativity and player-first mindset into everything I build and advocating for experiences that engage, include, and inspire.</h4>
+                        <h4>Outside of work, I'm both a gamer and a <a href='https://mysmee.itch.io/' target="_blank">game dev</a>, and I bring that same creativity and player-first mindset into everything I build, advocating for experiences that engage, include, and inspire.</h4>
                     </div>    
                 </div>
                 <br>
@@ -73,109 +69,108 @@
                 <!-- Portfolio -->
                 <div id="portfolio" >
                     <!-- Header -->
-                    <div class="flexInline">
+                    <div class="header">
                         <h2>projects</h2>
                         <!-- Filter Buttons -->
-                        <div>
-                            <button class="button3">Game Dev</button>
-                            <button class="button3">Web Dev</button>
-                            <button class="button3">UX/UI</button>
+                        <div class="header-buttons">
+                            <button class="button4" data-tag="game" onclick="toggleFilter(this)">Game Dev</button>
+                            <button class="button4" data-tag="web" onclick="toggleFilter(this)">Web Dev</button>
+                            <button class="button4" data-tag="uxui" onclick="toggleFilter(this)">UX/UI</button>
                         </div>
                     </div>
 
-                    <div>
-                        <h3 style="margin-bottom:-10px">Habitude</h3>
-                        <h5 class="tag">WEB DEVELOPMENT</h5>
-                        <p>
-                            Habitude is a web-based habit tracker that users can use to keep track of their daily goals through creating custom habits. 
-                            They will be able to view their habit upkeep through a calendar system which displays which days out of the year they completed their habit.
-                            <a onclick="window.open('assets/habitude.pdf')" style="cursor: pointer;">visit presentation</a>
-                        </p>
-                    </div>
-                    <br>
+                    <!-- Project Cards -->
+                    <div class="project-grid">
+                        <!-- I Fell in Love with a Mailman | 2024 -->
+                        <div class="project-card" data-tags="game">
+                            <h1>I Fell in Love with a Mailman</h1>
+                            <h2>Visual Novel | 1,600+ plays</h2>
+                            <p>Hallmark Christmas movie inspired visual novel featuring realistic claw machine gameplay! Is romance really just a rigged game of chance?!</p>
+                            <button class="button3" onclick="window.open('https://mysmee.itch.io/i-fell-in-love-with-a-mailman', '_blank')">Check it out!</button>
+                        </div>
 
-                    <div>
-                        <h3 style="margin-bottom:-10px">Grades of Green</h3>
-                        <h5 class="tag">WEB DEVELOPMENT</h5>
-                        <p>
-                            Collaborated with Grades of Green as a developer to rebrand the non-profit organization’s website to facilitate user engagement and integrated a database for dynamic display of data.
-                            I participated in this project as an officer in ACM at UCLA's design committee.
-                        </p>
-                    </div>
-                    <br>
+                        <!-- Potion Promotion | 2024 -->
+                        <div class="project-card" data-tags="game">
+                            <h1>Potion Promotion</h1>
+                            <h2>Visual Novel | 590+ plays</h2>
+                            <p>You've inherited your uncle's potion shop and it's your first day on the job. Help the potion hungry customers procure their precious potions!</p>
+                            <button class="button3" onclick="window.open('https://mysmee.itch.io/potion-promotion', '_blank')">Check it out!</button>
+                        </div>
 
-                    <div>
-                        <h3 style="margin-bottom:-10px">CSS Framework</h3>
-                        <h5 class="tag">UX/UI</h5>
-                        <p>
-                            Contributed to the creation of a CSS stylesheet according to ACM at UCLA’s branding guidelines to unify and streamline the development of our online websites and resources.
-                            I participated in this project as an officer in ACM at UCLA's design committee.
-                            <a href="https://github.com/uclaacm/WestwoodCSS" target="_blank">visit github</a>
-                        </p>
-                    </div>
-                    <br>
+                        <!-- Tippity Tap: Dog Destroy | 2024 -->
+                        <div class="project-card" data-tags="game">
+                            <h1>Tippity Tap: Dog Destroy</h1>
+                            <h2>Typing Game</h2>
+                            <p>A typing game (in Korean) where you defend earth from warlock dogs!</p>
+                            <button class="button3" onclick="window.open('https://mysmee.itch.io/tippity-tap-dog-destroy', '_blank')">Check it out!</button>
+                        </div>
 
-                    <div>
-                        <h3 style="margin-bottom:-10px">CCLE App Redesign</h3>
-                        <h5 class="tag">UX/UI</h5>
-                        <p>
-                            Created prototypes for an updated mobile version of UCLA's school engine, CCLE. 
-                            I participated in this project as a member of the Bruin Women in Business tech committee.
-                            <a onclick="window.open('assets/ccle.pdf')" style="cursor: pointer;">visit presentation</a>
-                        </p>
-                    </div>
-                    <br>
+                        <!-- Tippity Tap: Cat Attack | 2024 -->
+                        <div class="project-card" data-tags="game">
+                            <h1>Tippity Tap: Cat Attack</h1>
+                            <h2>Typing Game</h2>
+                            <p>A typing game where you defend earth from wizard cats!</p>
+                            <button class="button3" onclick="window.open('https://mysmee.itch.io/tippity-tap-cat-attack', '_blank')">Check it out!</button>
+                        </div>
 
-                    <div>
-                        <h3 style="margin-bottom:-10px">Bubble Tea in Quarantine</h3>
-                            <h5 class="tag">GAME DEVELOPMENT - 100+ downloads</h5>
-                            <p>
-                                A visual novel about tea, boba, and coronavirus with a twist—you fight coronavirus itself! 
-                                Individually developed and implemented with Pokémon-esque fight mechanics.
-                                <a href="https://keycard.itch.io/bubble-tea-in-quarantine" target="_blank">visit game site</a>
-                            </p>
-                    </div>
-                    <br>
+                        <!-- Habitude | 2021 -->
+                        <div class="project-card" data-tags="web">
+                            <h1>Habitude</h1>
+                            <h2>Web App</h2>
+                            <p>A web-based habit tracker that users can use to keep track of their daily goals through creating custom habits.</p>
+                            <button class="button3" onclick="window.open('assets/habitude.pdf')">Check it out!</button>
+                        </div>                         
 
-                    <div>
-                        <h3 style="margin-bottom:-10px">Wayfarer</h3>
-                            <h5 class="tag">GAME DEVELOPMENT - 500+ browser plays & 14 downloads</h5>
-                            <p>
-                                A deckbuilding puzzle game meets a wholesome story about friendship! 
-                                I used Unity to develop the visual novel interface as a game developer during ACM Studio’s 6 month long student led game development project.
-                                <a href="https://volcanogirl.itch.io/wayfarer" target="_blank">visit game site</a>
-                            </p>
-                    </div>
-                    <br>
+                        <!-- Grades of Green | 2021 -->
+                        <div class="project-card" data-tags="web">
+                            <h1>Grades of Green</h1>
+                            <h2>Web App</h2>
+                            <p>Collaborated with Grades of Green as a developer to rebrand the non-profit organization’s website to facilitate user engagement and integrated a database for dynamic display of data.</p>
+                            <!-- <button class="button3">Check it out!</button> -->
+                        </div>
 
-                    <div>
-                        <h3 style="margin-bottom:-10px">Enharmonic</h3>
-                            <h5 class="tag">GAME DEVELOPMENT - 100+ downloads</h5>
-                            <p>
-                                A visual novel about art, love, and angst. Created with <a href="https://monicasivart0.wixsite.com/artwork" target="_blank">Monica Sivayavirojna</a> based off of her webtoon concept and original characters. 
-                                <a href="https://keycard.itch.io/enharmonic" target="_blank" >visit game site</a>
-                            </p>       
-                    </div>
-                    <br>
+                        <!-- CSS Framework | 2021 -->
+                        <div class="project-card" data-tags="uxui">
+                            <h1>CSS Framework</h1>
+                            <h2>UX/UI</h2>
+                            <p>Contributed to the creation of a CSS stylesheet according to ACM at UCLA’s branding guidelines to unify and streamline the development of our online websites and resources.</p>
+                            <button class="button3" onclick="window.open('https://github.com/uclaacm/WestwoodCSS', '_blank')">Check it out!</button>
+                        </div>
 
-                    <div>
-                        <h3 style="margin-bottom:-10px">Dungeon RPG</h3>
-                            <h5 class="tag">GAME DEVELOPMENT</h5>
-                            <p>
-                                A randomly generated multi-level dungeon RPG with various mobs and weapons run through Xcode. It utilizes recursive functions for mob movement, class inheritance, and vectors; and was coded in C++.
-                            </p>
+                        <!-- Wayfarer | 2021 -->
+                        <div class="project-card" data-tags="game">
+                            <h1>Wayfarer</h1>
+                            <h2>Visual Novel / Deck Builder | 840+ plays</h2>
+                            <p>A deckbuilding puzzle game meets a wholesome story about friendship! Your choices in the story impact the cards you get for the puzzle, which determines the ending.</p>
+                            <button class="button3" onclick="window.open('https://sonderingemily.itch.io/wayfarer', '_blank')">Check it out!</button>
+                        </div>
+
+                        <!-- CCLE App Redesign | 2020 -->
+                        <div class="project-card" data-tags="uxui">
+                            <h1>CCLE App Redesign</h1>
+                            <h2>UX/UI</h2>
+                            <p>Created prototypes for an updated mobile version of UCLA's school engine, CCLE.</p>
+                            <button class="button3" onclick="window.open('assets/ccle.pdf')">Check it out!</button>
+                        </div>
+
+                        <!-- Bubble Tea in Quarantine | 2020 -->
+                        <div class="project-card" data-tags="game">
+                            <h1>Bubble Tea in Quarantine</h1>
+                            <h2>Visual Novel</h2>
+                            <p>A visual novel about tea, boba, and coronavirus with a twist!</p>
+                            <button class="button3" onclick="window.open('https://mysmee.itch.io/bubble-tea-in-quarantine', '_blank')">Check it out!</button>
+                        </div>
+
+                        <!-- This Website! | 2025 -->
+                        <div class="project-card" data-tags="web">
+                            <h1>This Website!</h1>
+                            <h2>Web App</h2>
+                            <p>Coded in html, css, and javascript; just to prove a point to myself :P</p>
+                            <button class="button3" onclick="window.open('https://github.com/megys/portfolio', '_blank')">Check it out!</button>
+                        </div>
                     </div>
-                    <!-- creating creative contents -->
-                    <br>
-                    <div id="creatingCreativeContents">
-                        <h3 style="margin-bottom:-10px">Memory Train</h3>
-                            <h5 class="tag">GAME DEVELOPMENT</h5>
-                            <p>
-                                A docugame on dementia and caretakers of dementia patients, created to raise awareness and educate players. The game takes place on a train where the player character interacts with 3 different characters, who end up being the same character at different stages of their life, and learns clues about their lives (or life).
-                            </p>
-                    </div>
-                    <!-- creating creative contents -->
-                    <br>
+
+
                 </div>
                 <br>
                 <br>
@@ -198,24 +193,58 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- Work -->
                     <div>
-                        <h3 style="margin-bottom:-10px">Work Experience</h3>
+                        <h3 style="margin-bottom:-10px">Professional Experience</h3>
+                        <div>
+                            <!-- PM -->
                             <div>
                                 <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Project Manager Intern</h4>
+                                    <h4>Product Manager | Xbox @ Microsoft</h4>
+                                    <div class="timeframe">
+                                        <span>2024 - Present</span>
+                                    </div>
+                                </div>
+                                <!-- Brief -->
+                                <div class="expBrief">
+                                    <p>Lead initiatives improving game discoverability, driving platform growth, and delivering inclusive, high-impact user experiences across Xbox endpoints.</p>
+                                </div>
+                                <!-- Detailed -->
+                                <div class="expDetailed" style="display: none">
+                                    <ul>
+                                        <li>
+                                            Lead initiatives that enhanced game discoverability, drove platform growth, and promoted inclusive experiences across Xbox endpoints.
+                                        </li>
+                                        <li>
+                                            Drove the development and productionalization of metadata systems enabling quality personalized discovery experiences.
+                                        </li>
+                                        <li>
+                                            Managed cross-functional v-teams, defined product strategy, and delivered features contributing to both user engagement and revenue growth.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- PM Intern -->
+                            <div>
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>PM Intern | Xbox @ Microsoft</h4>
                                     <div class="timeframe">
                                         <span>2022</span>
                                     </div>
-                                </div>
+                                </div>     
+                                <!-- Brief -->
                                 <div class="expBrief">
-                                    <p>Strategized and executed a filter and sort by feature refresh for the Xbox storefronts</p>
+                                    <p>Delivered storefront feature improvements—including filter/sort refreshes and enhanced visibility for self-published titles—while owning the browse-all-games experience on Xbox.com.</p>
                                 </div>
+                                <!-- Detailed -->
                                 <div class="expDetailed" style="display: none">
-                                    <p style="margin-bottom:-10px">
-                                        Strategized and executed a filter and sort by feature refresh for the Xbox storefronts
-                                    </p>
                                     <ul>
+                                        <li>
+                                            Strategized and executed a filter and sort by feature refresh for the Xbox storefronts
+                                        </li>
                                         <li>
                                             Created a strategy to increase the visibility and discoverability of self-published games on the Xbox storefronts
                                         </li>
@@ -223,27 +252,24 @@
                                             Owned the browse all games feature for Xbox.com
                                         </li>
                                     </ul>
-                                </div>
-                                
+                                </div>                             
+                            </div>
+                            
+                            
+                            <!-- Explore Intern -->
+                            <div>
                                 <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Explore Intern</h4>
+                                    <h4>Explore Intern | Viva Engage @ Microsoft</h4>
                                     <div class="timeframe">
                                         <span>2021</span>
                                     </div>
                                 </div>
+                                <!-- Brief -->
                                 <div class="expBrief">
-                                    <p>
-                                        Explore Microsoft is a 12-week summer internship program specifically designed for students in their first or 
-                                        second year of a bachelor’s degree program who would like to learn more about careers in software 
-                                        development through a learning program. 
-                                    </p>                                
+                                    <p>Built a web-based security trivia game and gained hands-on engineering and PM experience while supporting the Yammer Security, Privacy, and Compliance team.</p>
                                 </div>
+                                <!-- Detailed -->
                                 <div class="expDetailed" style="display: none">
-                                    <!-- <p>
-                                        Explore Microsoft is a 12-week summer internship program specifically designed for students in their first or 
-                                        second year of a bachelor’s degree program who would like to learn more about careers in software 
-                                        development through a learning program. 
-                                    </p>          -->
                                     <ul>
                                         <li>
                                             Gained experience with software engineering and project management through the 12-week summer internship program                                        
@@ -257,166 +283,80 @@
                                     </ul>                         
                                 </div>
                             </div>
+                        </div>
                     </div>
                     <br>
+
                     <!-- Education -->
-                        <div>
+                    <div>
                         <h3 style="margin-bottom:-10px">Education</h3>
-                        </div>
-                        <div>
-                        <h3 style="margin-bottom:-10px">Upsilon Pi Epsilon</h3>
-                            <div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Induction Advisor</h4>
-                                    <div class="timeframe">
-                                        <span>2022 - 2023</span>
-                                    </div>
-                                </div>
-                                <div class="expBrief">
-                                    <p>Brief</p>
-                                </div>
-                                <div class="expDetailed" style="display: none">
-                                    <ul>
-                                        <li>
-                                            Organized committee meetings and divided responsibilities between co-directors and chairs 
-                                        </li>
-                                        <li>
-                                            Overhauled the active membership program through adding new requirements and new benefits
-                                        </li>
-                                        <li>
-                                            Managed inductees and active members
-                                        </li>
-                                        <li>
-                                            Conducted clubhouse tutoring, orientations, and ceremonies
-                                        </li>
-                                    </ul>    
-                                </div>
-
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Induction Director</h4>
-                                    <div class="timeframe">
-                                        <span>2021 - 2022</span>
-                                    </div>
-                                </div>
-                                <div class="expBrief">
-                                    <p>Brief</p>
-                                </div>
-                                <div class="expDetailed" style="display: none">
-                                    <ul>
-                                        <li>
-                                            Organized committee meetings and divided responsibilities between co-directors and chairs 
-                                        </li>
-                                        <li>
-                                            Overhauled the active membership program through adding new requirements and new benefits
-                                        </li>
-                                        <li>
-                                            Managed inductees and active members
-                                        </li>
-                                        <li>
-                                            Conducted clubhouse tutoring, orientations, and ceremonies
-                                        </li>
-                                    </ul>    
-                                </div>
-
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Induction Chair</h4>
-                                    <div class="timeframe">
-                                        <span>2020 - 2021</span>
-                                    </div>
-                                </div>
-                                <div class="expBrief">
-                                    <p>Brief</p>
-                                </div>
-                                <div class="expDetailed" style="display: none">
-                                    <ul>
-                                        <li>
-                                            Managed inductees during the induction process to the honor society as well as active members                                        </li>
-                                        <li>
-                                            Scheduled tutoring hours for inductees/officers and tracked attendance                                        </li>
-                                        <li>
-                                            Conducted orientations and induction ceremonies                                        </li>
-                                    </ul>    
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                        <h3 style="margin-bottom:-10px">ACM Design</h3>
+                        <!-- Uni -->
                         <div>
                             <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>Committee Officer</h4>
-                                <div class="timeframe">
-                                    <span>2020 - 2022</span>
-                                </div>
-                            </div>
-                            <div class="expBrief">
-                                <p>Brief</p>
-                            </div>
-                            <div class="expDetailed" style="display: none">
-                                <p>
-                                    ACM Design is a committee within the Association for Computing Machinery (ACM) at UCLA that handles design requests, design projects, and hosts tutorials related to 
-                                    design and computer science.
-                                </p>
-                                <ul>
-                                    <li>
-                                        Collaborated with Grades of Green as a developer to rebrand the non-profit organization’s website to facilitate user engagement and integrated a database for dynamic display of data
-                                    </li>
-                                    <li>
-                                        Contributed to the creation of a CSS stylesheet according to ACM at UCLA’s branding guidelines to unify and streamline the development of our online websites and resources 
-                                    </li>
-                                    <li>
-                                        Utilized Figma to complete design requests: Facebook and Instagram advertisements for events run by the different ACM committees
-                                    </li>
-                                </ul>    
-                            </div>
-
-                        </div>
-                        </div>
-                        <br>
-
-                        <div>
-                        <h3 style="margin-bottom:-10px">ACM Studio</h3>
-                        <div>
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>Game Developer</h4>
+                                <h4>University of California, Los Angeles</h4>
                                 <div class="timeframe">
                                     <span>2023</span>
                                 </div>
                             </div>
+                            <div>
+                                <p><b>B.A. in Linguistics & Computer Science, Korean</b></p>
+                            </div>
+                            <!-- Brief Description -->
                             <div class="expBrief">
-                                <p>Brief</p>
+                                <p><b>Honors:</b> Cum Laude | Phi Beta Kappa | Dean's List</p>
+                                <p><b>Orgs:</b> Upsilon Pi Epsilon | Association for Computing Machinery (Design & Studio)</p>
                             </div>
+                            <!-- Detailed Description -->
                             <div class="expDetailed" style="display: none">
-                                <p>
-                                    ACM Studio is a committee within the Association for Computing Machinery (ACM) at UCLA that creates games and hosts tutorials on game development.
-                                </p>
-                                <ul>
-                                    <li>
-                                        Utilized Unity to develop the visual novel interface as a game dev with ACM Studio’s two quarter long student led game development project
-                                    </li>
-                                </ul>    
-                            </div>
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>Game Developer</h4>
-                                <div class="timeframe">
-                                    <span>2021</span>
+                                <p><b>Honors:</b> Cum Laude | Phi Beta Kappa | Dean's List</p>
+                                <br>
+                                <p><b>Student Societies & Organizations:</b></p>
+                                <div>
+                                    <p><a href="https://upe.seas.ucla.edu/" target="_blank">Upsilon Pi Epsilon</a> | Induction Director</p>
+                                    <ul>
+                                        <li>
+                                            Led committee operations by organizing meetings, delegating responsibilities, and managing inductees and active members through tutoring, orientations, and ceremonies.
+                                        </li>
+                                        <li>
+                                            Revamped the active membership program by introducing new requirements and benefits to strengthen engagement and member development.
+                                        </li>
+                                    </ul>
                                 </div>
-                            </div>
-                            <div class="expBrief">
-                                <p>Brief</p>
-                            </div>
-                            <div class="expDetailed" style="display: none">
-                                <p>
-                                    ACM Studio is a committee within the Association for Computing Machinery (ACM) at UCLA that creates games and hosts tutorials on game development.
-                                </p>
-                                <ul>
-                                    <li>
-                                        Utilized Unity to develop the visual novel interface as a game dev with ACM Studio’s two quarter long student led game development project
-                                    </li>
-                                </ul>    
+
+                                <div>
+                                    <p><a href="https://upe.seas.ucla.edu/" target="_blank">Upsilon Pi Epsilon</a> | Induction Chair</p>
+                                    <ul>
+                                        <li>
+                                            Oversaw inductees and active members throughout the induction process, coordinating tutoring schedules, tracking attendance, and conducting orientations and ceremonies.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <p><a href="https://studio.uclaacm.com/" target="_blank">ACM Studio</a> | Game Developer</p>
+                                    <ul>
+                                        <li>
+                                            Built and delivered two games, shipping one, while participating in game jams and workshops to strengthen rapid prototyping, design skills, and full-pipeline development.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <p><a href="https://design.uclaacm.com/" target="_blank">ACM Design</a> | Committee Officer</p>
+                                    <ul>
+                                        <li>
+                                            Collaborated with non-profit Grades of Green to rebrand their website and implement a dynamic data system, and contributed to ACM's unified CSS style framework.
+                                        </li>
+                                        <li>
+                                           Completed design requests in Figma, creating event advertisements for ACM committees across Facebook and Instagram.
+                                        </li>
+                                    </ul>
+                                </div>
+                                
                             </div>
                         </div>
-                        </div>
-                        <br>
+                    </div>
+
                 </div>
                 <br>
                 <br>
@@ -424,6 +364,7 @@
 
                 <!-- Service -->
                 <div id="service">
+                    <!-- Header -->
                     <div class="flexInline">
                         <h2>service</h2>
                         <div>
@@ -438,138 +379,336 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div>
-                        <h3 style="margin-bottom:-10px">Liberty in North Korea</h3>
-                            <div>
-                                <div class="serDetailed" style="display: none">
-                                    <p style="font-size: smaller">
-                                        Liberty in North Korea is an international NGO working with the North Korean people as they achieve their liberty. LiNK helps North Korean refugees escape through a 3,000-mile secret rescue route and empowers North Koreans who have reached freedom to be changemakers, advocates, and leaders on this issue.
-                                    </p>
-                                    <p>
-                                        Liberty in North Korea is an international NGO working with the North Korean people as they achieve their liberty. LiNK helps North Korean refugees escape through a 3,000-mile secret rescue route and empowers North Koreans who have reached freedom to be changemakers, advocates, and leaders on this issue.
-                                    </p>
 
-                                </div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>President</h4>
-                                    <div class="timeframe">
-                                        <span>2022 - 2023</span>
-                                    </div>
-                                </div>
-                                <div class="serBrief">
-                                    <p>Brief</p>
-                                </div>
-                                <div class="serDetailed" style="display: none">
-                                    <ul>
-                                        <li>
-                                            Presided as the main correspondent with a large non-profit organization
-                                        </li>
-                                        <li>
-                                            Established the Rescue Team's overall objectives and timeline for each quarter
-                                        </li>
-                                        <li>
-                                            Delegated responsibilities and supported the work efforts and contributions of individual club members
-                                        </li>
-                                    </ul>    
-                                </div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Fundraising Director</h4>
-                                    <div class="timeframe">
-                                        <span>2021 - 2022</span>
-                                    </div>
-                                </div>
-                                <div class="serBrief">
-                                    <p>Brief</p>
-                                </div>
-                                <div class="serDetailed" style="display: none">
-                                    <ul>
-                                        <li>
-                                            Coordinated the development of fundraisers and events for the club
-                                        </li>
-                                        <li>
-                                            Communicated with other committees to facilitate fundraisers and events
-                                        </li>
-                                    </ul>    
-                                </div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Financial Director</h4>
-                                    <div class="timeframe">
-                                        <span>2020 - 2021</span>
-                                    </div>
-                                </div>
-                                <div class="serBrief">
-                                    <p>Brief</p>
-                                </div>
-                                <div class="serDetailed" style="display: none">
-                                    <ul>
-                                        <li>
-                                            Applied for university grants to fund events and provide honorarium for speaker events
-                                        </li>
-                                        <li>
-                                            Organized and analyzed financial spreadsheets for transactions and donations
-                                        </li>
-                                        <li>
-                                            Facilitated the financial transactions of the nonprofit subsidiary organization
-                                        </li>
-                                        <li>
-                                            Collaborated on a fundraiser which raised 2/3 of our goal within a week ($2,000)
-                                        </li>
-                                        <li>
-                                            Worked with the fundraising team throughout the year to cumulatively raise $3,500
-                                        </li>
-                                    </ul>    
-                                </div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Fundraising Intern</h4>
-                                    <div class="timeframe">
-                                        <span>2019 - 2020</span>
-                                    </div>
-                                </div>
-                                <div class="serBrief">
-                                    <p>Brief</p>
-                                </div>
-                                <div class="serDetailed" style="display: none">
-                                    <ul>
-                                        <li>
-                                            Initiated and developed fundraisers and events, cumulatively raising $3,500 and thus exceeding our fundraising goal for the school year ($3,000: enough to finance the relocation of one North Korean refugee)
-                                        </li>
-                                        <li>
-                                            Expanded outreach through publicity, resulting in 50+ event attendees
-                                        </li>
-                                        <li>
-                                            Executed a speaker event with the team in which North Korean defector Oh Chong-Song spoke on his experiences living in North Korea and his escape
-                                        </li>
-                                    </ul>    
-                                </div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>LiNK Team Founder</h4>
-                                    <div class="timeframe">
-                                        <span>2017 - 2019</span>
-                                    </div>
-                                </div>
-                                <div class="serBrief">
-                                    <p>Brief</p>
-                                </div>
-                                <div class="serDetailed" style="display: none">
-                                    <ul>
-                                        <li>Founded and led a LiNK Rescue Team at my high school.</li>
-                                    </ul>    
+                    <!-- Game Dev Stuff -->
+                    <!-- <div>
+                        <h3 style="margin-bottom:-10px">Game Developer Discovery V-Team</h3>
+                         <div style="margin-bottom:-25px" class="flexInline">
+                            <h4>Committee Member</h4>
+                            <div class="timeframe">
+                                <span>2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br> -->
+
+                    <!-- Intern Program -->
+                    <div>
+                        <h3 style="margin-bottom:-10px">Microsoft Intern Program</h3>
+                        <p style="margin-bottom:-5px">Strengthened Microsoft's intern community through inclusive engagement and mentorship, fostering belonging and early-career growth across cohorts.</p>
+                        <div class="serBrief">
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>Co-lead, Xbox Intern Gaming Tournament</h4>
+                                <div class="timeframe">
+                                    <span>2025</span>
                                 </div>
                             </div>
+
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>Intern Cohort Leader</h4>
+                                <div class="timeframe">
+                                    <span>2024 - 2025</span>
+                                </div>
+                            </div>                 
+
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>Volunteer, Xbox Intern Program</h4>
+                                <div class="timeframe">
+                                    <span>2024</span>
+                                </div>
+                            </div>       
+                        </div>
+                        <div class="serDetailed" style="display: none">
+                            <!-- Co-lead, Xbox Intern Gaming Tournament -->
+                            <div> 
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>Co-lead, Xbox Intern Gaming Tournament</h4>
+                                    <div class="timeframe">
+                                        <span>2025</span>
+                                    </div>
+                                </div>
+                                <div>                            
+                                    <ul>
+                                        <li>
+                                            Organized and delivered an Xbox-wide team gaming tournament—developing the event website, resources, and structure—to foster community-building and cross-intern networking in an inclusive, fun environment.
+                                        </li>
+                                        <li>
+                                            Secured prizes and engagement opportunities that connected interns with Xbox leaders and expanded access to mentorship and company insights.                                        
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Intern Cohort Leader -->
+                            <div>
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>Intern Cohort Leader</h4>
+                                    <div class="timeframe">
+                                        <span>2024 - 2025</span>
+                                    </div>
+                                </div>          
+                                <div>
+                                    <ul>
+                                        <li>
+                                            Mentored a diverse cohort of interns by hosting inclusive events, providing ongoing support, and creating a welcoming community centered on belonging, professional growth, and peer connection.                                        
+                                        </li>
+                                        <li>
+                                            Facilitated networking, guidance sessions, and open forums that empowered interns to ask questions, build confidence, and navigate Microsoft with greater clarity and support.
+                                        </li>
+                                    </ul>
+                                </div>                     
+                            </div>
+              
+
+                            <!-- Volunteer, Xbox Intern Program -->
+                            <div>
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>Volunteer, Xbox Intern Program</h4>
+                                    <div class="timeframe">
+                                        <span>2024</span>
+                                    </div>
+                                </div>    
+                                <div>
+                                    <ul>
+                                        <li>
+                                            Hosted accessible lunches and office hours offering career advice, PM skill development, and personalized support to help interns thrive at Xbox.
+                                        </li>
+                                        <li>
+                                            Organized community-building events and assisted in running the Xbox Intern Gaming Tournament, creating spaces for interns to network, bond, and learn more about the organization.
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                            </div>   
+                        </div>
+                        
                     </div>
                     <br>
+
+                    <!-- Company Volunteer Opportunities -->
+                    <div>
+                        <h3 style="margin-bottom:-10px">Microsoft Resource Groups and Volunteering</h3>
+                        <p style="margin-bottom:-5px">Advanced company culture by leading ERG and volunteering initatives that promote inclusion, connection, and giving back across the Microsoft community.</p>
+                        <div class="serBrief">
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>Co-lead, Xbox Give Gaming Tournament</h4>
+                                <div class="timeframe">
+                                    <span>2025</span>
+                                </div>
+                            </div>
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>Co-lead, Asians at Microsoft Give Pillar</h4>
+                                <div class="timeframe">
+                                    <span>2025</span>
+                                </div>
+                            </div>
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>External Committee Member, Asians at Microsoft</h4>
+                                <div class="timeframe">
+                                    <span>2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="serDetailed" style="display: none">
+                            <!-- Co-lead, Xbox Give Gaming Tournament -->
+                            <div>
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>Co-lead, Xbox Give Gaming Tournament</h4>
+                                    <div class="timeframe">
+                                        <span>2025</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            Expanded a former intern-only tournament to full-time employees for the first time ever, designing an inclusive format and resources that fostered cross-team bonding and broadened participation across Xbox.
+                                        </li>
+                                        <li>
+                                            Built communications, branding, and event infrastructure while securing prizes that increased access to executive networking and strengthened community connection.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <!-- Co-lead, Asians at Microsoft Give Pillar -->
+                            <div>
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>Co-lead, Asians at Microsoft Give Pillar</h4>
+                                    <div class="timeframe">
+                                        <span>2025</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            Drove cross-ERG initiatives that celebrated Asian identity and expanded inclusive giving opportunities, hosting joint events with 100+ attendees.
+                                        </li>
+                                        <li>
+                                            Streamlined communications, partner coordination, and onboarding practices to create a welcoming volunteer experience and sustain long-term leadership growth.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <!-- External Committee Member, Asians at Microsoft -->
+                            <div>
+                                <div style="margin-bottom:-25px" class="flexInline">
+                                    <h4>External Committee Member, Asians at Microsoft</h4>
+                                    <div class="timeframe">
+                                        <span>2024</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            Represented the ERG in external partnerships, strengthening ties with nonprofits and charities, managing logistics and Q&A for events.                                        
+                                        </li>
+                                        <li>
+                                            Championed inclusive framing across events and content, reinforcing belonging and respect within both Microsoft and community-facing programs.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>                             
+
+                        </div>
+                    </div>
+                    <br>
+
+                    <!-- LiNK -->
+                    <div>
+                        <h3 style="margin-bottom:-10px">Liberty in North Korea</h3>
+                        <p style="margin-bottom:-5px">
+                            Six years of progressive leadership across finance, fundraising, and chapter management, including serving as President and founding a new chapter for the international NGO 
+                            <a href="libertyinnorthkorea.org/" target="_blank">Liberty in North Korea</a>.
+                        </p>
+                        <!-- Brief  -->
+                        <div class="serBrief">
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>Presidency & Committee Leadership | University</h4>
+                                <div class="timeframe">
+                                    <span>2019 - 2023</span>
+                                </div>
+                            </div>
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>Chapter Founder & Early Advocacy | High School</h4>
+                                <div class="timeframe">
+                                    <span>2017 - 2019</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Detailed -->
+                        <div class="serDetailed" style="display: none">
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>President</h4>
+                                <div class="timeframe">
+                                    <span>2022 - 2023</span>
+                                </div>
+                            </div>
+                            <div class="serBrief">
+                                <p>Brief</p>
+                            </div>
+                            <div class="serDetailed" style="display: none">
+                                <ul>
+                                    <li>
+                                        Led the chapter as the primary liaison with the international NGO, setting quarterly strategic goals and driving club-wide execution.
+                                    </li>
+                                    <li>
+                                        Strengthened organizational effectiveness by delegating responsibilities, mentoring members, and ensuring consistent delivery of high-impact events and initiatives.
+                                    </li>
+                                </ul>    
+                            </div>
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>Fundraising Director</h4>
+                                <div class="timeframe">
+                                    <span>2021 - 2022</span>
+                                </div>
+                            </div>
+                            <div class="serBrief">
+                                <p>Brief</p>
+                            </div>
+                            <div class="serDetailed" style="display: none">
+                                <ul>
+                                    <li>
+                                        Directed the planning and execution of chapter fundraisers and cross-committee events, increasing collaboration and community reach.
+                                    </li>
+                                    <li>
+                                        Streamlined event coordination processes, enabling more efficient and higher-impact fundraising operations.
+                                    </li>
+                                </ul>    
+                            </div>
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>Financial Director</h4>
+                                <div class="timeframe">
+                                    <span>2020 - 2021</span>
+                                </div>
+                            </div>
+                            <div class="serBrief">
+                                <p>Brief</p>
+                            </div>
+                            <div class="serDetailed" style="display: none">
+                                <ul>
+                                    <li>
+                                        Secured university funding and managed grants, budgets, and financial reporting to sustain chapter programming and speaker events.
+                                    </li>
+                                    <li>
+                                        Co-led major fundraising efforts—including campaigns that raised $3,500 throughout the year and $2,000 in a single week—significantly advancing rescue mission goals.
+                                    </li>
+                                </ul>    
+                            </div>
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>Fundraising Intern</h4>
+                                <div class="timeframe">
+                                    <span>2019 - 2020</span>
+                                </div>
+                            </div>
+                            <div class="serBrief">
+                                <p>Brief</p>
+                            </div>
+                            <div class="serDetailed" style="display: none">
+                                <ul>
+                                    <li>
+                                        Initiated and executed fundraising campaigns that surpassed yearly goals by raising $3,500—enough to fund the relocation of a North Korean refugee.
+                                    </li>
+                                    <li>
+                                        Expanded chapter visibility through targeted outreach, drawing 50+ attendees to events and supporting a major speaker event featuring defector Oh Chong-Song.                             
+                                    </li>
+                                </ul>    
+                            </div>
+                            <div style="margin-bottom:-25px" class="flexInline">
+                                <h4>LiNK Team Founder</h4>
+                                <div class="timeframe">
+                                    <span>2017 - 2019</span>
+                                </div>
+                            </div>
+                            <div class="serBrief">
+                                <p>Established and led the first LiNK team at my high school, building awareness and fundraising programs.</p>
+                            </div>
+                            <div class="serDetailed" style="display: none">
+                                <ul>
+                                    <li>
+                                        Founded and led a new LiNK Rescue Team at my high school, running educational programming and coordinating all communication with the NGO.
+                                    </li>
+                                    <li>
+                                        Achieved the $3,000 annual fundraising goal each year through on-campus campaigns and community engagement, establishing a sustainable, mission-driven chapter.                                    
+                                    </li>
+                                </ul>    
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <!-- English Tutoring -->
                     <div>
                         <h3 style="margin-bottom:-10px">Alliance for Korea United USA</h3>
+                        <p style="margin-bottom:-5px">Served as an English tutor for a Korean student, teaching language skills while fostering cross-cultural connection and discussion.</p>
                             <div>
                                 <div style="margin-bottom:-25px" class="flexInline">
                                     <h4>English Tutor</h4>
                                     <div class="timeframe">
                                         <span>2021</span>
                                     </div>
-                                </div>
-                                <div class="serBrief">
-                                    <p>Brief</p>
                                 </div>
                                 <div class="serDetailed" style="display: none">
                                     <ul>
@@ -591,50 +730,13 @@
                 <hr>
 
 
-                <!-- <div id="aboutMe">
-                    <h2>about me</h2>
-                    <div>
-                        <h4>
-                            Hello! My name is Megan, and I’m a fourth year at UCLA double majoring in Linguistics & Computer Science and Korean.
-                            Nice to meet you! :)
-                            <br><br>
-                            I love investing myself in projects for social good and in creative storytelling pursuits! 
-                            I'm passionate about service and tech: web development, game development, and exploring and discovering more fields within the industry.
-                            <br><br>
-                        </h4>        
-                    </div> -->
-                <!-- <div class="flexBox" style="justify-content: center;">
-                        <div class="flexChild" style="width: 180px;">
-                            <img style="width:180px; margin-bottom: -15px;" src="assets/seattle.png" alt="a photo of Megan on the Space Needle" />
-                            <h5 style="text-align: center; margin-right: 5px; font-size: smaller">Me in Seattle!</h5>
-                        </div> -->
-                <!-- <div class="flexChild" style="width: 180px;">
-                            <img style="width:180px; margin-bottom: -15px;" src="assets/ratatouille.png" alt="a photo of two plates of ratatouille" />
-                            <h5 style="text-align: center; margin-right: 5px;font-size: smaller">Ratatouille attempt!</h5>
-                        </div>
-                        <div class="flexChild" style="width: 180px;">
-                            <img style="width:180px; margin-bottom: -15px;" src="assets/mayor.png" alt="a photo of Megan meeting the dog mayor, Mayor Max" />
-                            <h5 style="text-align: center; margin-right: 5px;font-size: smaller">Meeting Mayor Max!</h5>
-                        </div>
-                    </div>
-                        
-                    <br>
-                    <div>
-                        <p style="text-align: center;">
-                            Also, if you're interested in seeing my first attempt at a website site, <a href="https://megys.github.io/how-to-site/" target="_blank">click here!</a>
-                        </p>
-                    </div> -->
-                <!-- <br>
-                </div> -->
-
                 <!-- Closing -->
                 <div id="contact me">
                     <h2>say hi!</h2>
-                    <h3 style="font-weight: normal;">I hope you enjoyed learning a bit about me and my projects!</h3>
                     <h4>I hope you enjoyed learning a bit about me and my projects!</h4>
-                    <h4>If you'd like to reach out, you can message me at meganschmid@microsoft.com</h4>
-                    <h3 style="font-weight: normal;">Thanks for reading!</h3>
-
+                    <h4>Feel free to reach out to me at <a href="mailto:meganschmid@ucla.edu">meganschmid@ucla.edu</a> or connect with me on <a href="https://www.linkedin.com/in/megan-y-schmid/" target="_blank">linked in</a>. 
+                        I'd love to hear from you!</h4>
+                    <h4>Thanks for reading!</h4>
                 </div>
 
             </div>
@@ -648,38 +750,6 @@
 
 
         <!-- SCRIPTS -->
-
-        <!-- Accordian -->
-        <script>
-            // toggle text
-            var acc = document.getElementsByClassName("accordion");
-            var i;
-
-            for (i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function() {
-                    this.classList.toggle("active");
-                    var panel = this.nextElementSibling;
-                    if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                    } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                    } 
-                });
-            }
-
-            // move divs based on width
-            $(window).on('load resize', function() { //Fires when window is loaded or resized
-                var div1 = $('#div1');
-                var div2 = $('#div2');
-                var wrapper = $('.wrapper');
-
-                if ($(window).width() < 800) {
-                    wrapper.prepend(div1).append(div2); // move div 1 to start & div2 to end
-                } else {
-                    wrapper.prepend(div2).append(div1); // move div 2 to start & div 1 to end
-                }
-            });
-        </script>
 
         <!-- Visibility Toggle -->
         <script type="text/javascript" language="javascript">
@@ -730,6 +800,81 @@
                      }
                     }
         </script>
+
+        <!-- Filter Buttons -->
+        <script>
+            function toggleFilter(button) {
+                button.classList.toggle("active");
+            }
+        </script>
+
+        <!-- Filter Action -->
+        <script>
+            const activeTags = new Set();
+
+            function toggleFilter(button) {
+                const tag = button.dataset.tag;
+                button.classList.toggle("active");
+
+                if (button.classList.contains("active")) {
+                activeTags.add(tag);
+                } else {
+                activeTags.delete(tag);
+                }
+
+                filterProjects();
+            }
+
+            function filterProjects() {
+                const cards = document.querySelectorAll(".project-card");
+
+                if (activeTags.size === 0) {
+                // no filters active → show all
+                cards.forEach(card => card.classList.remove("hidden"));
+                return;
+                }
+
+                cards.forEach(card => {
+                const cardTags = card.dataset.tags.split(",");
+                const matches = [...activeTags].some(tag => cardTags.includes(tag));
+                card.classList.toggle("hidden", !matches);
+                });
+            }
+        </script>
+
+        <!-- Typing Animation -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const el = document.getElementById("type-target");
+            const text = "hello! ";
+            const smile = ":)"
+            let i = 0;
+            let j = 0;
+
+            function typeHello() {
+                if (i < text.length) {
+                el.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeHello, 100); // typing speed
+                } else {
+                // Wait 0.5 seconds before typing the smile
+                setTimeout(typeSmile, 500);
+                }
+            }
+            
+
+            function typeSmile() {
+                if (j < smile.length) {
+                el.textContent += smile.charAt(j);
+                j++;
+                setTimeout(typeSmile, 100); // typing speed
+                }
+            }
+
+            typeHello();
+            });
+        </script>
+
         
     </body>
 </html>
