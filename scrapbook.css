@@ -936,7 +936,6 @@ details.svc[open] summary::before { content: "▾ "; }
 .np strong { color: var(--ink); }
 
 .making { margin-top: 8px; }
-.making .list { font-size: .83rem; color: #45413c; margin: 0 0 8px; line-height: 1.7; }
 
 /* ---------- SCATTERED POLAROID PILE ----------
    Photos strewn across the section. Hover brings one forward; clicking
@@ -1014,11 +1013,12 @@ details.svc[open] summary::before { content: "▾ "; }
 .scatter-face.back .back-note {
   width: 100%; aspect-ratio: 1/1;
   display: flex; align-items: center; justify-content: center;
-  margin: 0; padding: 10px;
+  margin: 0; padding: 8px;
   font-family: var(--font-hand);
-  font-size: 1.3rem; line-height: 1.35; color: #45413c;
+  font-size: 1.02rem; line-height: 1.2; color: #45413c;
   text-align: center;
 }
+.scatter-face.back .back-note.compact { font-size: .88rem; line-height: 1.16; }
 .scatter-face.back .back-hint {
   position: absolute; bottom: 12px; left: 0; right: 0;
   text-align: center;
