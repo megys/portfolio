@@ -1,0 +1,1122 @@
+/* ============================================================
+   SCRAPBOOK WIREFRAME — v2 styling direction
+   Clean white base · subtle scrapbook accents · layered parallax
+   All texture is pure CSS/SVG — zero image dependencies.
+   Photo swap-in points are marked [PHOTO SLOT].
+   ============================================================ */
+
+:root {
+  /* retained from the original site */
+  --pink: #fdabab;
+  --pink-deep: #ee5c5c;
+
+  /* paper + ink */
+  --paper: #ffffff;
+  --paper-warm: #f8f2e8;    /* soft kraft stock so paper reads against white */
+  --paper-edge: #ebe3d5;
+  --page: #ffffff;          /* page background stays white */
+  --kraft: #e8dcc8;
+  --ink: #1a1a1a;
+  --muted: #6b6b6b;
+  --faint: #a8a8a8;
+  --line: #ebe7e0;
+
+  --tape: rgba(253, 171, 171, 0.32);
+  --tape-neutral: rgba(226, 216, 196, 0.55);
+
+  --shadow-lift: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.07);
+  --shadow-photo: 0 1px 1px rgba(0,0,0,.05), 0 10px 30px rgba(0,0,0,.10);
+
+  --font-head: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+  --font-hand: 'Caveat', cursive;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  /* barely-there paper grain, generated not loaded */
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(0,0,0,.012) 0 1px, transparent 1px),
+    radial-gradient(circle at 70% 60%, rgba(0,0,0,.012) 0 1px, transparent 1px);
+  background-size: 7px 7px, 11px 11px;
+}
+
+h1, h2, h3, h4, h5 { font-family: var(--font-head); color: var(--ink); }
+p, li { font-family: var(--font-body); color: var(--muted); line-height: 1.65; }
+
+a { color: var(--ink); font-weight: 600; text-decoration: none; }
+a:hover { color: var(--pink-deep); }
+
+/* ============================================================
+   PARALLAX ENGINE
+   Elements with [data-speed] are translated on scroll by main.js.
+   Negative speed = drifts up faster; positive = lags behind.
+   ============================================================ */
+
+.parallax-layer {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 0;
+}
+
+/* content always rides above the scattered layer */
+.layer-content { position: relative; z-index: 2; }
+
+/* soft page-colored wash behind the readable column so doodles fade
+   seamlessly behind text. Sits above the doodles (z-index 0) but below
+   the text itself. Blended left/right edges keep it from reading as a box —
+   on wide screens margin doodles stay fully visible; as the viewport
+   narrows and doodles drift toward the text, they dissolve behind it. */
+.layer-content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -18px; bottom: -18px; left: -4%; right: -4%;
+  background: linear-gradient(
+    90deg,
+    transparent 0,
+    rgba(255,255,255,.9) 9%,
+    rgba(255,255,255,.9) 91%,
+    transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    180deg, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+  mask-image: linear-gradient(
+    180deg, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+  pointer-events: none;
+}
+
+/* scroll-reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s cubic-bezier(.22,.9,.3,1), transform .7s cubic-bezier(.22,.9,.3,1);
+}
+.reveal.in { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .08s; }
+.reveal.d2 { transition-delay: .16s; }
+.reveal.d3 { transition-delay: .24s; }
+
+/* ============================================================
+   SCRAPBOOK PRIMITIVES (pure CSS/SVG)
+   ============================================================ */
+
+/* --- washi tape --- */
+.tape {
+  position: absolute;
+  width: 96px;
+  height: 26px;
+  background: var(--tape);
+  z-index: 5;
+  /* slightly ragged ends */
+  clip-path: polygon(2% 0,98% 4%,100% 96%,0 100%);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.tape::after { /* stripe texture */
+  content: "";
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    -45deg, rgba(255,255,255,.28) 0 5px, transparent 5px 10px);
+}
+.tape.neutral { background: var(--tape-neutral); }
+.tape.tl { top: -12px; left: -16px; transform: rotate(-28deg); }
+.tape.tr { top: -13px; right: -18px; transform: rotate(24deg); }
+.tape.bl { bottom: -12px; left: -18px; transform: rotate(18deg); }
+.tape.top { top: -14px; left: 50%; transform: translateX(-50%) rotate(-2deg); }
+.tape.sm { width: 62px; height: 20px; }
+
+/* --- torn paper strip --- */
+.torn {
+  position: relative;
+  background: var(--paper-warm);
+  border-left: 1px solid var(--paper-edge);
+  border-right: 1px solid var(--paper-edge);
+  padding: 30px 34px;
+  box-shadow: var(--shadow-lift);
+}
+/* torn top + bottom edges via SVG masks — no images */
+.torn::before, .torn::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 13px;
+  background: var(--paper-warm);
+}
+.torn::before {
+  top: -12px;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='13' preserveAspectRatio='none'%3E%3Cpath d='M0 13 L0 7 Q6 3 12 6 T24 5 T36 8 T48 4 T60 7 T72 3 T84 6 T96 4 T108 7 T120 5 L120 13 Z' fill='%23000'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='13' preserveAspectRatio='none'%3E%3Cpath d='M0 13 L0 7 Q6 3 12 6 T24 5 T36 8 T48 4 T60 7 T72 3 T84 6 T96 4 T108 7 T120 5 L120 13 Z' fill='%23000'/%3E%3C/svg%3E");
+  -webkit-mask-size: 120px 13px; mask-size: 120px 13px;
+  -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+}
+.torn::after {
+  bottom: -12px;
+  /* darker shadow that hugs each bottom tooth so the tears read clearly */
+  filter: drop-shadow(0 4px 3px rgba(0,0,0,.32)) drop-shadow(0 1px 1px rgba(0,0,0,.24));
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='13' preserveAspectRatio='none'%3E%3Cpath d='M0 0 L0 6 Q6 10 12 7 T24 8 T36 5 T48 9 T60 6 T72 10 T84 7 T96 9 T108 6 T120 8 L120 0 Z' fill='%23000'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='13' preserveAspectRatio='none'%3E%3Cpath d='M0 0 L0 6 Q6 10 12 7 T24 8 T36 5 T48 9 T60 6 T72 10 T84 7 T96 9 T108 6 T120 8 L120 0 Z' fill='%23000'/%3E%3C/svg%3E");
+  -webkit-mask-size: 120px 13px; mask-size: 120px 13px;
+  -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+}
+
+/* --- polaroid --- */
+.polaroid {
+  background: #fff;
+  padding: 13px 13px 52px 13px;
+  box-shadow: var(--shadow-photo);
+  transform: rotate(-3deg);
+  transition: transform .45s cubic-bezier(.22,.9,.3,1), box-shadow .45s ease;
+  position: relative;
+  width: 268px;
+}
+.polaroid:hover {
+  transform: rotate(-1deg) translateY(-6px) scale(1.02);
+  box-shadow: 0 2px 3px rgba(0,0,0,.06), 0 20px 46px rgba(0,0,0,.15);
+}
+.polaroid .shot {           /* [PHOTO SLOT] swap for <img> */
+  width: 100%;
+  aspect-ratio: 1/1;
+  background:
+    linear-gradient(150deg, #f6f2ec 0%, #ece6dc 55%, #e3dcd0 100%);
+  display: flex; align-items: center; justify-content: center;
+  color: #b6ada0; font-size: .62rem; letter-spacing: .12em;
+  text-transform: uppercase; text-align: center; padding: 8px;
+}
+.polaroid .caption {
+  position: absolute; bottom: 14px; left: 0; right: 0;
+  text-align: center;
+  font-family: var(--font-hand);
+  font-size: 1.28rem;
+  color: #55524d;
+  line-height: 1;
+}
+.polaroid.sm { width: 150px; padding: 9px 9px 36px 9px; }
+.polaroid.sm .caption { font-size: 1rem; bottom: 10px; }
+
+/* --- handwriting annotation --- */
+.hand {
+  font-family: var(--font-hand);
+  font-size: 1.32rem;
+  color: var(--pink-deep);
+  line-height: 1.15;
+  transform: rotate(-2.5deg);
+  display: inline-block;
+}
+.hand.grey { color: #9a9086; }
+
+/* hand-drawn arrow */
+.arrow { width: 62px; height: 40px; opacity: .5; }
+.arrow path { fill: none; stroke: var(--pink-deep); stroke-width: 2; stroke-linecap: round; }
+
+/* --- doodles / stamps for the parallax layer --- */
+.doodle { opacity: .5; }
+.stamp {
+  width: 74px; height: 88px;
+  background: var(--paper-warm);
+  border: 1px solid var(--paper-edge);
+  /* perforated stamp edge */
+  -webkit-mask-image: radial-gradient(circle at 50% 0, transparent 4px, #000 4.5px);
+  mask-image: radial-gradient(circle at 50% 0, transparent 4px, #000 4.5px);
+  padding: 7px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-hand); color: #b9b0a3; font-size: 1.5rem;
+  transform: rotate(6deg);
+  box-shadow: var(--shadow-lift);
+}
+
+/* --- section divider: dashed cut line --- */
+.cutline {
+  border: none;
+  border-top: 2px dashed var(--line);
+  margin: 4.5rem 0;
+  position: relative;
+}
+.cutline::after {
+  content: "✂";
+  position: absolute; top: -13px; left: 12px;
+  background: var(--page); padding: 0 8px;
+  color: var(--faint); font-size: .95rem;
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+
+.wrap {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+}
+
+section { position: relative; }
+
+/* ---------- HERO ---------- */
+
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 90px 0 70px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 268px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-photo-col { position: relative; }
+
+/* the about strip overlaps the polaroid — the effect you asked for */
+.hero-copy { position: relative; }
+
+.hero-strip {
+  margin-left: -78px;
+  padding-left: 96px;
+  z-index: 3;
+}
+
+.eyebrow {
+  font-family: var(--font-hand);
+  font-size: 1.45rem;
+  color: var(--pink-deep);
+  margin: 0 0 6px 0;
+}
+
+.pitch {
+  font-family: var(--font-head);
+  font-size: clamp(1.45rem, 3.1vw, 2.05rem);
+  font-weight: 600;
+  line-height: 1.34;
+  letter-spacing: -.015em;
+  margin: 0 0 16px 0;
+}
+.pitch mark {
+  background: linear-gradient(transparent 62%, var(--pink) 62%);
+  color: inherit; padding: 0 2px;
+}
+
+.role-line {
+  font-size: .84rem; color: var(--muted); margin: 0 0 18px;
+}
+.role-line .sep { color: var(--faint); padding: 0 7px; }
+
+.contact-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+.badge {
+  display: inline-block;
+  background: #f4faf4; border: 1px solid #cfe6cf; color: #3f7a3f;
+  border-radius: 100px; padding: 5px 13px;
+  font-size: .69rem; font-weight: 600;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font-head);
+  letter-spacing: .02em;
+  border: none;
+  border-radius: 0;
+  padding: 11px 26px;
+  font-size: .78rem;
+  cursor: pointer;
+  color: #5f5a52;
+  /* a strip of semi-transparent washi tape, with the diagonal stripe sheen
+     folded into the background so the label text always renders above it */
+  background:
+    repeating-linear-gradient(-45deg, rgba(255,255,255,.28) 0 5px, transparent 5px 10px),
+    var(--tape-neutral);
+  /* slightly ragged, torn tape ends */
+  clip-path: polygon(0 8%, 100% 0, 99% 92%, 1% 100%);
+  box-shadow: 0 1px 2px rgba(0,0,0,.08);
+  transition: filter .18s ease, box-shadow .18s ease;
+}
+.btn:hover {
+  filter: brightness(.97);
+  box-shadow: 0 2px 5px rgba(0,0,0,.12);
+}
+.btn:focus-visible {
+  outline: none;
+  /* clip-path clips a normal outline/box-shadow, so build the focus ring from
+     stacked drop-shadows that hug the torn tape shape */
+  filter:
+    drop-shadow(3px 0 0 var(--pink-deep))
+    drop-shadow(-3px 0 0 var(--pink-deep))
+    drop-shadow(0 3px 0 var(--pink-deep))
+    drop-shadow(0 -3px 0 var(--pink-deep))
+    drop-shadow(0 0 1px var(--pink-deep));
+}
+
+/* "get in touch": a strip of kraft tape */
+.btn.solid {
+  color: #5f5a52;
+  background:
+    repeating-linear-gradient(-45deg, rgba(255,255,255,.28) 0 5px, transparent 5px 10px),
+    rgba(226, 216, 196, 0.72);
+}
+
+/* "résumé": a strip of neutral kraft tape */
+.btn.ghost {
+  background:
+    repeating-linear-gradient(-45deg, rgba(255,255,255,.28) 0 5px, transparent 5px 10px),
+    rgba(226, 216, 196, 0.72);
+}
+
+.btn.sm { padding: 10px 22px; font-size: .74rem; }
+
+/* card "play it" buttons keep the cut-paper label look (not tape) */
+.card-foot .btn {
+  font-family: var(--font-head);
+  letter-spacing: .015em;
+  border-radius: 3px;
+  padding: 7px 16px;
+  font-size: .72rem;
+  color: var(--ink);
+  /* cream paper stock with a faint fiber grain — like a cut scrapbook label */
+  background:
+    radial-gradient(circle at 22% 20%, rgba(0,0,0,.012) 0 1px, transparent 1px),
+    linear-gradient(160deg, #fdf9f1 0%, var(--paper-warm) 100%);
+  background-size: 6px 6px, 100% 100%;
+  border: 1.5px dashed #cdbb9e;      /* dotted-line "cut here" edge */
+  clip-path: none;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.7) inset,
+    0 1px 1px rgba(0,0,0,.05),
+    0 5px 12px rgba(0,0,0,.07);
+  transform: rotate(-1.2deg);
+  transition: transform .18s ease, box-shadow .18s ease, background .3s ease, color .3s ease, border-color .3s ease;
+}
+.card-foot .btn::after { content: none; }   /* no tape stripe sheen */
+.card-foot .btn:hover {
+  filter: none;
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.7) inset,
+    0 2px 3px rgba(0,0,0,.08),
+    0 9px 18px rgba(0,0,0,.12);
+}
+/* softer pink focus ring for the cut-paper card buttons (no clip-path here,
+   so a normal outline works and reads cleaner than the tape drop-shadow ring) */
+.card-foot .btn:focus-visible {
+  filter: none;
+  outline: 2px solid var(--pink);
+  outline-offset: 3px;
+}
+
+/* nudge each nav tag to a slightly different tilt so they read as
+   hand-placed paper labels rather than a rigid button row */
+.hero-nav .btn:nth-child(1) { transform: rotate(-2deg); }
+.hero-nav .btn:nth-child(2) { transform: rotate(1.5deg); }
+.hero-nav .btn:nth-child(3) { transform: rotate(-1deg); }
+.hero-nav .btn:nth-child(4) { transform: rotate(2deg); }
+.hero-nav .btn:hover { transform: rotate(0deg) translateY(-2px); }
+
+.hero-nav { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* scroll cue */
+.scroll-cue {
+  position: absolute; bottom: 26px; left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-hand); color: var(--faint); font-size: 1.1rem;
+  text-align: center;
+}
+.scroll-cue span { display: block; animation: bob 2.1s ease-in-out infinite; }
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
+
+/* ---------- SECTION HEADS ---------- */
+
+.sec-head { margin-top: 26px; margin-bottom: 6px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.sec-head h2 {
+  font-size: 1.75rem; margin: 0; letter-spacing: -.02em; font-weight: 600;
+}
+.sec-head h2 .underline {
+  background: linear-gradient(transparent 68%, var(--pink) 68%);
+  padding: 0 3px;
+}
+.sec-sub { font-size: .82rem; color: var(--muted); margin: 0 0 6px; }
+
+/* ---------- STATS ---------- */
+
+.stats {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  margin: 26px 0 8px;
+}
+.stat {
+  flex: 1; min-width: 118px;
+  background: var(--paper-warm);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 15px 16px;
+  position: relative;
+  transition: transform .35s ease;
+}
+.stat:nth-child(odd)  { transform: rotate(-.7deg); }
+.stat:nth-child(even) { transform: rotate(.6deg); }
+.stat:hover { transform: rotate(0) translateY(-4px); }
+.stat b { display: block; font-family: var(--font-head); font-size: 1.6rem; font-weight: 600; letter-spacing: -.02em; }
+.stat span { font-size: .64rem; text-transform: uppercase; letter-spacing: .09em; color: var(--faint); }
+
+/* ---------- PROJECT CARDS ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  gap: 30px 26px;
+  margin-top: 34px;
+}
+
+.card {
+  /* a quality cut slip of paper: warm off-white stock with the faintest
+     fiber grain, a crisp scissor-cut edge, and a layered contact shadow */
+  background:
+    radial-gradient(circle at 22% 18%, rgba(0,0,0,.010) 0 1px, transparent 1px),
+    radial-gradient(circle at 78% 72%, rgba(0,0,0,.010) 0 1px, transparent 1px),
+    linear-gradient(160deg, #fdf9f1 0%, var(--paper-warm) 55%, #f4ede0 100%);
+  background-size: 7px 7px, 9px 9px, 100% 100%;
+  border: 1px solid var(--paper-edge);
+  border-bottom-color: #e6ddcb;
+  border-radius: 2px;
+  position: relative;
+  display: flex; flex-direction: column;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.7) inset,   /* top sheen so the stock reads as quality */
+    0 1px 1px rgba(0,0,0,.06),            /* crisp contact shadow at the cut edge */
+    0 10px 22px rgba(0,0,0,.08);          /* soft ambient lift off the page */
+  transition: opacity .48s cubic-bezier(.22,.9,.3,1), transform .42s cubic-bezier(.22,.9,.3,1), box-shadow .42s ease;
+}
+.card:nth-child(3n+1) { transform: rotate(-.85deg); }
+.card:nth-child(3n+2) { transform: rotate(.55deg); }
+.card:nth-child(3n)   { transform: rotate(-.35deg); }
+.card:hover { transform: rotate(0) translateY(-8px); box-shadow: var(--shadow-lift); z-index: 4; }
+
+.card .cover {              /* [PHOTO SLOT] swap for <img> */
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 63/50;       /* matches the itch.io cover thumbnail (630×500) so covers aren't cropped */
+  background: linear-gradient(145deg, #f7f4ef 0%, #ece7de 60%, #e4ded2 100%);
+  border-bottom: 1px solid var(--line);
+}
+/* each thumbnail / screenshot fills the cover; on hover the card cross-fades
+   through them like a little slideshow (see parallax.js). Only the active
+   slide is visible; the rest are stacked underneath at opacity 0. */
+.card .cover .slide {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(145deg, #f7f4ef 0%, #ece7de 60%, #e4ded2 100%);
+  color: #b8afa2; font-size: .6rem; letter-spacing: .13em;
+  text-transform: uppercase; text-align: center; padding: 8px;
+  opacity: 0;
+  transition: opacity .55s ease;
+}
+.card .cover .slide.is-active { opacity: 1; }
+/* drop an <img> straight in and it fills the slot */
+.card .cover .slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.card-body { padding: 17px 18px 18px; display: flex; flex-direction: column; flex: 1; }
+
+.card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.card-title { font-size: .96rem; font-weight: 700; margin: 0; line-height: 1.25; }
+
+.year {
+  font-family: var(--font-hand); font-size: 1.12rem;
+  color: var(--faint); white-space: nowrap;
+}
+
+.card-meta {
+  font-size: .61rem; font-weight: 700; color: var(--faint);
+  text-transform: uppercase; letter-spacing: .09em; margin: 8px 0 10px;
+}
+
+.card-hook { font-size: .8rem; margin: 0 0 11px; }
+
+/* --- first-game card: a page torn out of a lined notebook ---
+   Origin-story emphasis. Ruled lines + a red margin rule read as a school
+   notebook; the ragged clip-path edges say it was ripped straight out.
+   The rougher-than-everything-else look intentionally signals "rookie era." */
+.card.first-game {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  /* NOTE: no filter/clip-path here — a filter rasterizes all descendants
+     into a bitmap, which was blurring the crisp "play it" button + text.
+     The torn sheet lives on the ::before background layer instead. */
+}
+/* the torn ruled sheet, drawn behind the content so the content stays sharp */
+.card.first-game::before {
+  content: "";
+  position: absolute; inset: 0;
+  z-index: 0;
+  background:
+    /* red margin rule */
+    linear-gradient(to right, transparent 25px, #f2b6b6 25px, #f2b6b6 27px, transparent 27px),
+    /* horizontal ruled lines */
+    repeating-linear-gradient(to bottom, transparent 0 27px, #cfe0ee 27px 28px),
+    /* base sheet */
+    linear-gradient(180deg, #fffef9 0%, #fdfbf3 100%);
+  /* drop-shadow (not box-shadow) so the shadow follows the torn edge */
+  filter:
+    drop-shadow(0 1px 1px rgba(0,0,0,.07))
+    drop-shadow(0 4px 2px rgba(0,0,0,.18))
+    drop-shadow(0 12px 16px rgba(0,0,0,.14));
+  /* clean straight top; irregularly torn bottom (ripped off the pad) */
+  clip-path: polygon(
+    0% 0%, 100% 0%,
+    100% 97.2%, 95% 99.0%, 90% 96.8%, 85% 98.6%, 79% 97.0%, 73% 99.3%,
+    68% 97.4%, 62% 98.9%, 55% 96.6%, 49% 99.2%, 43% 97.1%, 37% 98.7%,
+    31% 96.9%, 25% 99.1%, 19% 97.3%, 13% 98.8%, 7% 96.7%, 0% 98.6%
+  );
+}
+/* keep the card's real content above the torn-sheet background layer */
+.card.first-game .cover,
+.card.first-game .card-body { position: relative; z-index: 1; }
+/* punched holes down the left edge, like a sheet pulled from a ring binder.
+   Confined to the notebook-paper body so they don't cut across the cover thumbnail. */
+.card.first-game .card-body::before {
+  content: "";
+  position: absolute;
+  left: 6px; top: 0; bottom: 52px; width: 16px;
+  z-index: 2; pointer-events: none;
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    var(--paper) 0 5px,
+    rgba(0,0,0,.14) 5px 6px,
+    transparent 6px 100%);
+  background-size: 100% 48px;
+  background-repeat: repeat-y;
+  background-position: center 14px;
+}
+/* push text clear of both the holes and the red margin rule */
+.card.first-game .card-body { padding-left: 44px; }
+/* let the ruled lines show through the cover slot instead of a solid fill */
+.card.first-game .cover {
+  background: linear-gradient(145deg, rgba(247,244,239,.55), rgba(228,222,210,.55));
+  border-bottom: 1px dashed #cfe0ee;
+}
+.card.first-game .cover .slide {
+  background: linear-gradient(145deg, rgba(247,244,239,.55), rgba(228,222,210,.55));
+}
+.first-tag {
+  font-family: var(--font-hand);
+  font-size: .92rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--pink-deep);
+  font-weight: 700;
+}
+
+/* the decision line — a warm-pink sticky note pinned into the card.
+   Tinted to match the page's coral accent (--pink), text kept dark for contrast. */
+.decision {
+  position: relative;
+  font-size: .78rem; color: #5c2f2f; line-height: 1.6;
+  background: #ffdcd8;
+  border: none;
+  border-radius: 2px;
+  padding: 13px 13px 14px;
+  margin: 6px 0 18px;
+  box-shadow: 0 6px 10px -6px rgba(0,0,0,.20);
+  /* clip the true bottom-right corner so the sheet reads as dog-eared */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+}
+/* the folded-over triangle at the bottom-right corner */
+.decision::after {
+  content: "";
+  position: absolute; right: 0; bottom: 0;
+  width: 16px; height: 16px;
+  /* underside of the fold: a slightly deeper coral, lit from top-left */
+  background: linear-gradient(135deg, #fbb9b3 0%, #f5a09a 100%);
+  border-radius: 2px 0 0 0;
+  box-shadow: -1px -1px 2px rgba(0,0,0,.12);
+}
+.decision b { color: var(--pink-deep); }
+
+.card-foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.plays { font-size: .73rem; font-weight: 700; color: var(--pink-deep); }
+
+/* ---------- EXPERIENCE ---------- */
+
+/* employer wrapper: groups both roles under one Xbox tenure so the
+   promotion reads as progression rather than two unrelated jobs */
+.employer { margin-bottom: 34px; }
+.employer-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 12px; flex-wrap: wrap; margin-bottom: 4px;
+}
+.employer-head h3 { margin: 0; font-size: 1.02rem; font-weight: 700; }
+.employer-head .tenure { font-family: var(--font-hand); font-size: 1.15rem; color: var(--faint); }
+.employer-head + .exp { margin-top: 16px; }
+
+.exp { margin-bottom: 30px; position: relative; padding-left: 20px; }
+.exp::before {
+  content: ""; position: absolute; left: 0; top: 8px; bottom: 4px;
+  width: 2px; background: linear-gradient(var(--pink), transparent);
+}
+
+/* roles nested under an employer share one continuous rail */
+.employer .exp { margin-bottom: 22px; }
+.employer .exp.current::before { background: var(--pink); }
+.employer .exp.current::after {
+  content: ""; position: absolute; left: -6px; top: 8px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--pink); border: 2px solid #fff;
+  box-sizing: content-box;
+}
+
+.exp-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.exp-head h4 { margin: 0 0 3px; font-size: .95rem; font-weight: 600; }
+.exp ul { margin: 9px 0 0; padding-left: 17px; }
+.exp li { font-size: .8rem; margin-bottom: 7px; }
+
+/* role summary line + work-area buckets within a role */
+.exp .role-summary { font-size: .8rem; color: var(--muted); margin: 9px 0 0; }
+.exp .area {
+  font-family: var(--font-head);
+  font-size: .63rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--pink-deep);
+  margin: 15px 0 1px;
+}
+.exp .area + ul { margin-top: 4px; }
+
+/* --- earlier roles: deliberately subordinate ---
+   Smaller type, greyed rail, tighter spacing. Enforces the hierarchy
+   visually so full-time work stays the star even when scanning. */
+.earlier-head {
+  font-family: var(--font-head);
+  font-size: .64rem; font-weight: 700; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--faint);
+  margin: 36px 0 14px;
+  display: flex; align-items: center; gap: 12px;
+}
+.earlier-head::after {
+  content: ""; flex: 1; height: 1px; background: var(--line);
+}
+
+.exp.past { margin-bottom: 18px; padding-left: 18px; }
+.exp.past::before { background: var(--line); }
+.exp.past .exp-head h4 { font-size: .86rem; font-weight: 600; color: #4a4640; }
+.exp.past .year { font-size: 1rem; }
+.exp.past ul { margin-top: 6px; }
+.exp.past li { font-size: .755rem; margin-bottom: 4px; color: #77736c; }
+.exp.past .stack {
+  font-size: .7rem; color: var(--faint); margin: 7px 0 0; font-style: italic;
+}
+
+.chip {
+  display: inline-block; background: #fff4f4; border: 1px solid #ffdede;
+  color: #b1514f; border-radius: 3px; padding: 1px 6px;
+  font-size: .69rem; font-weight: 600;
+}
+
+.tradeoff {
+  background: var(--paper-warm); border: 1px solid var(--line);
+  border-left: 3px solid var(--kraft);
+  padding: 10px 13px; margin-top: 11px; font-size: .78rem; color: #4a4640;
+}
+
+/* ---------- SERVICE ---------- */
+
+details.svc summary {
+  cursor: pointer; font-size: .81rem; color: var(--muted);
+  padding: 7px 0; list-style: none;
+}
+details.svc summary::-webkit-details-marker { display: none; }
+details.svc summary::before { content: "▸ "; color: var(--pink); font-weight: 700; }
+details.svc[open] summary::before { content: "▾ "; }
+
+.svc-list { margin-top: 8px; margin-bottom: 26px; }
+.svc-line {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  border-bottom: 1px dotted var(--line); padding: 8px 0; font-size: .79rem; color: var(--muted);
+}
+.svc-line:last-child { border-bottom: none; }
+.svc-line strong { color: var(--ink); font-weight: 600; }
+.svc-line em { font-style: normal; color: var(--faint); font-size: .71rem; white-space: nowrap; }
+.svc-outcome { color: var(--faint); font-size: .71rem; font-style: italic; }
+
+/* ---------- SERVICE: FEATURED ITEM ---------- */
+
+/* wrapper carries the tilt + tape so the tape isn't clipped by the
+   card's torn clip-path (clip-path clips all descendants) */
+.feature-wrap {
+  position: relative;
+  margin: 22px 0 26px;
+  transform: rotate(-.4deg);
+  transition: opacity .48s cubic-bezier(.22,.9,.3,1), transform .7s cubic-bezier(.22,.9,.3,1);
+}
+
+.feature {
+  position: relative;
+  /* same quality kraft-stock paper as the project cards */
+  background:
+    radial-gradient(circle at 22% 18%, rgba(0,0,0,.010) 0 1px, transparent 1px),
+    radial-gradient(circle at 78% 72%, rgba(0,0,0,.010) 0 1px, transparent 1px),
+    linear-gradient(160deg, #fdf9f1 0%, var(--paper-warm) 55%, #f4ede0 100%);
+  background-size: 7px 7px, 9px 9px, 100% 100%;
+  padding: 28px 22px 26px;
+  /* drop-shadow (not box-shadow) so the shadow follows the torn edge */
+  filter:
+    drop-shadow(0 1px 1px rgba(0,0,0,.07))
+    drop-shadow(0 10px 18px rgba(0,0,0,.10));
+  /* ripped top + bottom edges, like a strip torn from a page */
+  clip-path: polygon(
+    0% 1.8%, 7% 0.5%, 14% 2.0%, 21% 0.7%, 28% 1.9%, 35% 0.6%, 42% 2.1%,
+    50% 0.8%, 57% 2.0%, 64% 0.6%, 71% 1.9%, 78% 0.7%, 85% 2.1%, 92% 0.6%, 100% 1.7%,
+    100% 98.3%, 92% 99.4%, 85% 97.8%, 78% 99.3%, 71% 97.9%, 64% 99.4%, 57% 97.8%,
+    50% 99.2%, 42% 97.9%, 35% 99.4%, 28% 97.8%, 21% 99.3%, 14% 97.9%, 7% 99.4%, 0% 98.2%
+  );
+}
+.feature-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 12px; flex-wrap: wrap;
+}
+.feature-title { margin: 4px 0 2px; font-size: 1rem; font-weight: 700; }
+.feature-lede { margin: 0 0 10px; font-size: .82rem; color: #4a4640; }
+.intern-list { margin: 4px 0 0; padding-left: 17px; }
+.intern-list li { font-size: .8rem; margin-bottom: 8px; line-height: 1.5; }
+.intern-list b { color: var(--ink); }
+
+.quotes { margin-top: 14px; }
+.quote {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 14px 18px 12px;
+  margin: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,.04);
+}
+.quote p {
+  margin: 0 0 7px; font-size: .85rem; line-height: 1.55; color: #3f3b36;
+  font-style: italic;
+}
+.quote cite {
+  font-style: normal; font-size: .72rem; color: var(--faint);
+  font-family: var(--font-head); letter-spacing: .02em;
+}
+.quote + .quote { margin-top: 10px; }
+
+/* ---------- KIND WORDS (kudos) ---------- */
+
+.kudos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+  margin: 34px 0 24px;
+  align-items: start;
+}
+
+.kudos {
+  position: relative;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(0,0,0,.010) 0 1px, transparent 1px),
+    linear-gradient(158deg, #fdf9f1 0%, var(--paper-warm) 60%, #f4ede0 100%);
+  background-size: 7px 7px, 100% 100%;
+  border: 1px solid var(--paper-edge);
+  padding: 34px 32px 26px;
+  margin: 0;
+  box-shadow: var(--shadow-lift);
+  transition: opacity .48s cubic-bezier(.22,.9,.3,1), transform .4s cubic-bezier(.22,.9,.3,1), box-shadow .4s ease;
+}
+.kudos:nth-child(3n+1) { transform: rotate(-.7deg); }
+.kudos:nth-child(3n+2) { transform: rotate(.55deg); }
+.kudos:nth-child(3n)   { transform: rotate(-.35deg); }
+.kudos:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 0 2px 3px rgba(0,0,0,.06), 0 18px 40px rgba(0,0,0,.12);
+}
+
+.kudos-quote {
+  margin: 0 0 16px;
+  font-size: .96rem;
+  line-height: 1.7;
+  color: #3f3b36;
+  font-style: italic;
+}
+.kudos-quote::before {
+  content: "\201C";
+  font-family: var(--font-hand);
+  font-style: normal;
+  font-size: 2.8rem;
+  color: var(--pink);
+  line-height: 0;
+  margin-right: 4px;
+  vertical-align: -.34em;
+}
+.kudos-quote-second { margin-top: 14px; }
+.kudos-quote-second::before { content: none; }
+
+.kudos-cite {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-top: 1px dotted var(--line);
+  padding-top: 13px;
+  margin-top: 4px;
+}
+.kudos-name {
+  font-family: var(--font-head);
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.kudos-role {
+  font-family: var(--font-head);
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--faint);
+}
+
+/* ---------- NOW PLAYING / ALSO MAKING ---------- */
+
+.np {
+  position: relative;
+  background: var(--paper-warm);
+  border: 1px solid var(--line);
+  padding: 20px 22px;
+  margin: 34px 0;
+  transform: rotate(-.5deg);
+}
+.np-label {
+  display: block; font-family: var(--font-head); font-size: .62rem;
+  text-transform: uppercase; letter-spacing: .13em; color: var(--pink-deep);
+  font-weight: 700; margin-bottom: 8px;
+}
+.np p { margin: 0; font-size: .82rem; }
+.np strong { color: var(--ink); }
+
+.making { margin-top: 8px; }
+.making .list { font-size: .83rem; color: #45413c; margin: 0 0 8px; line-height: 1.7; }
+
+/* ---------- SCATTERED POLAROID PILE ----------
+   Photos strewn across the section. Hover brings one forward; clicking
+   (or Enter) flips it to reveal a note on the back. Click again, click
+   empty space, or press Esc to flip it back. Stacks on narrow screens. */
+.scatter {
+  position: relative;
+  margin-top: 30px;
+  min-height: 540px;
+}
+.scatter-card {
+  position: absolute;
+  left: var(--x, 0);
+  top: var(--y, 0);
+  width: 208px;
+  height: 240px;
+  margin: 0;
+  transform: rotate(var(--r, 0deg));
+  transition: transform .4s cubic-bezier(.22,.9,.3,1);
+  cursor: pointer;
+  z-index: 1;
+  outline: none;
+  perspective: 1100px;
+}
+/* lift + straighten on hover/focus — works whether flipped or not */
+.scatter-card:hover,
+.scatter-card:focus-visible {
+  transform: rotate(0deg) translateY(-8px) scale(1.05);
+}
+.scatter-card:focus-visible { outline: 2px dashed var(--pink); outline-offset: 5px; }
+
+.scatter-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .55s cubic-bezier(.34,1.2,.4,1);
+}
+.scatter-card.is-flipped .scatter-inner { transform: rotateY(180deg); }
+
+.scatter-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-photo);
+}
+.scatter-card:hover .scatter-face,
+.scatter-card:focus-visible .scatter-face {
+  box-shadow: 0 3px 4px rgba(0,0,0,.06), 0 24px 54px rgba(0,0,0,.20);
+}
+.scatter-face.front { padding: 12px 12px 44px 12px; }
+.scatter-face.back {
+  transform: rotateY(180deg);
+  background: #fff;
+  padding: 12px 12px 44px 12px;
+}
+
+.scatter-card .shot {                  /* [PHOTO SLOT] swap for <img> */
+  width: 100%; aspect-ratio: 1/1;
+  background: linear-gradient(150deg, #f6f2ec 0%, #ece6dc 55%, #e3dcd0 100%);
+  display: flex; align-items: center; justify-content: center;
+  color: #b6ada0; font-size: .6rem; letter-spacing: .12em;
+  text-transform: uppercase; text-align: center; padding: 8px;
+  user-select: none;
+}
+.scatter-card .caption {
+  position: absolute; bottom: 12px; left: 0; right: 0;
+  text-align: center; font-family: var(--font-hand);
+  font-size: 1.24rem; color: #55524d; line-height: 1; margin: 0;
+}
+/* back note sits in the same square footprint as the photo, so both
+   faces share identical proportions */
+.scatter-face.back .back-note {
+  width: 100%; aspect-ratio: 1/1;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0; padding: 10px;
+  font-family: var(--font-hand);
+  font-size: 1.3rem; line-height: 1.35; color: #45413c;
+  text-align: center;
+}
+.scatter-face.back .back-hint {
+  position: absolute; bottom: 12px; left: 0; right: 0;
+  text-align: center;
+  font-family: var(--font-head); font-size: .58rem;
+  text-transform: uppercase; letter-spacing: .12em; color: var(--faint);
+}
+
+/* narrow screens: drop the absolute scatter, stack them centered
+   (still tilted, so the hand-strewn feel survives) */
+@media (max-width: 680px) {
+  .scatter {
+    min-height: 0;
+    display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 22px 14px;
+  }
+  .scatter-card { position: static; left: auto; top: auto; }
+}
+
+/* ---------- FOOTER ---------- */
+
+.foot {
+  border-top: 2px dashed var(--line);
+  margin-top: 60px; padding: 36px 0 46px;
+  text-align: center; font-size: .77rem; color: var(--muted);
+}
+.foot .hand { font-size: 1.5rem; display: block; margin-bottom: 10px; }
+
+/* ============================================================
+   WIREFRAME ANNOTATIONS — delete in production
+   ============================================================ */
+
+.note {
+  background: #fffdf2; border: 1px dashed #e6d894; border-radius: 4px;
+  padding: 11px 14px; margin: 16px 0;
+  font-size: .72rem; color: #857021; line-height: 1.6;
+  position: relative; z-index: 3;
+}
+.note b { color: #6b5a12; }
+.banner {
+  background: var(--ink); color: #fff; text-align: center;
+  padding: 10px; font-size: .72rem; letter-spacing: .04em;
+  position: relative; z-index: 20;
+}
+
+/* floating toggle to hide/show all suggestion notes */
+.notes-toggle {
+  position: fixed; bottom: 18px; right: 18px;
+  z-index: 100;
+  background: var(--ink); color: #fff;
+  border: none; border-radius: 100px;
+  padding: 10px 18px;
+  font-family: var(--font-head); font-size: .72rem; letter-spacing: .03em;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,.28);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.notes-toggle:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(0,0,0,.32); }
+.notes-toggle:active { transform: translateY(0); }
+
+/* hidden state: drop every wireframe note */
+body.notes-hidden .note { display: none; }
+
+/* ============================================================
+   RESPONSIVE — the breakpoints you were worried about
+   ============================================================ */
+
+/* --- tablet: 900px --- */
+@media (max-width: 900px) {
+  .hero-grid { gap: 44px; }
+  .hero-strip { margin-left: -58px; padding-left: 74px; }
+}
+
+/* --- the critical one: stack the hero, 760px ---
+   Overlap only works side-by-side. Below this the polaroid centers,
+   the torn strip goes full-width, and the overlap becomes vertical. */
+@media (max-width: 760px) {
+  .wrap { padding: 0 20px; }
+
+  .hero { min-height: auto; padding: 74px 0 56px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 0; justify-items: center; }
+
+  .hero-photo-col { display: flex; justify-content: center; margin-bottom: -34px; z-index: 4; }
+  .polaroid { transform: rotate(-2deg); width: 232px; }
+
+  .hero-strip {
+    margin-left: 0;
+    padding: 46px 26px 30px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .pitch { font-size: 1.35rem; }
+  .grid { grid-template-columns: 1fr; gap: 26px; }
+
+  /* kill rotations — they cause horizontal overflow on narrow screens */
+  .card, .card:nth-child(3n+1), .card:nth-child(3n+2), .card:nth-child(3n) { transform: none; }
+  .stat, .stat:nth-child(odd), .stat:nth-child(even) { transform: none; }
+  .np { transform: none; }
+  .feature, .quote { transform: none; }
+  .kudos, .kudos:nth-child(3n+1), .kudos:nth-child(3n+2), .kudos:nth-child(3n) { transform: none; }
+  .kudos-grid { grid-template-columns: 1fr; }
+
+  /* scattered parallax elements are hidden below tablet:
+     they overlap text and cause scroll jank on touch devices */
+  .parallax-layer { display: none !important; }
+
+  .scroll-cue { display: none; }
+  .cutline { margin: 3.2rem 0; }
+}
+
+/* --- phone: 460px --- */
+@media (max-width: 460px) {
+  .wrap { padding: 0 15px; }
+  .pitch { font-size: 1.2rem; }
+  .sec-head h2 { font-size: 1.42rem; }
+  .polaroid { width: 200px; }
+  .stats { gap: 8px; }
+  .stat { min-width: calc(50% - 4px); padding: 12px 13px; }
+  .stat b { font-size: 1.32rem; }
+  .hero-nav .btn { flex: 1; min-width: 116px; }
+  .torn { padding-left: 20px; padding-right: 20px; }
+  .exp { padding-left: 14px; }
+}
+
+/* --- accessibility: honor reduced-motion --- */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+  .parallax-layer { display: none !important; }
+}
+
+/* --- print --- */
+@media print {
+  .parallax-layer, .note, .banner, .scroll-cue { display: none !important; }
+  .reveal { opacity: 1; transform: none; }
+  .card, .stat, .np, .polaroid { transform: none !important; box-shadow: none !important; }
+  .feature, .quote { transform: none !important; box-shadow: none !important; }
+  .kudos { transform: none !important; box-shadow: none !important; }
+}

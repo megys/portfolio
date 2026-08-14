@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Megan Schmid — Résumé</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Résumé of Megan Schmid — Product Manager at Xbox (discovery, search, personalization) and indie game developer.">
+<meta name="author" content="Megan Schmid">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://megys.github.io/portfolio/resume.html">
+<!-- Person structured data. [VERIFY] the sameAs URLs match your real profiles. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Megan Schmid",
+  "url": "https://megys.github.io/portfolio/",
+  "jobTitle": "Product Manager",
+  "worksFor": { "@type": "Organization", "name": "Xbox" },
+  "sameAs": [
+    "https://www.linkedin.com/in/megan-y-schmid/",
+    "https://mysmee.itch.io/"
+  ]
+}
+</script>
+<style>
+  /* ATS-friendly: single column, real text, standard headings, system fonts,
+     no images/icons in critical content, high-contrast black-on-white. */
+  :root{
+    --ink:#1a1a1a;
+    --muted:#555;
+    --rule:#cfcfcf;
+    --pink:#fdabab;        /* soft pink — matches scrapbook */
+    --pink-deep:#ee5c5c;   /* deep pink — matches scrapbook */
+    --accent:var(--pink-deep);
+    --maxw:760px;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+    color:var(--ink);
+    background:#f4f4f4;
+    line-height:1.45;
+    font-size:14px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .toolbar{
+    max-width:var(--maxw);
+    margin:16px auto 0;
+    padding:0 8px;
+    display:flex;
+    gap:10px;
+    justify-content:flex-end;
+    align-items:center;
+  }
+  .toolbar a, .toolbar button{
+    font: inherit;
+    font-size:12.5px;
+    text-decoration:none;
+    color:var(--ink);
+    background:#fff;
+    border:1px solid var(--rule);
+    border-radius:6px;
+    padding:6px 12px;
+    cursor:pointer;
+  }
+  .toolbar button{
+    color:#fff;
+    background:var(--pink-deep);
+    border-color:var(--pink-deep);
+  }
+  .toolbar button:hover{ background:#e04a4a; border-color:#e04a4a; }
+  .toolbar a:hover{ background:#f0f0f0; }
+
+  .page{
+    max-width:var(--maxw);
+    margin:12px auto 40px;
+    background:#fff;
+    padding:40px 48px;
+    box-shadow:0 1px 4px rgba(0,0,0,.12);
+  }
+
+  header.masthead{ margin-bottom:14px; }
+  h1{
+    font-size:26px;
+    letter-spacing:.3px;
+    margin:0 0 2px;
+    color:var(--pink-deep);
+  }
+  .tagline{
+    font-size:13.5px;
+    color:var(--muted);
+    margin:0 0 8px;
+  }
+  .contact{
+    font-size:12.5px;
+    color:var(--ink);
+  }
+  .contact span{ color:var(--rule); margin:0 7px; }
+  .contact a{ color:var(--ink); text-decoration:none; }
+  .contact a:hover{ text-decoration:underline; color:var(--pink-deep); }
+  .todo{ color:#b23; font-weight:600; }
+
+  .summary{
+    margin:14px 0 6px;
+    font-size:13.5px;
+  }
+
+  section{ margin-top:20px; }
+  h2{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1.4px;
+    margin:0 0 10px;
+    padding-bottom:4px;
+    color:var(--pink-deep);
+    border-bottom:1.5px solid var(--pink);
+  }
+
+  .entry{ margin-bottom:15px; }
+  .entry:last-child{ margin-bottom:0; }
+  .entry-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:12px;
+  }
+  .entry-head h3{
+    font-size:14.5px;
+    margin:0;
+  }
+  .entry-head .org{ font-weight:400; color:var(--muted); }
+  .dates{
+    font-size:12px;
+    color:var(--muted);
+    white-space:nowrap;
+  }
+  .subrole{
+    font-size:13px;
+    font-weight:600;
+    margin:6px 0 3px;
+  }
+  ul{ margin:5px 0 0; padding-left:18px; }
+  li{ margin:3px 0; font-size:13px; }
+
+  .proj-note{ font-size:12.5px; color:var(--muted); margin:0 0 8px; }
+  .proj{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    font-size:13px;
+    margin:4px 0;
+  }
+  .proj .meta{ color:var(--muted); }
+  .proj .plays{ color:var(--muted); white-space:nowrap; }
+
+  .two-col{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:4px 14px;
+    font-size:13px;
+  }
+  .two-col dt{ font-weight:600; }
+  .two-col dd{ margin:0; }
+
+  @media (max-width:640px){
+    .page{ padding:26px 20px; }
+    .entry-head{ flex-direction:column; gap:2px; }
+    .two-col{ grid-template-columns:1fr; }
+    .two-col dt{ margin-top:6px; }
+  }
+
+  /* Print / PDF: clean one-pager, no chrome, tight margins. */
+  @media print{
+    @page{ margin:0.5in; }
+    body{ background:#fff; font-size:11pt; line-height:1.35; }
+    .toolbar, .print-hint{ display:none !important; }
+    .page{
+      max-width:none;
+      margin:0;
+      padding:0;
+      box-shadow:none;
+    }
+    h2{ page-break-after:avoid; }
+    .entry, .proj{ page-break-inside:avoid; }
+    a{ color:#000; text-decoration:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="print-hint" style="margin-right:auto; font-size:12px; color:#777;">Tip: Print → Save as PDF for a clean copy.</span>
+  <a href="./index.html">&larr; Back to portfolio</a>
+  <button type="button" onclick="window.print()">Download / Print PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- ============ MASTHEAD ============ -->
+  <header class="masthead">
+    <h1>Megan Schmid</h1>
+    <p class="tagline">Product Manager — Discovery, Search &amp; Personalization · Indie Game Developer</p>
+    <p class="contact">
+      <a href="mailto:meganyschmid@gmail.com">meganyschmid@gmail.com</a>
+      <span>·</span>
+      <a href="https://www.linkedin.com/in/megan-y-schmid/">LinkedIn</a>
+      <span>·</span>
+      <a href="https://mysmee.itch.io/">itch.io</a>
+      <span>·</span>
+      Seattle, WA
+    </p>
+  </header>
+
+  <p class="summary">
+    Product Manager II at Xbox with <strong>4+ years</strong> shipping AI-driven discovery, search, and
+    commerce features to <strong>millions of players</strong>. Took an AI metadata platform from zero to
+    live across a <strong>15,000+ title</strong> catalog and shipped personalization features driving
+    <strong>+9.4% Game Pass sign-ups</strong>. Currently leading a net-new Search product from definition
+    to launch. Indie game developer with <strong>6 titles</strong> shipped.
+  </p>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section>
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Microsoft <span class="org">— Xbox</span></h3>
+        <span class="dates">Jan 2024 – Present</span>
+      </div>
+
+      <p class="subrole">Product Manager II — Search, Notifications &amp; Discovery <span style="font-weight:400;color:#555;">(Mar 2026 – Present)</span></p>
+      <ul>
+        <li><strong>Own product for a net-new Xbox Search experience</strong> from definition to launch — set the multi-phase product direction, authored the functional specs, and led UX walkthroughs that aligned <strong>[VERIFY] N</strong> client, platform, and partner engineering teams on how to build it.</li>
+        <li>Rebuilt how the <strong>Notifications</strong> program runs day-to-day — clearer intake, tracking, and team rhythms across <strong>[VERIFY] N partner teams</strong> — and advanced a new marketing-notifications pilot plus Wishlist notifications through privacy review.</li>
+        <li>Drive ambiguous, multi-team efforts from idea to launch, balancing player needs, technical constraints, and business goals across engineering, design, marketing, and leadership.</li>
+      </ul>
+
+      <p class="subrole">Product Manager — Metadata, Wishlist &amp; PC Catalog <span style="font-weight:400;color:#555;">(Jan 2024 – Mar 2026)</span></p>
+      <ul>
+        <li>Took the Gaming Metadata system (Xbox's AI game-tagging platform behind recommendations, search, and personalization) from early foundation to live service — rebuilding tagging quality with a retrieval-augmented (RAG) pipeline and reprocessing the <strong>~15,000+ title</strong> catalog, with human-in-the-loop guardrails to scale AI tagging responsibly.</li>
+        <li><strong>~7.4M players</strong> in A/B test — shipped Browse by Mood on PC Home, the first player-facing feature on that metadata, driving a statistically significant lift in install click-through and becoming a reusable template for future channels.</li>
+        <li><strong>+9.4% Game Pass sign-ups</strong> — shipped Deals for You, a personalized deals channel surfacing deals on games each player actually cares about.</li>
+        <li><strong>+9% wishlist views, +12% wishlist actions</strong> — made the Wishlist channel permanent on the PC Store.</li>
+        <li>Built the Quality Control filter from the ground up — an always-on system (PC + Console) that keeps low-quality titles off the storefront, shipped after proving it lifted engagement without hurting sales.</li>
+        <li>Expanded the Xbox PC catalog by <strong>hundreds</strong> of previously missing games (covered by <em>The Verge</em> and <em>PC Gamer</em>), contributing to the Xbox Play Anywhere 1,000-titles milestone.</li>
+      </ul>
+
+      <p class="subrole">Culture &amp; Community</p>
+      <ul>
+        <li>Co-led the <strong>Xbox Gaming Tournaments</strong> — designed the event format, built the event website, and ran comms, branding, and prize sourcing end-to-end for an Xbox-wide audience.</li>
+        <li>Led ERG and intern-community efforts — Give Pillar co-lead for Asians at Microsoft and Intern Cohort Leader — strengthening team culture beyond the product roadmap.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED PROJECTS ============ -->
+  <section>
+    <h2>Selected Projects</h2>
+    <p class="proj-note">Indie developer — 6 titles shipped, mostly solo. Highlights below; full portfolio on itch.io.</p>
+
+    <div class="proj">
+      <span><strong>I Fell in Love with a Mailman</strong> <span class="meta">— Visual Novel · Solo dev · 2024</span></span>
+      <span class="plays">1,600+ plays</span>
+    </div>
+    <div class="proj">
+      <span><strong>Wayfarer</strong> <span class="meta">— Visual Novel + Deck Builder · 2021</span></span>
+      <span class="plays">840+ plays</span>
+    </div>
+    <div class="proj">
+      <span><strong>Potion Promotion</strong> <span class="meta">— Visual Novel · Solo dev · 2024</span></span>
+      <span class="plays">590+ plays</span>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>University of California, Los Angeles</h3>
+        <span class="dates">2023</span>
+      </div>
+      <ul>
+        <li>B.A. Linguistics &amp; Computer Science, Korean.</li>
+        <li>Cum Laude · Phi Beta Kappa · Upsilon Pi Epsilon · ACM Studio (Game Dev) · ACM Design.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section>
+    <h2>Skills</h2>
+    <dl class="two-col">
+      <dt>Product</dt>
+      <dd>Product strategy &amp; roadmapping · discovery &amp; personalization · A/B testing &amp; experimentation · storefront &amp; commerce · cross-functional leadership · user research</dd>
+      <dt>Technical</dt>
+      <dd>AI/ML metadata systems (RAG) · SQL · C# · ASP.NET · Unity · HTML/CSS/JavaScript · Azure DevOps</dd>
+      <dt>Game Dev</dt>
+      <dd>Solo shipping · narrative &amp; systems design · Ren'Py / visual novels · localization (Korean)</dd>
+    </dl>
+  </section>
+
+</div>
+
+</body>
+</html>

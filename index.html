@@ -1,880 +1,771 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Megan Schmid</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="icon" href="assets/icon.svg">
-        <link href="./base.css" type="text/css" rel="stylesheet" />
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');        </style>    
-    </head>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- SEO: keep your full name near the front of the title. In production remove the "[SCRAPBOOK WIREFRAME]" tag. -->
+<title>Megan Schmid — Product Manager &amp; Game Developer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Megan Schmid is a Product Manager at Xbox focused on game discovery, and an indie game developer with 6 shipped titles. Portfolio, projects, and résumé.">
+<meta name="author" content="Megan Schmid">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://megys.github.io/portfolio/">
 
-    <body>
-        <div style="height:10px"></div>
+<!-- Open Graph (link previews on LinkedIn, iMessage, Slack, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://megys.github.io/portfolio/">
+<meta property="og:title" content="Megan Schmid — Product Manager &amp; Game Developer">
+<meta property="og:description" content="I build discovery experiences that connect people with things they'll love — and I make games myself.">
+<meta property="og:image" content="https://megys.github.io/portfolio/assets/headshot.png">
 
-        <div class="main">
-            <!-- Intro Section -->
-            <div class="intro">
-                <div class="flexBox" style="padding: 25px">
-                    <div class="flexChild" style="width:300px; align-items: center; padding: 10px 15px 10px 15px"> 
-                        <img style="width:300px" src="assets/headshot.png" alt="a photo of Megan" />
-                        <br>
-                        <a href="#aboutMe"><button class="button1">about me</button></a>
-                    </div>
-                    <div class="flexChild" style="justify-content: center; padding: 10px 15px 10px 15px">
-                        <h1 id="type-target" style="margin-bottom:-15px"></h1>
-                        <h3 style="margin-bottom:-5px">I'm Megan! Nice to meet you!</h3>
-                        <div>
-                            <h3 style="margin-bottom:-20px;">Product Manager @ Xbox</h3>
-                            <h5 style="width:300px">Creating more engaging, inclusive, and discoverable gaming experiences</h5>
-                        </div>
-                        <div>
-                            <a href="#portfolio"><button class="button2">projects</button></a>
-                            <a href="#experience"><button class="button2">experience</button></a>
-                            <a href="#service"><button class="button2">service</button></a>
-                        </div>
-                    </div>
-                </div>
+<!-- Twitter/X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Megan Schmid — Product Manager &amp; Game Developer">
+<meta name="twitter:description" content="I build discovery experiences that connect people with things they'll love — and I make games myself.">
+<meta name="twitter:image" content="https://megys.github.io/portfolio/assets/headshot.png">
 
-            </div>
-            
-            <!-- Content Section -->
-            <div class="content">
+<!-- Person structured data: the strongest signal for ranking on a name.
+     [VERIFY] Replace the sameAs URLs below with your exact public profile links. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Megan Schmid",
+  "url": "https://megys.github.io/portfolio/",
+  "image": "https://megys.github.io/portfolio/assets/headshot.png",
+  "jobTitle": "Product Manager",
+  "worksFor": { "@type": "Organization", "name": "Xbox" },
+  "description": "Product Manager at Xbox working on game discovery, and indie game developer with 6 shipped titles.",
+  "sameAs": [
+    "https://www.linkedin.com/in/megan-y-schmid/",
+    "https://mysmee.itch.io/"
+  ]
+}
+</script>
 
-                <!-- About -->
-                <div id="aboutMe">
-                    <!-- Header -->
-                    <div class="header">
-                        <h2>about me</h2>
-                        <div class="header-buttons">
-                            <button class="button2" type="submit" onclick="window.open('assets/MSresume.pdf')">📋 resume</button>
-                            <button class="button2" onclick="window.open('https://www.linkedin.com/in/megan-y-schmid/', '_blank')">🔗 linked in</button>
-                            <button class="button2" onclick="window.open('https://mysmee.itch.io/', '_blank')">🎮 itch.io</button>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div>
-                        <h4>Hello! My name is Megan (she/her), and I'm a Product Manager at <a href='https://www.xbox.com/en-US' target="_blank">Xbox</a>, where I focus on crafting discovery experiences that connect players with the games they love.</h4>
-                        <h4>I specialize in building AI-driven metadata systems that power personalized discovery, helping players find what they love while enabling publishers to reach the right audiences.</h4></h4>
-                        <h4>Outside of work, I'm both a gamer and a <a href='https://mysmee.itch.io/' target="_blank">game dev</a>, and I bring that same creativity and player-first mindset into everything I build, advocating for experiences that engage, include, and inspire.</h4>
-                    </div>    
-                </div>
-                <br>
-                <br>
-                <hr>
-
-                <!-- Portfolio -->
-                <div id="portfolio" >
-                    <!-- Header -->
-                    <div class="header">
-                        <h2>projects</h2>
-                        <!-- Filter Buttons -->
-                        <div class="header-buttons">
-                            <button class="button4" data-tag="game" onclick="toggleFilter(this)">Game Dev</button>
-                            <button class="button4" data-tag="web" onclick="toggleFilter(this)">Web Dev</button>
-                            <button class="button4" data-tag="uxui" onclick="toggleFilter(this)">UX/UI</button>
-                        </div>
-                    </div>
-
-                    <!-- Project Cards -->
-                    <div class="project-grid">
-                        <!-- I Fell in Love with a Mailman | 2024 -->
-                        <div class="project-card" data-tags="game">
-                            <h1>I Fell in Love with a Mailman</h1>
-                            <h2>Visual Novel | 1,600+ plays</h2>
-                            <p>Hallmark Christmas movie inspired visual novel featuring realistic claw machine gameplay! Is romance really just a rigged game of chance?!</p>
-                            <button class="button3" onclick="window.open('https://mysmee.itch.io/i-fell-in-love-with-a-mailman', '_blank')">Check it out!</button>
-                        </div>
-
-                        <!-- Potion Promotion | 2024 -->
-                        <div class="project-card" data-tags="game">
-                            <h1>Potion Promotion</h1>
-                            <h2>Visual Novel | 590+ plays</h2>
-                            <p>You've inherited your uncle's potion shop and it's your first day on the job. Help the potion hungry customers procure their precious potions!</p>
-                            <button class="button3" onclick="window.open('https://mysmee.itch.io/potion-promotion', '_blank')">Check it out!</button>
-                        </div>
-
-                        <!-- Tippity Tap: Dog Destroy | 2024 -->
-                        <div class="project-card" data-tags="game">
-                            <h1>Tippity Tap: Dog Destroy</h1>
-                            <h2>Typing Game</h2>
-                            <p>A typing game (in Korean) where you defend earth from warlock dogs!</p>
-                            <button class="button3" onclick="window.open('https://mysmee.itch.io/tippity-tap-dog-destroy', '_blank')">Check it out!</button>
-                        </div>
-
-                        <!-- Tippity Tap: Cat Attack | 2024 -->
-                        <div class="project-card" data-tags="game">
-                            <h1>Tippity Tap: Cat Attack</h1>
-                            <h2>Typing Game</h2>
-                            <p>A typing game where you defend earth from wizard cats!</p>
-                            <button class="button3" onclick="window.open('https://mysmee.itch.io/tippity-tap-cat-attack', '_blank')">Check it out!</button>
-                        </div>
-
-                        <!-- Habitude | 2021 -->
-                        <div class="project-card" data-tags="web">
-                            <h1>Habitude</h1>
-                            <h2>Web App</h2>
-                            <p>A web-based habit tracker that users can use to keep track of their daily goals through creating custom habits.</p>
-                            <button class="button3" onclick="window.open('assets/habitude.pdf')">Check it out!</button>
-                        </div>                         
-
-                        <!-- Grades of Green | 2021 -->
-                        <div class="project-card" data-tags="web">
-                            <h1>Grades of Green</h1>
-                            <h2>Web App</h2>
-                            <p>Collaborated with Grades of Green as a developer to rebrand the non-profit organization’s website to facilitate user engagement and integrated a database for dynamic display of data.</p>
-                            <!-- <button class="button3">Check it out!</button> -->
-                        </div>
-
-                        <!-- CSS Framework | 2021 -->
-                        <div class="project-card" data-tags="uxui">
-                            <h1>CSS Framework</h1>
-                            <h2>UX/UI</h2>
-                            <p>Contributed to the creation of a CSS stylesheet according to ACM at UCLA’s branding guidelines to unify and streamline the development of our online websites and resources.</p>
-                            <button class="button3" onclick="window.open('https://github.com/uclaacm/WestwoodCSS', '_blank')">Check it out!</button>
-                        </div>
-
-                        <!-- Wayfarer | 2021 -->
-                        <div class="project-card" data-tags="game">
-                            <h1>Wayfarer</h1>
-                            <h2>Visual Novel / Deck Builder | 840+ plays</h2>
-                            <p>A deckbuilding puzzle game meets a wholesome story about friendship! Your choices in the story impact the cards you get for the puzzle, which determines the ending.</p>
-                            <button class="button3" onclick="window.open('https://sonderingemily.itch.io/wayfarer', '_blank')">Check it out!</button>
-                        </div>
-
-                        <!-- CCLE App Redesign | 2020 -->
-                        <div class="project-card" data-tags="uxui">
-                            <h1>CCLE App Redesign</h1>
-                            <h2>UX/UI</h2>
-                            <p>Created prototypes for an updated mobile version of UCLA's school engine, CCLE.</p>
-                            <button class="button3" onclick="window.open('assets/ccle.pdf')">Check it out!</button>
-                        </div>
-
-                        <!-- Bubble Tea in Quarantine | 2020 -->
-                        <div class="project-card" data-tags="game">
-                            <h1>Bubble Tea in Quarantine</h1>
-                            <h2>Visual Novel</h2>
-                            <p>A visual novel about tea, boba, and coronavirus with a twist!</p>
-                            <button class="button3" onclick="window.open('https://mysmee.itch.io/bubble-tea-in-quarantine', '_blank')">Check it out!</button>
-                        </div>
-
-                        <!-- This Website! | 2025 -->
-                        <div class="project-card" data-tags="web">
-                            <h1>This Website!</h1>
-                            <h2>Web App</h2>
-                            <p>Coded in html, css, and javascript; just to prove a point to myself :P</p>
-                            <button class="button3" onclick="window.open('https://github.com/megys/portfolio', '_blank')">Check it out!</button>
-                        </div>
-                    </div>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link href="./scrapbook.css" rel="stylesheet">
+</head>
+<body>
 
 
-                </div>
-                <br>
-                <br>
-                <hr>
 
-                <!-- Experience -->
-                <div id="experience">
-                    <!-- Header -->
-                    <div class="flexInline">
-                        <h2>experience</h2>
-                        <div>
-                            <div class="toggle-button-cover">
-                                <div class="button-cover">
-                                    <div class="button r" id="button-1">
-                                    <input type="checkbox" class="checkbox" onClick="toggleVisibilityExp(this)"/>
-                                    <div class="knobs"></div>
-                                    <div class="layer"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!-- ======================= HERO ======================= -->
+<section class="hero">
 
-                    <!-- Work -->
-                    <div>
-                        <h3 style="margin-bottom:-10px">Professional Experience</h3>
-                        <div>
-                            <!-- PM -->
-                            <div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Product Manager | Xbox @ Microsoft</h4>
-                                    <div class="timeframe">
-                                        <span>2024 - Present</span>
-                                    </div>
-                                </div>
-                                <!-- Brief -->
-                                <div class="expBrief">
-                                    <p>Lead initiatives improving game discoverability, driving platform growth, and delivering inclusive, high-impact user experiences across Xbox endpoints.</p>
-                                </div>
-                                <!-- Detailed -->
-                                <div class="expDetailed" style="display: none">
-                                    <ul>
-                                        <li>
-                                            Lead initiatives that enhanced game discoverability, drove platform growth, and promoted inclusive experiences across Xbox endpoints.
-                                        </li>
-                                        <li>
-                                            Drove the development and productionalization of metadata systems enabling quality personalized discovery experiences.
-                                        </li>
-                                        <li>
-                                            Managed cross-functional v-teams, defined product strategy, and delivered features contributing to both user engagement and revenue growth.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            
-                            <!-- PM Intern -->
-                            <div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>PM Intern | Xbox @ Microsoft</h4>
-                                    <div class="timeframe">
-                                        <span>2022</span>
-                                    </div>
-                                </div>     
-                                <!-- Brief -->
-                                <div class="expBrief">
-                                    <p>Delivered storefront feature improvements—including filter/sort refreshes and enhanced visibility for self-published titles—while owning the browse-all-games experience on Xbox.com.</p>
-                                </div>
-                                <!-- Detailed -->
-                                <div class="expDetailed" style="display: none">
-                                    <ul>
-                                        <li>
-                                            Strategized and executed a filter and sort by feature refresh for the Xbox storefronts
-                                        </li>
-                                        <li>
-                                            Created a strategy to increase the visibility and discoverability of self-published games on the Xbox storefronts
-                                        </li>
-                                        <li>
-                                            Owned the browse all games feature for Xbox.com
-                                        </li>
-                                    </ul>
-                                </div>                             
-                            </div>
-                            
-                            
-                            <!-- Explore Intern -->
-                            <div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Explore Intern | Viva Engage @ Microsoft</h4>
-                                    <div class="timeframe">
-                                        <span>2021</span>
-                                    </div>
-                                </div>
-                                <!-- Brief -->
-                                <div class="expBrief">
-                                    <p>Built a web-based security trivia game and gained hands-on engineering and PM experience while supporting the Yammer Security, Privacy, and Compliance team.</p>
-                                </div>
-                                <!-- Detailed -->
-                                <div class="expDetailed" style="display: none">
-                                    <ul>
-                                        <li>
-                                            Gained experience with software engineering and project management through the 12-week summer internship program                                        
-                                        </li>
-                                        <li>
-                                            Interned with the Yammer Security, Privacy, and Compliance team                                        
-                                        </li>
-                                        <li>
-                                            Utilized tools such as Azure DevOps, ASP.NET, SQLite, C#, and Unity to devise and produce a web-based security trivia game to gamify the experience of security training for all Yammer engineers                                        
-                                        </li>
-                                    </ul>                         
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
+  <!-- parallax layer: scattered scrapbook elements, multi-speed.
+       Hidden below 760px and under prefers-reduced-motion. -->
+  <div class="parallax-layer" data-speed="0.18" data-spin="0.006" style="top:14%; left:4%;">
+    <svg class="doodle" width="54" height="54" viewBox="0 0 54 54" aria-hidden="true">
+      <path d="M27 27 Q27 20 34 20 Q43 20 43 30 Q43 43 29 43 Q11 43 11 25 Q11 5 33 5"
+            fill="none" stroke="#e0d6c4" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="-0.10" style="top:66%; left:7%;">
+    <svg class="doodle" width="70" height="70" viewBox="0 0 70 70" aria-hidden="true">
+      <path d="M35 8 L42 27 L62 27 L46 39 L52 58 L35 46 L18 58 L24 39 L8 27 L28 27 Z"
+            fill="none" stroke="#fdabab" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="0.30" style="top:22%; right:4%;">
+    <svg class="doodle" width="52" height="48" viewBox="0 0 52 48" aria-hidden="true">
+      <path d="M26 44 C6 30 6 13 17 11 C23 10 26 16 26 18 C26 16 29 10 35 11 C46 13 46 30 26 44 Z"
+            fill="none" stroke="#fdabab" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="-0.16" style="top:72%; right:8%;">
+    <svg class="doodle" width="86" height="52" viewBox="0 0 86 52" aria-hidden="true">
+      <path d="M4 40 Q22 6 44 26 T82 12" fill="none" stroke="#e0d6c4" stroke-width="2"
+            stroke-linecap="round" stroke-dasharray="5 7"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="0.12" style="top:44%; right:16%;">
+    <svg class="doodle" width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
+      <path d="M23 4 C24 16 30 22 42 23 C30 24 24 30 23 42 C22 30 16 24 4 23 C16 22 22 16 23 4 Z"
+            fill="none" stroke="#fdabab" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="-0.08" style="top:38%; left:9%;">
+    <svg class="doodle" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M20 5 L20 35 M5 20 L35 20 M9 9 L31 31 M31 9 L9 31"
+            fill="none" stroke="#e0d6c4" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+  </div>
 
-                    <!-- Education -->
-                    <div>
-                        <h3 style="margin-bottom:-10px">Education</h3>
-                        <!-- Uni -->
-                        <div>
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>University of California, Los Angeles</h4>
-                                <div class="timeframe">
-                                    <span>2023</span>
-                                </div>
-                            </div>
-                            <div>
-                                <p><b>B.A. in Linguistics & Computer Science, Korean</b></p>
-                            </div>
-                            <!-- Brief Description -->
-                            <div class="expBrief">
-                                <p><b>Honors:</b> Cum Laude | Phi Beta Kappa | Dean's List</p>
-                                <p><b>Orgs:</b> Upsilon Pi Epsilon | Association for Computing Machinery (Design & Studio)</p>
-                            </div>
-                            <!-- Detailed Description -->
-                            <div class="expDetailed" style="display: none">
-                                <p><b>Honors:</b> Cum Laude | Phi Beta Kappa | Dean's List</p>
-                                <br>
-                                <p><b>Student Societies & Organizations:</b></p>
-                                <div>
-                                    <p><a href="https://upe.seas.ucla.edu/" target="_blank">Upsilon Pi Epsilon</a> | Induction Director</p>
-                                    <ul>
-                                        <li>
-                                            Led committee operations by organizing meetings, delegating responsibilities, and managing inductees and active members through tutoring, orientations, and ceremonies.
-                                        </li>
-                                        <li>
-                                            Revamped the active membership program by introducing new requirements and benefits to strengthen engagement and member development.
-                                        </li>
-                                    </ul>
-                                </div>
+  <div class="wrap layer-content">
+    <div class="hero-grid">
 
-                                <div>
-                                    <p><a href="https://upe.seas.ucla.edu/" target="_blank">Upsilon Pi Epsilon</a> | Induction Chair</p>
-                                    <ul>
-                                        <li>
-                                            Oversaw inductees and active members throughout the induction process, coordinating tutoring schedules, tracking attendance, and conducting orientations and ceremonies.
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div>
-                                    <p><a href="https://studio.uclaacm.com/" target="_blank">ACM Studio</a> | Game Developer</p>
-                                    <ul>
-                                        <li>
-                                            Built and delivered two games, shipping one, while participating in game jams and workshops to strengthen rapid prototyping, design skills, and full-pipeline development.
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div>
-                                    <p><a href="https://design.uclaacm.com/" target="_blank">ACM Design</a> | Committee Officer</p>
-                                    <ul>
-                                        <li>
-                                            Collaborated with non-profit Grades of Green to rebrand their website and implement a dynamic data system, and contributed to ACM's unified CSS style framework.
-                                        </li>
-                                        <li>
-                                           Completed design requests in Figma, creating event advertisements for ACM committees across Facebook and Instagram.
-                                        </li>
-                                    </ul>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <br>
-                <br>
-                <hr>
-
-                <!-- Service -->
-                <div id="service">
-                    <!-- Header -->
-                    <div class="flexInline">
-                        <h2>service</h2>
-                        <div>
-                            <div class="toggle-button-cover">
-                                <div class="button-cover">
-                                    <div class="button r" id="button-1">
-                                    <input type="checkbox" class="checkbox" onClick="toggleVisibilityService(this)"/>
-                                    <div class="knobs"></div>
-                                    <div class="layer"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Game Dev Stuff -->
-                    <!-- <div>
-                        <h3 style="margin-bottom:-10px">Game Developer Discovery V-Team</h3>
-                         <div style="margin-bottom:-25px" class="flexInline">
-                            <h4>Committee Member</h4>
-                            <div class="timeframe">
-                                <span>2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <br> -->
-
-                    <!-- Intern Program -->
-                    <div>
-                        <h3 style="margin-bottom:-10px">Microsoft Intern Program</h3>
-                        <p style="margin-bottom:-5px">Strengthened Microsoft's intern community through inclusive engagement and mentorship, fostering belonging and early-career growth across cohorts.</p>
-                        <div class="serBrief">
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>Co-lead, Xbox Intern Gaming Tournament</h4>
-                                <div class="timeframe">
-                                    <span>2025</span>
-                                </div>
-                            </div>
-
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>Intern Cohort Leader</h4>
-                                <div class="timeframe">
-                                    <span>2024 - 2025</span>
-                                </div>
-                            </div>                 
-
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>Volunteer, Xbox Intern Program</h4>
-                                <div class="timeframe">
-                                    <span>2024</span>
-                                </div>
-                            </div>       
-                        </div>
-                        <div class="serDetailed" style="display: none">
-                            <!-- Co-lead, Xbox Intern Gaming Tournament -->
-                            <div> 
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Co-lead, Xbox Intern Gaming Tournament</h4>
-                                    <div class="timeframe">
-                                        <span>2025</span>
-                                    </div>
-                                </div>
-                                <div>                            
-                                    <ul>
-                                        <li>
-                                            Organized and delivered an Xbox-wide team gaming tournament—developing the event website, resources, and structure—to foster community-building and cross-intern networking in an inclusive, fun environment.
-                                        </li>
-                                        <li>
-                                            Secured prizes and engagement opportunities that connected interns with Xbox leaders and expanded access to mentorship and company insights.                                        
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Intern Cohort Leader -->
-                            <div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Intern Cohort Leader</h4>
-                                    <div class="timeframe">
-                                        <span>2024 - 2025</span>
-                                    </div>
-                                </div>          
-                                <div>
-                                    <ul>
-                                        <li>
-                                            Mentored a diverse cohort of interns by hosting inclusive events, providing ongoing support, and creating a welcoming community centered on belonging, professional growth, and peer connection.                                        
-                                        </li>
-                                        <li>
-                                            Facilitated networking, guidance sessions, and open forums that empowered interns to ask questions, build confidence, and navigate Microsoft with greater clarity and support.
-                                        </li>
-                                    </ul>
-                                </div>                     
-                            </div>
-              
-
-                            <!-- Volunteer, Xbox Intern Program -->
-                            <div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Volunteer, Xbox Intern Program</h4>
-                                    <div class="timeframe">
-                                        <span>2024</span>
-                                    </div>
-                                </div>    
-                                <div>
-                                    <ul>
-                                        <li>
-                                            Hosted accessible lunches and office hours offering career advice, PM skill development, and personalized support to help interns thrive at Xbox.
-                                        </li>
-                                        <li>
-                                            Organized community-building events and assisted in running the Xbox Intern Gaming Tournament, creating spaces for interns to network, bond, and learn more about the organization.
-                                        </li>
-                                    </ul>
-                                </div>
-                                
-                            </div>   
-                        </div>
-                        
-                    </div>
-                    <br>
-
-                    <!-- Company Volunteer Opportunities -->
-                    <div>
-                        <h3 style="margin-bottom:-10px">Microsoft Resource Groups and Volunteering</h3>
-                        <p style="margin-bottom:-5px">Advanced company culture by leading ERG and volunteering initatives that promote inclusion, connection, and giving back across the Microsoft community.</p>
-                        <div class="serBrief">
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>Co-lead, Xbox Give Gaming Tournament</h4>
-                                <div class="timeframe">
-                                    <span>2025</span>
-                                </div>
-                            </div>
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>Co-lead, Asians at Microsoft Give Pillar</h4>
-                                <div class="timeframe">
-                                    <span>2025</span>
-                                </div>
-                            </div>
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>External Committee Member, Asians at Microsoft</h4>
-                                <div class="timeframe">
-                                    <span>2024</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="serDetailed" style="display: none">
-                            <!-- Co-lead, Xbox Give Gaming Tournament -->
-                            <div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Co-lead, Xbox Give Gaming Tournament</h4>
-                                    <div class="timeframe">
-                                        <span>2025</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>
-                                            Expanded a former intern-only tournament to full-time employees for the first time ever, designing an inclusive format and resources that fostered cross-team bonding and broadened participation across Xbox.
-                                        </li>
-                                        <li>
-                                            Built communications, branding, and event infrastructure while securing prizes that increased access to executive networking and strengthened community connection.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-
-                            <!-- Co-lead, Asians at Microsoft Give Pillar -->
-                            <div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>Co-lead, Asians at Microsoft Give Pillar</h4>
-                                    <div class="timeframe">
-                                        <span>2025</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>
-                                            Drove cross-ERG initiatives that celebrated Asian identity and expanded inclusive giving opportunities, hosting joint events with 100+ attendees.
-                                        </li>
-                                        <li>
-                                            Streamlined communications, partner coordination, and onboarding practices to create a welcoming volunteer experience and sustain long-term leadership growth.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-
-                            <!-- External Committee Member, Asians at Microsoft -->
-                            <div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>External Committee Member, Asians at Microsoft</h4>
-                                    <div class="timeframe">
-                                        <span>2024</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>
-                                            Represented the ERG in external partnerships, strengthening ties with nonprofits and charities, managing logistics and Q&A for events.                                        
-                                        </li>
-                                        <li>
-                                            Championed inclusive framing across events and content, reinforcing belonging and respect within both Microsoft and community-facing programs.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>                             
-
-                        </div>
-                    </div>
-                    <br>
-
-                    <!-- LiNK -->
-                    <div>
-                        <h3 style="margin-bottom:-10px">Liberty in North Korea</h3>
-                        <p style="margin-bottom:-5px">
-                            Six years of progressive leadership across finance, fundraising, and chapter management, including serving as President and founding a new chapter for the international NGO 
-                            <a href="libertyinnorthkorea.org/" target="_blank">Liberty in North Korea</a>.
-                        </p>
-                        <!-- Brief  -->
-                        <div class="serBrief">
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>Presidency & Committee Leadership | University</h4>
-                                <div class="timeframe">
-                                    <span>2019 - 2023</span>
-                                </div>
-                            </div>
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>Chapter Founder & Early Advocacy | High School</h4>
-                                <div class="timeframe">
-                                    <span>2017 - 2019</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Detailed -->
-                        <div class="serDetailed" style="display: none">
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>President</h4>
-                                <div class="timeframe">
-                                    <span>2022 - 2023</span>
-                                </div>
-                            </div>
-                            <div class="serBrief">
-                                <p>Brief</p>
-                            </div>
-                            <div class="serDetailed" style="display: none">
-                                <ul>
-                                    <li>
-                                        Led the chapter as the primary liaison with the international NGO, setting quarterly strategic goals and driving club-wide execution.
-                                    </li>
-                                    <li>
-                                        Strengthened organizational effectiveness by delegating responsibilities, mentoring members, and ensuring consistent delivery of high-impact events and initiatives.
-                                    </li>
-                                </ul>    
-                            </div>
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>Fundraising Director</h4>
-                                <div class="timeframe">
-                                    <span>2021 - 2022</span>
-                                </div>
-                            </div>
-                            <div class="serBrief">
-                                <p>Brief</p>
-                            </div>
-                            <div class="serDetailed" style="display: none">
-                                <ul>
-                                    <li>
-                                        Directed the planning and execution of chapter fundraisers and cross-committee events, increasing collaboration and community reach.
-                                    </li>
-                                    <li>
-                                        Streamlined event coordination processes, enabling more efficient and higher-impact fundraising operations.
-                                    </li>
-                                </ul>    
-                            </div>
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>Financial Director</h4>
-                                <div class="timeframe">
-                                    <span>2020 - 2021</span>
-                                </div>
-                            </div>
-                            <div class="serBrief">
-                                <p>Brief</p>
-                            </div>
-                            <div class="serDetailed" style="display: none">
-                                <ul>
-                                    <li>
-                                        Secured university funding and managed grants, budgets, and financial reporting to sustain chapter programming and speaker events.
-                                    </li>
-                                    <li>
-                                        Co-led major fundraising efforts—including campaigns that raised $3,500 throughout the year and $2,000 in a single week—significantly advancing rescue mission goals.
-                                    </li>
-                                </ul>    
-                            </div>
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>Fundraising Intern</h4>
-                                <div class="timeframe">
-                                    <span>2019 - 2020</span>
-                                </div>
-                            </div>
-                            <div class="serBrief">
-                                <p>Brief</p>
-                            </div>
-                            <div class="serDetailed" style="display: none">
-                                <ul>
-                                    <li>
-                                        Initiated and executed fundraising campaigns that surpassed yearly goals by raising $3,500—enough to fund the relocation of a North Korean refugee.
-                                    </li>
-                                    <li>
-                                        Expanded chapter visibility through targeted outreach, drawing 50+ attendees to events and supporting a major speaker event featuring defector Oh Chong-Song.                             
-                                    </li>
-                                </ul>    
-                            </div>
-                            <div style="margin-bottom:-25px" class="flexInline">
-                                <h4>LiNK Team Founder</h4>
-                                <div class="timeframe">
-                                    <span>2017 - 2019</span>
-                                </div>
-                            </div>
-                            <div class="serBrief">
-                                <p>Established and led the first LiNK team at my high school, building awareness and fundraising programs.</p>
-                            </div>
-                            <div class="serDetailed" style="display: none">
-                                <ul>
-                                    <li>
-                                        Founded and led a new LiNK Rescue Team at my high school, running educational programming and coordinating all communication with the NGO.
-                                    </li>
-                                    <li>
-                                        Achieved the $3,000 annual fundraising goal each year through on-campus campaigns and community engagement, establishing a sustainable, mission-driven chapter.                                    
-                                    </li>
-                                </ul>    
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-
-                    <!-- English Tutoring -->
-                    <div>
-                        <h3 style="margin-bottom:-10px">Alliance for Korea United USA</h3>
-                        <p style="margin-bottom:-5px">Served as an English tutor for a Korean student, teaching language skills while fostering cross-cultural connection and discussion.</p>
-                            <div>
-                                <div style="margin-bottom:-25px" class="flexInline">
-                                    <h4>English Tutor</h4>
-                                    <div class="timeframe">
-                                        <span>2021</span>
-                                    </div>
-                                </div>
-                                <div class="serDetailed" style="display: none">
-                                    <ul>
-                                        <li>
-                                            Conducted 90 minute one-on-one tutoring sessions with a new topic each week                                            
-                                        </li>
-                                        <li>
-                                            Researched and prepared weekly lesson presentations and homework assignments
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                    </div>
-                    <br>
-    
-                </div>
-                <br>
-                <br>
-                <hr>
-
-
-                <!-- Closing -->
-                <div id="contact me">
-                    <h2>say hi!</h2>
-                    <h4>I hope you enjoyed learning a bit about me and my projects!</h4>
-                    <h4>Feel free to reach out to me at <a href="mailto:meganschmid@ucla.edu">meganschmid@ucla.edu</a> or connect with me on <a href="https://www.linkedin.com/in/megan-y-schmid/" target="_blank">linked in</a>. 
-                        I'd love to hear from you!</h4>
-                    <h4>Thanks for reading!</h4>
-                </div>
-
-            </div>
-    
+      <!-- POLAROID HEADSHOT -->
+      <div class="hero-photo-col reveal">
+        <div class="polaroid">
+          <div class="tape top"></div>
+          <div class="shot">[PHOTO SLOT]<br>headshot.png</div>
+          <div class="caption">hi, I'm Megan! :)</div>
         </div>
-        <br>
+      </div>
 
-        <footer>
-            <span>made with ♡ by megan</span>
-        </footer>
+      <!-- ABOUT ON A TORN STRIP, OVERLAPPING THE POLAROID -->
+      <div class="hero-copy reveal d1">
+        <div class="torn hero-strip">
+          <p class="eyebrow">nice to meet you!</p>
+          <h1 class="pitch">
+            I build <mark>discovery experiences</mark> that connect people
+            with things they'll love — and I make games myself.
+          </h1>
+          <p class="role-line">
+            Product Manager II @ Xbox <span class="sep">·</span> Indie Game Developer
+          </p>
+          <div class="contact-row">
+            <a href="mailto:meganyschmid@gmail.com" class="btn sm solid">📧 get in touch</a>
+            <a href="./resume.html" class="btn sm ghost">resume</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span>scroll ↓</span></div>
+</section>
+
+<div class="wrap">
+</div>
+
+<hr class="wrap cutline">
+
+<!-- ======================= ABOUT / STATS ======================= -->
+<section>
+  <div class="parallax-layer" data-speed="0.20" style="top:10%; left:2%;">
+    <svg class="doodle" width="60" height="60" viewBox="0 0 60 60" aria-hidden="true">
+      <circle cx="30" cy="30" r="24" fill="none" stroke="#efe6d6" stroke-width="2" stroke-dasharray="4 8"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="-0.14" style="top:60%; left:5%;">
+    <svg class="doodle" width="50" height="50" viewBox="0 0 50 50" aria-hidden="true">
+      <path d="M25 25 Q25 19 31 19 Q39 19 39 28 Q39 39 27 39 Q12 39 12 23 Q12 6 31 6"
+            fill="none" stroke="#e0d6c4" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="0.15" style="top:34%; right:3%;">
+    <svg class="doodle" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+      <path d="M22 4 C23 14 28 19 40 20 C28 21 23 26 22 40 C21 26 16 21 4 20 C16 19 21 14 22 4 Z"
+            fill="none" stroke="#fdabab" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <div class="wrap layer-content">
+    <div class="sec-head reveal"><h2><span class="underline">about</span></h2></div>
+
+    <p class="reveal" style="font-size:.87rem; max-width:640px;">
+      I'm a Product Manager at Xbox working on the discovery experiences that connect players
+      with the games they love — building AI-driven metadata systems that power personalization.
+    </p>
+    <p class="reveal d1" style="font-size:.87rem; max-width:640px;">
+      I'm also a game developer. Six shipped titles, mostly solo, mostly nights and weekends.
+      Working both sides — the platform that surfaces games, and the games that need surfacing —
+      shapes how I think about building for an audience.
+    </p>
+
+    <div class="stats">
+      <div class="stat reveal"><b>6</b><span>Games shipped</span></div>
+      <div class="stat reveal d1"><b>4,800+</b><span>Plays</span></div>
+      <div class="stat reveal d2"><b id="yrs-at-msft">4</b><span>Yrs at Microsoft</span></div>
+      <div class="stat reveal d3"><b>1,000+</b><span>Random ideas in my head</span></div>
+    </div>
+
+    <div class="np reveal">
+      <div class="tape sm neutral tl"></div>
+      <span class="np-label">Currently playing</span>
+      <p><strong>[REPLACE: game one]</strong>, <strong>[game two]</strong>, and replaying
+      <strong>[game three]</strong> for the [n]th time. [One line of opinion — this is what gives
+      an interviewer something to react to.]</p>
+    </div>
+
+  </div>
+</section>
+
+<hr class="wrap cutline">
+
+<!-- ======================= PROJECTS ======================= -->
+<section>
+  <div class="parallax-layer" data-speed="-0.13" style="top:6%; right:2%;">
+    <svg class="doodle" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true">
+      <path d="M24 4 C25 15 29 19 40 20 C29 21 25 25 24 36 C23 25 19 21 8 20 C19 19 23 15 24 4 Z"
+            fill="none" stroke="#fdabab" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="0.24" style="top:56%; left:1%;">
+    <svg class="doodle" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <path d="M20 6 C21 15 25 19 34 20 C25 21 21 25 20 34 C19 25 15 21 6 20 C15 19 19 15 20 6 Z"
+            fill="none" stroke="#fdabab" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M44 30 C44.6 35 47 37 52 37.5 C47 38 44.6 40 44 45 C43.4 40 41 38 36 37.5 C41 37 43.4 35 44 30 Z"
+            fill="none" stroke="#e0d6c4" stroke-width="1.6" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="0.14" style="top:32%; right:4%;">
+    <svg class="doodle" width="70" height="46" viewBox="0 0 70 46" aria-hidden="true">
+      <path d="M4 34 Q18 4 34 22 T66 10" fill="none" stroke="#efe6d6" stroke-width="2"
+            stroke-linecap="round" stroke-dasharray="5 7"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="-0.09" style="top:80%; right:6%;">
+    <svg class="doodle" width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
+      <path d="M21 4 L26 16 L39 16 L28 24 L32 38 L21 29 L10 38 L14 24 L3 16 L16 16 Z"
+            fill="none" stroke="#fdabab" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <div class="wrap layer-content">
+    <div class="sec-head reveal">
+      <h2><span class="underline">projects</span></h2>
+      <span class="hand" style="font-size:1.15rem;">← six I'm proud of</span>
+    </div>
+    <p class="sec-sub reveal">Games I've designed, built, and shipped — mostly solo.</p>
+
+    <div class="grid">
+
+      <div class="card reveal">
+        <div class="tape tl"></div>
+        <div class="cover">
+          <div class="slide is-active"><img src="images/mailman-cover.png" alt="I Fell in Love with a Mailman — cover art" loading="lazy"></div>
+          <div class="slide"><img src="images/mailman-4.jpeg" alt="I Fell in Love with a Mailman — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/mailman-6.jpeg" alt="I Fell in Love with a Mailman — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/mailman-2.jpeg" alt="I Fell in Love with a Mailman — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/mailman-1.jpeg" alt="I Fell in Love with a Mailman — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/mailman-3.jpeg" alt="I Fell in Love with a Mailman — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/mailman-5.jpeg" alt="I Fell in Love with a Mailman — screenshot" loading="lazy"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3 class="card-title">I Fell in Love with a Mailman</h3>
+            <span class="year">'24</span>
+          </div>
+          <div class="card-meta">Visual Novel · Solo dev</div>
+          <p class="card-hook">A Hallmark-Christmas-movie romance where the love interest is a claw machine you actually have to beat.</p>
+          <p class="decision"><b>[REPLACE]</b> Built the claw machine with real rigged physics instead of a scripted win — the joke only lands if the player genuinely feels cheated.</p>
+          <div class="card-foot"><span class="plays">2,900+ plays</span><a class="btn sm" href="https://mysmee.itch.io/i-fell-in-love-with-a-mailman" target="_blank" rel="noopener">play it</a></div>
+        </div>
+      </div>
+
+      <div class="card reveal d1">
+        <div class="tape tr neutral"></div>
+        <div class="cover">
+          <div class="slide is-active"><img src="images/potion-cover.png" alt="Potion Promotion — cover art" loading="lazy"></div>
+          <div class="slide"><img src="images/potion-1.png" alt="Potion Promotion — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/potion-2.png" alt="Potion Promotion — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/potion-3.png" alt="Potion Promotion — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/potion-4.png" alt="Potion Promotion — screenshot" loading="lazy"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3 class="card-title">Potion Promotion</h3>
+            <span class="year">'24</span>
+          </div>
+          <div class="card-meta">Visual Novel · Solo dev</div>
+          <p class="card-hook">You've inherited your uncle's potion shop, and the customers are demanding.</p>
+          <p class="decision"><b>[REPLACE]</b> Scoped to a single shift so the game could ship complete rather than sprawl into an unfinished shop sim.</p>
+          <div class="card-foot"><span class="plays">700+ plays</span><a class="btn sm" href="https://mysmee.itch.io/potion-promotion" target="_blank" rel="noopener">play it</a></div>
+        </div>
+      </div>
+
+      <div class="card reveal d2">
+        <div class="cover">
+          <div class="slide is-active"><img src="images/wayfarer-cover.png" alt="Wayfarer — cover art" loading="lazy"></div>
+          <div class="slide"><img src="images/wayfarer-1.png" alt="Wayfarer — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/wayfarer-2.png" alt="Wayfarer — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/wayfarer-3.png" alt="Wayfarer — screenshot" loading="lazy"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3 class="card-title">Wayfarer</h3>
+            <span class="year">'21</span>
+          </div>
+          <div class="card-meta">Visual Novel + Deck Builder · [VERIFY role]</div>
+          <p class="card-hook">A deckbuilding puzzle wrapped in a story about friendship, where your choices determine the cards you're dealt.</p>
+          <p class="decision"><b>[REPLACE]</b> Tied story choices directly to the card pool so puzzle difficulty became a consequence of the player's relationships.</p>
+          <div class="card-foot"><span class="plays">900+ plays</span><a class="btn sm" href="https://sonderingemily.itch.io/wayfarer" target="_blank" rel="noopener">play it</a></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="tape bl"></div>
+        <div class="cover">
+          <div class="slide is-active"><img src="images/dogdestroy-cover.jpeg" alt="Tippity Tap: Dog Destroy — cover art" loading="lazy"></div>
+          <div class="slide"><img src="images/dogdestroy-2.png" alt="Tippity Tap: Dog Destroy — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/dogdestroy-3.png" alt="Tippity Tap: Dog Destroy — screenshot" loading="lazy"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3 class="card-title">Tippity Tap: Dog Destroy</h3>
+            <span class="year">'24</span>
+          </div>
+          <div class="card-meta">Typing Game (Korean) · Solo dev</div>
+          <p class="card-hook">The warlock-dog sequel — built entirely in Korean.</p>
+          <p class="decision"><b>[REPLACE]</b> Rebuilt the input system around Hangul syllable composition, since character-by-character matching doesn't work in Korean.</p>
+          <div class="card-foot"><span class="plays">100+ plays · series</span><a class="btn sm" href="https://mysmee.itch.io/tippity-tap-dog-destroy" target="_blank" rel="noopener">play it</a></div>
+        </div>
+      </div>
+
+      <div class="card reveal d1">
+        <div class="cover">
+          <div class="slide is-active"><img src="images/catattack-cover.jpeg" alt="Tippity Tap: Cat Attack — cover art" loading="lazy"></div>
+          <div class="slide"><img src="images/catattack-1.png" alt="Tippity Tap: Cat Attack — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/catattack-2.png" alt="Tippity Tap: Cat Attack — screenshot" loading="lazy"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3 class="card-title">Tippity Tap: Cat Attack</h3>
+            <span class="year">'24</span>
+          </div>
+          <div class="card-meta">Typing Game · Solo dev</div>
+          <p class="card-hook">Defend earth from wizard cats using nothing but your keyboard.</p>
+          <p class="decision"><b>[REPLACE]</b> Tuned word difficulty to scale with typing speed rather than time elapsed, so challenge tracks the player instead of the clock.</p>
+          <div class="card-foot"><span class="plays">100+ plays · series</span><a class="btn sm" href="https://mysmee.itch.io/tippity-tap-cat-attack" target="_blank" rel="noopener">play it</a></div>
+        </div>
+      </div>
+
+      <div class="card reveal d2 first-game">
+        <div class="cover">
+          <div class="slide is-active"><img src="images/bubbletea-cover.png" alt="Bubble Tea in Quarantine — cover art" loading="lazy"></div>
+          <div class="slide"><img src="images/bubbletea-1.png" alt="Bubble Tea in Quarantine — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/bubbletea-2.png" alt="Bubble Tea in Quarantine — screenshot" loading="lazy"></div>
+          <div class="slide"><img src="images/bubbletea-3.png" alt="Bubble Tea in Quarantine — screenshot" loading="lazy"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3 class="card-title">Bubble Tea in Quarantine</h3>
+            <span class="year">'20</span>
+          </div>
+          <div class="card-meta"><span class="first-tag">★ my first game</span> · Solo dev</div>
+          <p class="card-hook">Made during covid lockdown — the game that started it all and pushed me into game dev.</p>
+          <p class="decision"><b>[REPLACE]</b> Shipped it start-to-finish while stuck at home, and finishing that first game is what convinced me I could actually build the ones that came after.</p>
+          <div class="card-foot"><span class="plays">100+ plays</span><a class="btn sm" href="https://mysmee.itch.io/bubble-tea-in-quarantine" target="_blank" rel="noopener">play it</a></div>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="font-size:.75rem; color:var(--faint); font-style:italic; margin-top:22px;">
+      Earlier work: web development and UX projects at UCLA (2020–21) — happy to share on request.
+    </p>
+
+  </div>
+</section>
+
+<hr class="wrap cutline">
+
+<!-- ======================= EXPERIENCE ======================= -->
+<section>
+  <div class="parallax-layer" data-speed="0.16" style="top:18%; right:1%;">
+    <svg class="doodle" width="66" height="66" viewBox="0 0 66 66" aria-hidden="true">
+      <path d="M33 33 Q33 25 41 25 Q52 25 52 37 Q52 52 35 52 Q13 52 13 30 Q13 6 39 6 Q58 6 58 22"
+            fill="none" stroke="#f3e9d8" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="-0.12" style="top:52%; left:2%;">
+    <svg class="doodle" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="7" fill="none" stroke="#fdabab" stroke-width="2"/>
+      <path d="M24 4 L24 11 M24 37 L24 44 M4 24 L11 24 M37 24 L44 24 M10 10 L15 15 M33 33 L38 38 M38 10 L33 15 M15 33 L10 38"
+            fill="none" stroke="#e0d6c4" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="0.2" style="top:78%; right:5%;">
+    <svg class="doodle" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M20 5 C21 14 25 19 35 20 C25 21 21 26 20 35 C19 26 15 21 5 20 C15 19 19 14 20 5 Z"
+            fill="none" stroke="#e0d6c4" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <div class="wrap layer-content">
+    <div class="sec-head reveal"><h2><span class="underline">experience</span></h2></div>
+
+    <div class="employer reveal">
+      <div class="employer-head">
+        <h3>Xbox @ Microsoft</h3>
+        <span class="tenure">Jan 2024 – present</span>
+      </div>
+
+      <div class="exp current">
+        <div class="exp-head">
+          <h4>Product Manager II — Search, Notifications &amp; Discovery</h4>
+          <span class="year">Mar 2026 – now</span>
+        </div>
+        <p class="role-summary">Lead product for <b>Xbox Search, Notifications, and Discovery</b> — helping players find the games they want, and making sure the messages Xbox sends them are trustworthy, timely, and worth their attention.</p>
+
+        <div class="area">Search</div>
+        <ul>
+          <li>Set the product direction for <b>next-generation Search</b> — defining the scenarios across multiple phases, authoring the functional specs, and leading UX walkthroughs that aligned client, platform, and partner engineering teams on how to build it.</li>
+        </ul>
+
+        <div class="area">Notifications</div>
+        <ul>
+          <li>Picked up a brand-new area on short notice and <b>reshaped how the Notifications program runs day-to-day</b> — clearer intake, tracking, and team rhythms that partners said made the whole program run noticeably smoother.</li>
+          <li>Advanced a new <b>marketing-notifications pilot</b> and supported Wishlist notifications through bug-fixing and privacy review — sharpening both the reach and the trust of what Xbox sends players.</li>
+        </ul>
+
+        <div class="area">Cross-team leadership</div>
+        <ul>
+          <li>Drive ambiguous, multi-team efforts from idea to launch — balancing what players need, what's technically possible, and what the business wants, while bringing engineering, design, marketing, and leadership along.</li>
+        </ul>
+      </div>
+
+      <div class="exp">
+        <div class="exp-head">
+          <h4>Product Manager — Metadata, Wishlist &amp; PC Catalog</h4>
+          <span class="year">Jan 2024 – Mar 2026</span>
+        </div>
+        <p class="role-summary">Owned the <b>metadata, storefront, and PC catalog</b> experiences that help players find and buy games — building the AI data layer behind Xbox's recommendations, shipping the discovery and commerce features on top of it, and expanding what's available to play on PC.</p>
+
+        <div class="area">Discovery &amp; AI metadata</div>
+        <ul>
+          <li>Took the <b>Gaming Metadata</b> system — Xbox's AI game-tagging platform, the behind-the-scenes data that powers recommendations, search, and personalization — from an early foundation to a live service, rebuilding tagging quality with a retrieval-augmented (RAG) pipeline and reprocessing the entire <b>~15,000+ title catalog</b>.</li>
+          <li>Shipped <b>Browse by Mood</b> on PC Home — the first player-facing feature built on that metadata — letting players discover games by the vibe they're in the mood for (cozy, competitive, horror) instead of hunting through genres. In an A/B test across <b>~7.4M players</b> it drove a statistically significant lift in players clicking through to install games, and became a reusable template for future channels.</li>
+          <li>Added <b>human-in-the-loop guardrails</b> so people can review and correct the AI's tags — scaling the system responsibly without letting bad data reach players.</li>
+        </ul>
+
+        <div class="area">Commerce &amp; monetization</div>
+        <ul>
+          <li>Shipped <b>Deals for You</b>, a personalized channel that surfaces deals on games each player actually cares about — driving a <b>+9.4%</b> increase in Game Pass sign-ups.</li>
+          <li>Shipped the <b>Wishlist channel</b> permanently on the PC Store, putting the games players saved for later right in front of them when they're ready to buy — lifting wishlist views <b>+9%</b> and wishlist actions <b>+12%</b>.</li>
+          <li>Became product owner for the <b>Benefits Hub</b> and shipped third-party subscription compliance (Fortnite Crew, Ubisoft+ Classics, EA Play) across Console, PC, and Mobile on a tight timeline.</li>
+        </ul>
+
+        <div class="area">Catalog &amp; content quality</div>
+        <ul>
+          <li><b>Built the Quality Control filter from the ground up</b> — a brand-new system that keeps low-quality games from taking up space on the storefront, so players mostly see games worth their time. Took it from a blank page to a shipped, always-on feature live on both PC and Console, after proving it lifted engagement without hurting sales.</li>
+          <li>Owned the <b>Gaming Metadata</b> system end-to-end and expanded the Xbox PC catalog by adding <b>hundreds</b> of previously missing games — resolving a long-standing player request that earned coverage in <a href="https://www.theverge.com/2024/12/11/24318799/microsoft-xbox-app-new-games-homescreen" target="_blank" rel="noopener"><i>The Verge</i></a> and <a href="https://www.pcgamer.com/software/platforms/microsoft-adds-nearly-400-games-to-the-xbox-app-as-it-rolls-out-a-new-home-experience-to-all-users/" target="_blank" rel="noopener"><i>PC Gamer</i></a>, and contributing to the Xbox Play Anywhere 1,000-titles milestone.</li>
+        </ul>
+
+        <div class="area">Research &amp; strategy</div>
+        <ul>
+          <li>Commissioned and socialized user research — including a "what makes an Xbox game?" study — and drove its findings into store-strategy and game-visibility decisions across teams.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="earlier-head reveal">Earlier</div>
+
+    <div class="exp past reveal">
+      <div class="exp-head">
+        <h4>Program Manager Intern — Xbox</h4>
+        <span class="year">Summer 2022</span>
+      </div>
+      <ul>
+        <li>Strategized and shipped a <b>filter &amp; sort refresh</b> across the Xbox storefronts.</li>
+        <li>Built a strategy to increase visibility and discoverability of <b>self-published games</b>.</li>
+        <li>Owned the <b>browse all games</b> feature for Xbox.com.</li>
+      </ul>
+    </div>
+
+    <div class="exp past reveal d1">
+      <div class="exp-head">
+        <h4>Explore Intern — Viva Engage (Yammer)</h4>
+        <span class="year">Summer 2021</span>
+      </div>
+      <ul>
+        <li>Built a web-based security trivia game that gamified security training for all Yammer engineers, on the Security, Privacy &amp; Compliance team.</li>
+      </ul>
+      <p class="stack">C#, ASP.NET, SQLite, Unity, Azure DevOps</p>
+    </div>
+
+    <div class="exp past reveal d2">
+      <div class="exp-head">
+        <h4>University of California, Los Angeles</h4>
+        <span class="year">2023</span>
+      </div>
+      <p style="font-size:.79rem; margin:2px 0; color:#4a4640;"><b>B.A. Linguistics &amp; Computer Science, Korean</b></p>
+      <p style="font-size:.755rem; margin:2px 0; color:#77736c;">Cum Laude · Phi Beta Kappa · ACM Studio (Game Dev) · ACM Design · Upsilon Pi Epsilon</p>
+    </div>
 
 
-        <!-- SCRIPTS -->
 
-        <!-- Visibility Toggle -->
-        <script type="text/javascript" language="javascript">
-            function toggleVisibilityExp(cb)
-            { 
-                
-             var x = document.getElementsByClassName("expBrief");
-             var y = document.getElementsByClassName("expDetailed");
-             if(cb.checked==true)
-             {
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none"; 
-                }
-                for (i = 0; i < y.length; i++) {
-                    y[i].style.display = "block"; 
-                }
-             }
-             else
-             {
-                for (i = 0; i < x.length; i++)
-                    x[i].style.display = "block"; 
-                for (i = 0; i < y.length; i++)
-                    y[i].style.display = "none"; 
-             }
-            }
-        </script>
-        <script type="text/javascript" language="javascript">
-                    function toggleVisibilityService(cb)
-                    { 
-                        
-                     var x = document.getElementsByClassName("serBrief");
-                     var y = document.getElementsByClassName("serDetailed");
-                     if(cb.checked==true)
-                     {
-                        for (i = 0; i < x.length; i++) {
-                            x[i].style.display = "none"; 
-                        }
-                        for (i = 0; i < y.length; i++) {
-                            y[i].style.display = "block"; 
-                        }
-                     }
-                     else
-                     {
-                        for (i = 0; i < x.length; i++)
-                            x[i].style.display = "block"; 
-                        for (i = 0; i < y.length; i++)
-                            y[i].style.display = "none"; 
-                     }
-                    }
-        </script>
 
-        <!-- Filter Buttons -->
-        <script>
-            function toggleFilter(button) {
-                button.classList.toggle("active");
-            }
-        </script>
 
-        <!-- Filter Action -->
-        <script>
-            const activeTags = new Set();
+  </div>
+</section>
 
-            function toggleFilter(button) {
-                const tag = button.dataset.tag;
-                button.classList.toggle("active");
+<hr class="wrap cutline">
 
-                if (button.classList.contains("active")) {
-                activeTags.add(tag);
-                } else {
-                activeTags.delete(tag);
-                }
+<!-- ======================= KIND WORDS ======================= -->
+<section>
+  <div class="parallax-layer" data-speed="0.18" style="top:14%; left:3%;">
+    <svg class="doodle" width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+      <path d="M26 6 C27 17 32 22 44 23 C32 24 27 29 26 40 C25 29 20 24 8 23 C20 22 25 17 26 6 Z"
+            fill="none" stroke="#fdabab" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="-0.12" style="top:62%; right:3%;">
+    <svg class="doodle" width="60" height="60" viewBox="0 0 60 60" aria-hidden="true">
+      <path d="M30 8 L36 24 L54 24 L40 34 L45 51 L30 41 L15 51 L20 34 L6 24 L24 24 Z"
+            fill="none" stroke="#e0d6c4" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="0.14" style="top:36%; right:8%;">
+    <svg class="doodle" width="46" height="42" viewBox="0 0 46 42" aria-hidden="true">
+      <path d="M23 38 C6 26 6 12 16 10 C21 9 23 14 23 16 C23 14 25 9 30 10 C40 12 40 26 23 38 Z"
+            fill="none" stroke="#fdabab" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </div>
 
-                filterProjects();
-            }
+  <div class="wrap layer-content">
+    <div class="sec-head reveal">
+      <h2><span class="underline">kind words</span></h2>
+      <span class="hand" style="font-size:1.15rem;">← from people I've worked with</span>
+    </div>
+    <p class="sec-sub reveal">A few notes from teammates across engineering, design, and product.</p>
 
-            function filterProjects() {
-                const cards = document.querySelectorAll(".project-card");
+    <div class="kudos-grid">
 
-                if (activeTags.size === 0) {
-                // no filters active → show all
-                cards.forEach(card => card.classList.remove("hidden"));
-                return;
-                }
+      <figure class="kudos reveal">
+        <div class="tape tl"></div>
+        <blockquote class="kudos-quote">The feature recently went GA which is an incredible milestone and quite quick given when we started. I remember it was on the roadmap for “sometime in calendar year 2026,” so you delivered much ahead of schedule! And it couldn't have come at a better time either. It feels great to be the only console platform with a solution to this problem. That will go a long way not just with players, but also our creators. And it's thanks to your hard work and dedication.</blockquote>
+        <figcaption class="kudos-cite">
+          <span class="kudos-name">Gersh Payzer</span>
+          <span class="kudos-role">Principal Software Engineer</span>
+        </figcaption>
+      </figure>
 
-                cards.forEach(card => {
-                const cardTags = card.dataset.tags.split(",");
-                const matches = [...activeTags].some(tag => cardTags.includes(tag));
-                card.classList.toggle("hidden", !matches);
-                });
-            }
-        </script>
+      <figure class="kudos reveal d1">
+        <div class="tape tr neutral"></div>
+        <blockquote class="kudos-quote">You bring great energy to our collaborations. You demonstrated excellent adaptability by quickly familiarizing yourself with this new domain, driven by your proactive approach to asking questions and providing feedback, allowing you to confidently represent the project and make impactful decisions. Beyond that, your calm and decisive leadership fosters a positive, productive environment for discussion. Keep killing it!</blockquote>
+        <figcaption class="kudos-cite">
+          <span class="kudos-name">Jessica Elliott</span>
+          <span class="kudos-role">Senior Designer</span>
+        </figcaption>
+      </figure>
 
-        <!-- Typing Animation -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-            const el = document.getElementById("type-target");
-            const text = "hello! ";
-            const smile = ":)"
-            let i = 0;
-            let j = 0;
+      <figure class="kudos reveal d1">
+        <div class="tape bl"></div>
+        <blockquote class="kudos-quote">You consistently demonstrate an exceptional attention to detail in our quality control filter work. Your ability to identify potential issues early and propose practical solutions ensures that our process remains robust and reliable. I also appreciate your proactive approach and clear communication to make collaboration smooth and efficient, and your commitment to maintaining high standards has been a key factor in delivering accurate, high-quality results.</blockquote>
+        <blockquote class="kudos-quote kudos-quote-second">Your enthusiasm and clarity are amazing — I never have to worry about if something has been overlooked with your involvement.</blockquote>
+        <figcaption class="kudos-cite">
+          <span class="kudos-role">Principal Product Manager</span>
+        </figcaption>
+      </figure>
 
-            function typeHello() {
-                if (i < text.length) {
-                el.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeHello, 100); // typing speed
-                } else {
-                // Wait 0.5 seconds before typing the smile
-                setTimeout(typeSmile, 500);
-                }
-            }
-            
+      <figure class="kudos reveal d2">
+        <div class="tape tl neutral"></div>
+        <blockquote class="kudos-quote">There's a phrase from boxing, I think, about “punching above your weight class” — meaning, doing more than would be expected of your level/experience/etc. You are consistently doing that — in part because you've had to, with some very high visibility work that brings out passionate, senior people who have strong opinions that need to be reconciled. I'm so impressed with your poise and calm in the face of these difficult conversations. It's honestly awesome.</blockquote>
+        <blockquote class="kudos-quote kudos-quote-second">Your recent document outlining the possible paths forward was a master class in objectivity — you were able to see the problem from all sides super fairly, and you absolutely deserve all the credit for getting the team to a decision today.</blockquote>
+        <figcaption class="kudos-cite">
+          <span class="kudos-name">Jessica Zahn</span>
+          <span class="kudos-role">Principal PDM Manager</span>
+        </figcaption>
+      </figure>
 
-            function typeSmile() {
-                if (j < smile.length) {
-                el.textContent += smile.charAt(j);
-                j++;
-                setTimeout(typeSmile, 100); // typing speed
-                }
-            }
+    </div>
 
-            typeHello();
-            });
-        </script>
+  </div>
+</section>
 
-        
-    </body>
+<hr class="wrap cutline">
+
+<!-- ======================= SERVICE + COMMUNITY ======================= -->
+<section>
+  <div class="parallax-layer" data-speed="0.22" style="top:12%; right:3%;">
+    <svg class="doodle" width="56" height="56" viewBox="0 0 56 56" aria-hidden="true">
+      <path d="M28 6 L34 22 L51 22 L37 32 L42 49 L28 39 L14 49 L19 32 L5 22 L22 22 Z"
+            fill="none" stroke="#fdabab" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="0.12" style="top:40%; right:8%;">
+    <svg class="doodle" width="46" height="42" viewBox="0 0 46 42" aria-hidden="true">
+      <path d="M23 38 C6 26 6 12 16 10 C21 9 23 14 23 16 C23 14 25 9 30 10 C40 12 40 26 23 38 Z"
+            fill="none" stroke="#e0d6c4" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="-0.11" style="top:66%; left:2%;">
+    <svg class="doodle" width="50" height="50" viewBox="0 0 50 50" aria-hidden="true">
+      <path d="M25 25 Q25 18 32 18 Q41 18 41 28 Q41 41 26 41 Q8 41 8 22 Q8 3 31 3"
+            fill="none" stroke="#e0d6c4" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="parallax-layer" data-speed="0.18" style="top:26%; left:4%;">
+    <svg class="doodle" width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+      <circle cx="26" cy="26" r="20" fill="none" stroke="#efe6d6" stroke-width="2" stroke-dasharray="4 8"/>
+    </svg>
+  </div>
+
+  <div class="wrap layer-content">
+    <div class="sec-head reveal"><h2><span class="underline">community &amp; culture</span></h2></div>
+    <p class="sec-sub reveal">Building culture at Xbox — beyond the product spec.</p>
+
+    <p class="reveal d1" style="font-size:.87rem; max-width:640px;">
+      Some of the work I care about most doesn't ship in a product. I like making the place better
+      for the people in it — running events, leading intern cohorts, and organizing our community
+      groups.
+    </p>
+
+    <!-- Featured: intern events program (the lead item, kept compact) -->
+    <div class="feature-wrap reveal d2">
+      <div class="tape sm neutral tl"></div>
+      <div class="feature">
+        <div class="feature-head">
+          <span class="np-label">Co-lead · Summer 2026</span>
+        </div>
+        <h3 class="feature-title">Xbox Gaming Intern Events Program</h3>
+        <p class="feature-lede">Co-led the summer intern events program — the people, the budget, the partnerships, and the day-of.</p>
+        <ul class="intern-list">
+          <li><b>Led volunteer teams</b> — delegated ownership and organized teams to plan and run each event.</li>
+          <li><b>Ran the gaming tournament</b> — worked with team to organize the revamped competition and prizes</li>
+          <li><b>Built the feedback loop</b> — structured intern feedback back to volunteers and LT.</li>
+          <li><b>Partnered with design, finance &amp; LT</b> — created custom intern merch and secured budget to make the swag happen.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="svc-list reveal d2">
+      <div class="svc-line"><span><strong>Co-lead</strong>, Xbox Give Gaming Tournament <span class="svc-outcome">[VERIFY — e.g. N participants / $ raised]</span></span><em>2025</em></div>
+      <div class="svc-line"><span><strong>Co-lead</strong>, Xbox Intern Gaming Tournament</span><em>2025</em></div>
+      <div class="svc-line"><span><strong>Co-lead</strong>, Asians at Microsoft — Fundraising Pillar</span><em>2025</em></div>
+      <div class="svc-line"><span><strong>Intern Cohort Leader</strong> — mentored interns, hosted group events</span><em>2024 – 2025</em></div>
+      <div class="svc-line"><span><strong>Committee Member</strong>, Asians at Microsoft</span><em>2024</em></div>
+      <div class="svc-line"><span><strong>Volunteer</strong>, Xbox Intern Program</span><em>2024</em></div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="wrap cutline">
+
+<!-- ======================= ALSO MAKING ======================= -->
+<section>
+  <div class="wrap layer-content">
+    <div class="sec-head reveal"><h2><span class="underline">also making</span></h2></div>
+    <p class="sec-sub reveal">Different mediums, same instinct — I like making things and handing them to people.</p>
+
+    <div class="making reveal">
+      <p class="list">
+        pottery with a high failure rate · photographs · scrapbooks nobody asked for ·
+        a book club I take too seriously · music, badly and often
+      </p>
+
+      <!-- Scattered polaroid pile — swap [PHOTO SLOT]/caption per hobby, and
+           write a note on each .back. Hover to bring a photo forward; click (or
+           Enter) to flip it and read the back. Click it again, click empty space,
+           or press Esc to flip it back. Stacks on narrow screens. -->
+      <div class="scatter" role="group" aria-label="Hobby photos — click one to flip it over and read the back">
+        <figure class="scatter-card" tabindex="0" style="--x:1%;  --y:6px;   --r:-5deg;">
+          <div class="scatter-inner">
+            <div class="scatter-face front">
+              <div class="shot">[PHOTO SLOT]<br>pottery.jpg</div>
+              <figcaption class="caption">pottery</figcaption>
+            </div>
+            <div class="scatter-face back">
+              <p class="back-note">[Write a line about pottery — what you make, how it goes.]</p>
+              <span class="back-hint">click to flip back</span>
+            </div>
+          </div>
+        </figure>
+        <figure class="scatter-card" tabindex="0" style="--x:23%; --y:96px;  --r:4deg;">
+          <div class="scatter-inner">
+            <div class="scatter-face front">
+              <div class="shot">[PHOTO SLOT]<br>photo.jpg</div>
+              <figcaption class="caption">photography</figcaption>
+            </div>
+            <div class="scatter-face back">
+              <p class="back-note">[Write a line about your photography.]</p>
+              <span class="back-hint">click to flip back</span>
+            </div>
+          </div>
+        </figure>
+        <figure class="scatter-card" tabindex="0" style="--x:45%; --y:18px;  --r:-3deg;">
+          <div class="scatter-inner">
+            <div class="scatter-face front">
+              <div class="shot">[PHOTO SLOT]<br>scrapbook.jpg</div>
+              <figcaption class="caption">scrapbooks</figcaption>
+            </div>
+            <div class="scatter-face back">
+              <p class="back-note">[Write a line about the scrapbooks you make.]</p>
+              <span class="back-hint">click to flip back</span>
+            </div>
+          </div>
+        </figure>
+        <figure class="scatter-card" tabindex="0" style="--x:62%; --y:128px; --r:6deg;">
+          <div class="scatter-inner">
+            <div class="scatter-face front">
+              <div class="shot">[PHOTO SLOT]<br>bookclub.jpg</div>
+              <figcaption class="caption">my book club</figcaption>
+            </div>
+            <div class="scatter-face back">
+              <p class="back-note">[Write a line about the book club you organize.]</p>
+              <span class="back-hint">click to flip back</span>
+            </div>
+          </div>
+        </figure>
+        <figure class="scatter-card" tabindex="0" style="--x:33%; --y:214px; --r:-6deg;">
+          <div class="scatter-inner">
+            <div class="scatter-face front">
+              <div class="shot">[PHOTO SLOT]<br>music.jpg</div>
+              <figcaption class="caption">music</figcaption>
+            </div>
+            <div class="scatter-face back">
+              <p class="back-note">[Write a line about the music you make.]</p>
+              <span class="back-hint">click to flip back</span>
+            </div>
+          </div>
+        </figure>
+        <figure class="scatter-card" tabindex="0" style="--x:78%; --y:34px;  --r:5deg;">
+          <div class="scatter-inner">
+            <div class="scatter-face front">
+              <div class="shot">[PHOTO SLOT]<br>sewing.jpg</div>
+              <figcaption class="caption">sewing</figcaption>
+            </div>
+            <div class="scatter-face back">
+              <p class="back-note">[Write a line about what you sew.]</p>
+              <span class="back-hint">click to flip back</span>
+            </div>
+          </div>
+        </figure>
+        <figure class="scatter-card" tabindex="0" style="--x:9%;  --y:238px; --r:3deg;">
+          <div class="scatter-inner">
+            <div class="scatter-face front">
+              <div class="shot">[PHOTO SLOT]<br>garden.jpg</div>
+              <figcaption class="caption">gardening</figcaption>
+            </div>
+            <div class="scatter-face back">
+              <p class="back-note">[Write a line about the fruits and veggies you grow.]</p>
+              <span class="back-hint">click to flip back</span>
+            </div>
+          </div>
+        </figure>
+        <figure class="scatter-card" tabindex="0" style="--x:66%; --y:262px; --r:-4deg;">
+          <div class="scatter-inner">
+            <div class="scatter-face front">
+              <div class="shot">[PHOTO SLOT]<br>jewelry.jpg</div>
+              <figcaption class="caption">jewelry making</figcaption>
+            </div>
+            <div class="scatter-face back">
+              <p class="back-note">[Write a line about the jewelry you make.]</p>
+              <span class="back-hint">click to flip back</span>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer class="foot">
+    <span class="hand">thanks for reading!</span>
+    Megan Schmid · <a href="mailto:meganyschmid@gmail.com">meganyschmid@gmail.com</a> · <a href="https://www.linkedin.com/in/megan-y-schmid/">LinkedIn</a> · <a href="https://mysmee.itch.io/">itch.io</a>
+  </footer>
+</div>
+
+<script src="./parallax.js"></script>
+<script>
+  /* Years at Microsoft: time since Jan 2024, rounded to nearest half year */
+  (function () {
+    var el = document.getElementById('yrs-at-msft');
+    if (!el) return;
+    var start = new Date(2024, 0, 1); // Jan 2024
+    var now = new Date();
+    var months = (now.getFullYear() - start.getFullYear()) * 12 +
+                 (now.getMonth() - start.getMonth());
+    if (now.getDate() < start.getDate()) months--;
+    var years = Math.round((months / 12) * 2) / 2; // nearest 0.5
+    el.textContent = Math.max(0.5, years);
+  })();
+</script>
+</body>
 </html>
