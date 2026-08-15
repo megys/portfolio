@@ -332,6 +332,7 @@ section { position: relative; }
 .pitch mark {
   background: linear-gradient(transparent 62%, var(--pink) 62%);
   color: inherit; padding: 0 2px;
+  white-space: nowrap;
 }
 
 .role-line {
@@ -621,7 +622,9 @@ section { position: relative; }
 .card.first-game .cover,
 .card.first-game .card-body { position: relative; z-index: 2; }
 /* punched holes down the left edge, like a sheet pulled from a ring binder.
-   Confined to the notebook-paper body so they don't cut across the cover thumbnail. */
+   Confined to the notebook-paper body so they don't cut across the cover thumbnail.
+   The mask fades holes out near the top and bottom so a partial hole never lands
+   on the torn edge (card height varies with copy length and breakpoint). */
 .card.first-game .card-body::before {
   content: "";
   position: absolute;
@@ -635,6 +638,8 @@ section { position: relative; }
   background-size: 100% 48px;
   background-repeat: repeat-y;
   background-position: center 14px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12px, #000 calc(100% - 36px), transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0, #000 12px, #000 calc(100% - 36px), transparent 100%);
 }
 /* push text clear of both the holes and the red margin rule */
 .card.first-game .card-body { padding-left: 44px; }
@@ -1112,8 +1117,9 @@ body.notes-hidden .note { display: none; }
   .hero-copy { --hero-strip-overlap: 0px; }
 
   .pitch { font-size: 1.35rem; }
+  .pitch-break { display: none; }
   .grid { grid-template-columns: 1fr; gap: 26px; }
-  .card.first-game .card-body::before { bottom: 52px; }
+  .card.first-game .card-body::before { bottom: 8px; }
 
   /* kill rotations — they cause horizontal overflow on narrow screens */
   .card, .card:nth-child(3n+1), .card:nth-child(3n+2), .card:nth-child(3n) { transform: none; }
